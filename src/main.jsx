@@ -1,7 +1,9 @@
-import 'public/css/styles.css'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
 
-document.querySelector('#root').innerHTML = `
-  <div>
-    <h1>Hello!</h1>
-  </div>
-`
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
