@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <Message words="I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?" answer="pencil"></Message>
+      {/* <Message words="I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?" answer="pencil"></Message> */}
       <Backstory></Backstory>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
