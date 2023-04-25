@@ -1,7 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 
 /**
+ * First room component.
  *
+ * @returns {string} // TO DO: Write the return type
  */
 function FirstRoom () {
   const [hasKey, setHasKey] = useState(false)
@@ -9,23 +12,22 @@ function FirstRoom () {
   const [pickKey, setPickKey] = useState(false)
 
   /**
-   *
+   * Function that sets pickKey and hasKey to true if key is picked up.
    */
-  function handleKeyClick () {
+  function pickUpKey () {
+    setPickKey(true)
     setHasKey(true)
   }
 
-  function pickUpKey () {
-    setPickKey(true)
-    alert('You picked key')
-  }
-
   /**
-   *
+   * Function that sets the door to open if the door is clicked when the user has the key.
    */
+  // eslint-disable-next-line no-unused-vars
   function handleDoorClick () {
     if (hasKey) {
       setIsDoorOpen(true)
+    } else {
+    // TO DO: Set else if key isn't picked up.
     }
   }
 
@@ -48,35 +50,6 @@ function FirstRoom () {
         width: '30px',
         cursor: 'pointer'
       }} />)}
-      {hasKey && (
-        <img
-          src="./img/key.png"
-          alt="Key"
-          style={{
-            position: 'absolute',
-            top: '50px',
-            left: '100px'
-          }}
-        />
-      )}
-      {!isDoorOpen
-        ? (
-        <img
-          src="/door.png"
-          alt="Door"
-          style={{
-            position: 'absolute',
-            top: '100px',
-            left: '200px',
-            cursor: hasKey ? 'pointer' : 'default',
-            opacity: hasKey ? 1 : 0.5
-          }}
-          onClick={handleDoorClick}
-        />
-          )
-        : (
-        <p>Congratulations! You have opened the door!</p>
-          )}
     </div>
   )
 }

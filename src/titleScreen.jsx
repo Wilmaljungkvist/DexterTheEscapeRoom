@@ -1,13 +1,26 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
+// eslint-disable-next-line no-unused-vars
 import Backstory from './Backstory'
 
+/**
+ * Component for the title screen.
+ *
+ * @returns {string} //TO DO: write return.
+ */
 const TitleScreen = () => {
   const [showBackstory, setShowBackstory] = useState(false)
 
+  /**
+   * Shows backstory when the start button is pressed.
+   */
   const handleStart = () => {
     setShowBackstory(true)
   }
 
+  /**
+   * Shows about me when the about me button is pressed.
+   */
   const handleAboutMe = () => {
     // TODO: implement "about me" functionality
     alert('About Me button pressed')

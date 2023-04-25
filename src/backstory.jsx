@@ -1,8 +1,12 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react'
+// eslint-disable-next-line no-unused-vars
 import FirstRoom from './firstRoom'
 
 /**
+ * Component for showing the backstory to the escape room.
  *
+ * @returns {string} //TO DO: write correct return.
  */
 const Backstory = () => {
   const [currentStep, setCurrentStep] = useState(0)
@@ -61,7 +65,7 @@ const Backstory = () => {
   }, [showText, currentStep, displayText, story])
 
   /**
-   *
+   * Shows next picture and text if there are more to the story.
    */
   const handleNext = () => {
     if (currentStep === story.length - 1) {
@@ -76,7 +80,7 @@ const Backstory = () => {
   }
 
   /**
-   *
+   * Starts the first game when the start button is pressed.
    */
   const handleStart = () => {
     console.log('Det funkar visst')

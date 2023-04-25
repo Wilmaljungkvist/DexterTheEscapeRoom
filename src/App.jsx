@@ -1,11 +1,18 @@
+// eslint-disable-next-line no-unused-vars
 import { useState } from 'react'
+// eslint-disable-next-line no-unused-vars
 import Message from './Message.jsx'
+// eslint-disable-next-line no-unused-vars
 import Header from './Header.jsx'
+// eslint-disable-next-line no-unused-vars
 import TitleScreen from './titleScreen'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+/**
+ * The app component.
+ *
+ * @returns {string} //TO DO: return correct.
+ */
+function App () {
   return (
     <div className="App">
       <Header></Header>
