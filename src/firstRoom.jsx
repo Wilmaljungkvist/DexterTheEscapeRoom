@@ -22,30 +22,32 @@ function FirstRoom () {
   /**
    * Function that sets the door to open if the door is clicked when the user has the key.
    */
-  // eslint-disable-next-line no-unused-vars
   function handleDoorClick () {
     if (hasKey) {
+      alert('you opened the door')
       setIsDoorOpen(true)
     } else {
-    // TO DO: Set else if key isn't picked up.
+      alert('the door is locked')
     }
   }
 
   return (
     <div>
-      <img src="./img/basement.png" alt="Basement" style={{
+      <img src="./img/basement.png" alt="Basement" useMap="#doormap" style={{
         position: 'absolute',
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
+        width: '1500px',
+        height: '800px',
         border: 'solid 10px white'
       }}/>
+      <map name='doormap' cursor='pointer' style={{ backgroundColor: 'black' }} >
+        <area shape='rect' coords="900,200,1150,550" alt='test' onClick={handleDoorClick} />
+      </map>
       {!pickKey && (
       <img src="./img/key.png" onClick={pickUpKey} alt="key" style={{
         position: 'absolute',
-        top: '900px',
+        top: '650px',
         left: '400px',
         width: '30px',
         cursor: 'pointer'

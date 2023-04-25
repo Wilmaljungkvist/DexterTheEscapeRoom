@@ -3,8 +3,6 @@ import { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import Message from './Message.jsx'
 // eslint-disable-next-line no-unused-vars
-import Header from './Header.jsx'
-// eslint-disable-next-line no-unused-vars
 import TitleScreen from './titleScreen'
 
 /**
@@ -15,7 +13,6 @@ import TitleScreen from './titleScreen'
 function App () {
   return (
     <div className="App">
-      <Header></Header>
       {/* <Message words="I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?" answer="pencil"></Message> */}
       <TitleScreen></TitleScreen>
     </div>
