@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import FirstRoom from './firstRoom'
 
 /**
  *
@@ -7,6 +8,7 @@ const Backstory = () => {
   const [currentStep, setCurrentStep] = useState(0)
   const [showText, setShowText] = useState(false)
   const [displayText, setDisplayText] = useState('')
+  const [showFirstRoom, setShowFirstRoom] = useState(false)
 
   const story = [
     {
@@ -66,10 +68,24 @@ const Backstory = () => {
       // reset to first step
       setCurrentStep(0)
     } else {
+      console.log('Det går')
       setCurrentStep(currentStep + 1)
     }
     setShowText(true)
     setDisplayText('')
+  }
+
+  /**
+   *
+   */
+  const handleStart = () => {
+    console.log('Det funkar visst')
+    setShowFirstRoom(true)
+    setCurrentStep(7)
+  }
+
+  if (showFirstRoom) {
+    return <FirstRoom />
   }
 
   return (
@@ -104,9 +120,30 @@ const Backstory = () => {
       >
         <p class="backstorytext">{displayText}</p>
       </div>
-      {(showText || currentStep < story.length - 1) && (
+      {currentStep < story.length - 1
+        ? (
         <button
           onClick={handleNext}
+          style={{
+            position: 'absolute',
+            bottom: '0.5rem',
+            right: '1rem',
+            fontSize: '1.5rem',
+            fontFamily: 'coffee',
+            backgroundColor: '#ebe0df',
+            borderRadius: '1rem',
+            padding: '0.5rem 1rem',
+            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease'
+          }}
+        >
+          Nästa
+        </button>
+          )
+        : (
+        <button
+          onClick={handleStart}
           style={{
             position: 'absolute',
             bottom: '1rem',
@@ -121,9 +158,9 @@ const Backstory = () => {
             transition: 'all 0.3s ease'
           }}
         >
-          {currentStep === story.length - 1 ? 'Starta' : 'Nästa'}
+          Starta
         </button>
-      )}
+          )}
     </div>
   )
 }

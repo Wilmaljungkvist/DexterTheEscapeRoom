@@ -13,15 +13,46 @@ const TitleScreen = () => {
     alert('About Me button pressed')
   }
 
+  const buttonContainerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: '2rem',
+    flexDirection: 'column'
+  }
+
+  const startButtonStyle = {
+    margin: '20px',
+    fontSize: '1.5rem',
+    padding: '1rem 2rem',
+    marginRight: '1rem',
+    backgroundColor: '#92e09f',
+    color: 'white',
+    border: 'none',
+    borderRadius: '0.5rem',
+    cursor: 'pointer'
+  }
+
+  const aboutMeButtonStyle = {
+    margin: '20px',
+    fontSize: '1.5rem',
+    padding: '1rem 2rem',
+    backgroundColor: '#92cee0',
+    color: 'white',
+    border: 'none',
+    borderRadius: '0.5rem',
+    cursor: 'pointer'
+  }
+
   if (showBackstory) {
     return <Backstory />
   }
 
   return (
     <div>
-      <h1>Dexter: the escape room</h1>
-      <button onClick={handleStart}>Start</button>
-      <button onClick={handleAboutMe}>About Me</button>
+      <div style={buttonContainerStyle}>
+        <button style={startButtonStyle} onClick={handleStart}>Spela</button>
+        <button style={aboutMeButtonStyle} onClick={handleAboutMe}>Om spelet</button>
+      </div>
     </div>
   )
 }
