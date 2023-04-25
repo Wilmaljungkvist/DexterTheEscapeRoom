@@ -6,12 +6,18 @@ import React, { useState } from 'react'
 function FirstRoom () {
   const [hasKey, setHasKey] = useState(false)
   const [isDoorOpen, setIsDoorOpen] = useState(false)
+  const [pickKey, setPickKey] = useState(false)
 
   /**
    *
    */
   function handleKeyClick () {
     setHasKey(true)
+  }
+
+  function pickUpKey () {
+    setPickKey(true)
+    alert('You picked key')
   }
 
   /**
@@ -34,6 +40,14 @@ function FirstRoom () {
         objectFit: 'cover',
         border: 'solid 10px white'
       }}/>
+      {!pickKey && (
+      <img src="./img/key.png" onClick={pickUpKey} alt="key" style={{
+        position: 'absolute',
+        top: '900px',
+        left: '400px',
+        width: '30px',
+        cursor: 'pointer'
+      }} />)}
       {hasKey && (
         <img
           src="./img/key.png"
