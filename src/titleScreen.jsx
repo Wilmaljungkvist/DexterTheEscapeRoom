@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
-import Backstory from './Backstory'
+import Backstory from './backstory'
 // eslint-disable-next-line no-unused-vars
 import Header from './Header.jsx'
 
