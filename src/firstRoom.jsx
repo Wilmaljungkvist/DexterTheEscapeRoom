@@ -1,5 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
+// eslint-disable-next-line no-unused-vars
+import Endstory from './endstory'
 
 /**
  * First room component.
@@ -24,11 +26,14 @@ function FirstRoom () {
    */
   function handleDoorClick () {
     if (hasKey) {
-      alert('you opened the door')
       setIsDoorOpen(true)
     } else {
       alert('the door is locked')
     }
+  }
+
+  if (isDoorOpen) {
+    return <Endstory></Endstory>
   }
 
   return (

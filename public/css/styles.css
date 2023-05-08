@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'myfont';
-    src: url('/public/fonts/rainyhearts.ttf');
+    src: url('/fonts/rainyhearts.ttf');
   }
 
   @font-face {
     font-family: 'coffee';
-    src: url('/public/fonts/coffee.ttf');
+    src: url('/fonts/coffee.ttf');
   }
 
 body {

@@ -8,7 +8,7 @@ import Header from './Header.jsx'
 /**
  * Component for the title screen.
  *
- * @returns {string} //TO DO: write return.
+ * @returns {string} //TO DO: write return correct.
  */
 const TitleScreen = () => {
   const [showBackstory, setShowBackstory] = useState(false)
