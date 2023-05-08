@@ -22,14 +22,6 @@ const Endstory = () => {
     {
       image: './img/home.png',
       text: 'Äntligen hade du kommit ut och kunde känna den friska luften i din näsa, utsikten ut mot havet härifrån var väldigt vacker och solen hade börjat gå upp. Du kände att allt ditt slit hade varit värt det, hade det inte varit för Dexter hade du inte fått se denna vackra utsikt.'
-    },
-    {
-      image: './img/dark.png',
-      text: 'Redan nästa dag var det byggarbetare som satte igen hålet i din vägg, inte ens hyresvärden visste om att det var en dörr där som blev lika chockad som du blivit. “Dags att börja renovera för förråd", sa hon glatt.'
-    },
-    {
-      image: './img/bedroom.png',
-      text: 'Du blev en lokalkändis och alla ville  veta vad du hade varit med om men du sa precis samma sak till alla reportrar….  Dexter är min katt som är en svart Cornish Rex och jag hade precis kommit hem från jobbet………..'
     }
   ]
 
@@ -62,7 +54,7 @@ const Endstory = () => {
    */
   const handleEnd = () => {
     setShowFirstRoom(true)
-    setCurrentStep(3)
+    setCurrentStep(1)
   }
 
   if (showFirstRoom) {
