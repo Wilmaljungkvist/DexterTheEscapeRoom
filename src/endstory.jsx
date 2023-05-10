@@ -1,14 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react'
 // eslint-disable-next-line no-unused-vars
-import FirstRoom from './firstRoom'
+import TitleScreen from './titleScreen'
 
 /**
  * Component for showing the backstory to the escape room.
  *
  * @returns {string} //TO DO: write correct return.
  */
-const Backstory = () => {
+const Endstory = () => {
   const [currentStep, setCurrentStep] = useState(0)
   const [showText, setShowText] = useState(false)
   const [displayText, setDisplayText] = useState('')
@@ -16,36 +16,12 @@ const Backstory = () => {
 
   const story = [
     {
-      image: './img/forrest.png',
-      text: 'Dexter är din katt som är en svart Cornish Rex. Han är din absoluta bästa vän, och det är lite sorgligt, men sant, eftersom du precis har flyttat till en ny stad och ännu inte hunnit skaffa många vänner än. Det var en vanlig dag, och du hade precis kommit hem mycket trött efter ett 8-timmars pass på ditt lagerjobb.'
+      image: './img/dexter.png',
+      text: 'När du öppnar dörren får du äntligen syn på Dexter som snällt stått och väntat på att bli insläppt. Han stryker sig mot dina ben och du tar honom i ett hårt grepp ut igen'
     },
     {
-      image: './img/home.png',
-      text: 'Du möttes av Dexter vid dörren, som hälsade dig välkommen hem med ett glatt "meow". Du kände dig genast lite lugnare och gladare när du såg hans mjuka päls och hörde hans välkomnande ljud.'
-    },
-    {
-      image: './img/light.png',
-      text: 'Du bestämde dig för att se din favorit serie och satte dig ner på soffan för att slappna av en stund.'
-    },
-    {
-      image: './img/dark.png',
-      text: '6 timmar senare hade du sett en helt säsong och insåg att tiden gick lite snabbare än du hade velat.'
-    },
-    {
-      image: './img/bedroom.png',
-      text: 'Snabbt förberedde du dig för sängen så att det inte skulle bli alltför sent, men du hann inte sova länge innan du hörde en duns. Du blev rädd eftersom du inte kunde hitta Dexter, som annars alltid låg vid dina fötter. Du reste dig upp och gick mot köket, där ljudet kom ifrån.'
-    },
-    {
-      image: './img/kitchen.png',
-      text: 'När du kom till köket såg nu något underligt, en del av tapeten hade rivits av och det visades nu en del av en dörr. Du bestämmer dig för att öppna dörren för att se om de är hit Dexter farit'
-    },
-    {
-      image: './img/stairs.png',
-      text: 'Till din fasa va de en trappa ner till en källare, mörkt va det också, men Dexter måste hittas tänkte du. Du hämtade en ficklampa, tog några djupa andetag och gick ner för den mörka trappan.'
-    },
-    {
-      image: './img/basement.png',
-      text: 'När du kom till botten av trappan befann du dig i en gammal källare. Det såg ut som om ingen hade bott där på flera år, och det fanns spindelnät överallt. Men något kändes fel, och du hade en känsla av att det fanns något mer som gömde sig där. Källardörren stängdes med en smäll, och du sprang snabbt upp för att försöka ta dig ut. Men du insåg snart att dörren var låst och att du behövde hitta en annan väg ut, men också hitta Dexter. Dina enda ledtrådar var ytterligare en låst dörr framför dig och en vält färgburk med tassavtryck på golvet som visade att Dexter hade gått genom den dörren. “Bara att börja leta efter en väg ut” tänkte du, ovetandes om det stora äventyret framför dig'
+      image: './img/sun.png',
+      text: 'Äntligen hade du kommit ut och kunde känna den friska luften i din näsa, utsikten ut mot havet härifrån var väldigt vacker och solen hade börjat gå upp. Du kände att allt ditt slit hade varit värt det, hade det inte varit för Dexter hade du inte fått se denna vackra utsikt.'
     }
   ]
 
@@ -68,7 +44,6 @@ const Backstory = () => {
    * Shows next picture and text if there are more to the story.
    */
   const handleNext = () => {
-    setCurrentStep(0)
     setCurrentStep(currentStep + 1)
     setShowText(true)
     setDisplayText('')
@@ -77,13 +52,13 @@ const Backstory = () => {
   /**
    * Starts the first game when the start button is pressed.
    */
-  const handleStart = () => {
+  const handleEnd = () => {
     setShowFirstRoom(true)
-    setCurrentStep(7)
+    setCurrentStep(1)
   }
 
   if (showFirstRoom) {
-    return <FirstRoom />
+    return <TitleScreen />
   }
 
   return (
@@ -141,7 +116,7 @@ const Backstory = () => {
           )
         : (
         <button
-          onClick={handleStart}
+          onClick={handleEnd}
           style={{
             position: 'absolute',
             bottom: '1rem',
@@ -156,11 +131,11 @@ const Backstory = () => {
             transition: 'all 0.3s ease'
           }}
         >
-          Starta
+         Avsluta
         </button>
           )}
     </div>
   )
 }
 
-export default Backstory
+export default Endstory

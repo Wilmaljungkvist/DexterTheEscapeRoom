@@ -1,14 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
-import Backstory from './Backstory'
-// eslint-disable-next-line no-unused-vars
-import Header from './Header.jsx'
+import Backstory from './backstory'
 
 /**
  * Component for the title screen.
  *
- * @returns {string} //TO DO: write return.
+ * @returns {string} //TO DO: write return correct.
  */
 const TitleScreen = () => {
   const [showBackstory, setShowBackstory] = useState(false)
@@ -64,7 +62,9 @@ const TitleScreen = () => {
 
   return (
     <div>
-        <Header></Header>
+       <header>
+      <h1>Dexter: The Escape Room</h1>
+       </header>
       <div style={buttonContainerStyle}>
         <button style={startButtonStyle} onClick={handleStart}>Spela</button>
         <button style={aboutMeButtonStyle} onClick={handleAboutMe}>Om spelet</button>

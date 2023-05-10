@@ -1,8 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
-import Message from './Message.jsx'
-// eslint-disable-next-line no-unused-vars
 import TitleScreen from './titleScreen'
 
 /**
