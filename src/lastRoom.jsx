@@ -1,14 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
-import LastRoom from './lastRoom'
+import Endstory from './endstory'
 
 /**
  * First room component.
  *
  * @returns {string} // TO DO: Write the return type
  */
-function FirstRoom () {
+function LastRoom () {
   const [hasKey, setHasKey] = useState(false)
   const [isDoorOpen, setIsDoorOpen] = useState(false)
   const [pickKey, setPickKey] = useState(false)
@@ -33,12 +33,12 @@ function FirstRoom () {
   }
 
   if (isDoorOpen) {
-    return <LastRoom />
+    return <Endstory></Endstory>
   }
 
   return (
     <div>
-      <img src="./img/basement.png" alt="Basement" useMap="#doormap" style={{
+      <img src="./img/last.png" alt="Basement" useMap="#doormap" style={{
         position: 'absolute',
         top: 0,
         left: 0,
@@ -61,4 +61,4 @@ function FirstRoom () {
   )
 }
 
-export default FirstRoom
+export default LastRoom
