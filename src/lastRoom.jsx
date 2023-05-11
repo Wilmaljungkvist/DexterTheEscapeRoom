@@ -14,8 +14,9 @@ function LastRoom () {
   const [pickKey, setPickKey] = useState(false)
   const [clickSafe, setClickSafe] = useState(false)
   const [openSafe, setOpenSafe] = useState(false)
-  const [password, setPassword] = useState('1234')
+  const [password, setPassword] = useState('6743')
   const [inputValue, setInputValue] = useState('')
+  const [plantPressed, setPlantPressed] = useState(false)
 
   /**
    * Function that sets pickKey and hasKey to true if key is picked up.
@@ -66,12 +67,22 @@ function LastRoom () {
     }
   }
 
+  /**
+   *
+   */
   function handleKeyPad () {
     setClickSafe(false)
   }
 
   if (isDoorOpen) {
     return <Endstory></Endstory>
+  }
+
+  /**
+   *
+   */
+  function plant () {
+    setPlantPressed(true)
   }
 
   const keyButtonStyles = {
@@ -188,6 +199,46 @@ function LastRoom () {
     </div>
   </form>
       )}
+      <img
+        src="./img/plant.png"
+        onClick={plant}
+        alt="safe"
+        style={{
+          position: 'absolute',
+          top: '360px',
+          left: '1100px',
+          width: '400px',
+          cursor: 'pointer'
+        }}
+      />
+      {plantPressed && (
+  <div style={{ position: 'relative' }}>
+    <img
+      src='./img/letter.png'
+      alt="letter"
+      style={{
+        position: 'fixed',
+        top: '30%',
+        left: '35%',
+        width: '400px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+    />
+    <button
+      onClick={() => setPlantPressed(false)}
+      style={{
+        position: 'absolute',
+        top: '230px',
+        right: '500px'
+      }}
+    >
+      X
+    </button>
+  </div>
+      )}
+
     </div>
   )
 }
