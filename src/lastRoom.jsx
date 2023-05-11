@@ -66,6 +66,10 @@ function LastRoom () {
     }
   }
 
+  function handleKeyPad () {
+    setClickSafe(false)
+  }
+
   if (isDoorOpen) {
     return <Endstory></Endstory>
   }
@@ -171,6 +175,16 @@ function LastRoom () {
         cursor: 'pointer',
         fontFamily: 'myfont'
       }}>OK</button>
+      <button type="button" onClick={handleKeyPad} style={{
+        padding: '10px 20px',
+        fontSize: '20px',
+        backgroundColor: '#9e8f6a',
+        color: 'white',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        fontFamily: 'myfont'
+      }}>X</button>
     </div>
   </form>
       )}
