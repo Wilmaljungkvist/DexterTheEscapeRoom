@@ -12,6 +12,8 @@ function LastRoom () {
   const [hasKey, setHasKey] = useState(false)
   const [isDoorOpen, setIsDoorOpen] = useState(false)
   const [pickKey, setPickKey] = useState(false)
+  const [clickSafe, setClickSafe] = useState(false)
+  const [openSafe, setOpenSafe] = useState(false)
 
   /**
    * Function that sets pickKey and hasKey to true if key is picked up.
@@ -19,6 +21,14 @@ function LastRoom () {
   function pickUpKey () {
     setPickKey(true)
     setHasKey(true)
+  }
+
+  /**
+   * Function for the safe.
+   */
+  function safe () {
+    setClickSafe(true)
+    alert('You clicked the safe')
   }
 
   /**
@@ -57,6 +67,13 @@ function LastRoom () {
         width: '30px',
         cursor: 'pointer'
       }} />)}
+      <img src="./img/safe.png" onClick={safe} alt="safe" style={{
+        position: 'absolute',
+        top: '650px',
+        left: '500px',
+        width: '100px',
+        cursor: 'pointer'
+      }} />
     </div>
   )
 }
