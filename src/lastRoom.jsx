@@ -147,7 +147,8 @@ function LastRoom () {
         padding: '10px',
         borderRadius: '5px',
         textAlign: 'center',
-        fontSize: '20px'
+        fontSize: '20px',
+        gridColumn: 'span 3'
       }} />
       <button type="button" onClick={() => setInputValue(inputValue + '1')} style={keyButtonStyles}>1</button>
       <button type="button" onClick={() => setInputValue(inputValue + '2')} style={keyButtonStyles}>2</button>
@@ -158,12 +159,12 @@ function LastRoom () {
       <button type="button" onClick={() => setInputValue(inputValue + '7')} style={keyButtonStyles}>7</button>
       <button type="button" onClick={() => setInputValue(inputValue + '8')} style={keyButtonStyles}>8</button>
       <button type="button" onClick={() => setInputValue(inputValue + '9')} style={keyButtonStyles}>9</button>
-      <button type="button" onClick={() => setInputValue(inputValue.slice(0, -1))} style={keyButtonStyles}>DEL</button>
       <button type="button" onClick={() => setInputValue(inputValue + '0')} style={keyButtonStyles}>0</button>
+      <button type="button" onClick={() => setInputValue(inputValue.slice(0, -1))} style={keyButtonStyles}>delete</button>
       <button type="submit" style={{
         padding: '10px 20px',
         fontSize: '20px',
-        backgroundColor: 'green',
+        backgroundColor: '#9e8f6a',
         color: 'white',
         border: 'none',
         borderRadius: '5px',
