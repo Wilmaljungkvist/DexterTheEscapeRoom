@@ -17,6 +17,7 @@ function LastRoom () {
   const [password, setPassword] = useState('6743')
   const [inputValue, setInputValue] = useState('')
   const [plantPressed, setPlantPressed] = useState(false)
+  const [isCabinetOpen, setIsCabinetOpen] = useState(false)
 
   /**
    * Function that sets pickKey and hasKey to true if key is picked up.
@@ -68,6 +69,14 @@ function LastRoom () {
     }
   }
 
+  function clickCabinet () {
+    if (hasKey) {
+      setIsCabinetOpen(true)
+    } else {
+      alert('the cabinet is locked, needs a key')
+    }
+  }
+
   /**
    *
    */
@@ -116,7 +125,7 @@ function LastRoom () {
       <map name="doormap" cursor="pointer" style={{ backgroundColor: 'black' }}>
         <area shape="rect" coords="900,200,1150,550" alt="test" onClick={handleDoorClick} />
       </map>
-      {!pickKey && (
+      {!pickKey && openSafe && (
         <img
           src="./img/key.png"
           onClick={pickUpKey}
@@ -124,24 +133,26 @@ function LastRoom () {
           style={{
             position: 'absolute',
             top: '650px',
-            left: '400px',
+            left: '100px',
             width: '30px',
             cursor: 'pointer'
           }}
         />
       )}
+      {!openSafe && (
       <img
         src="./img/safe.png"
         onClick={safe}
         alt="safe"
         style={{
           position: 'absolute',
-          top: '650px',
-          left: '500px',
+          top: '600px',
+          left: '100px',
           width: '100px',
           cursor: 'pointer'
         }}
       />
+      )}
       {clickSafe && !openSafe && (
   <form onSubmit={handleSubmit} style={{
     position: 'absolute',
@@ -241,6 +252,18 @@ function LastRoom () {
   </div>
       )}
 
+<img
+      src='./img/cabinet.png'
+      alt="letter"
+      onClick={handleDoorClick}
+      style={{
+        position: 'absolute',
+        top: '450px',
+        left: '400px',
+        width: '300px',
+        cursor: 'pointer'
+      }}
+    />
     </div>
   )
 }
