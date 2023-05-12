@@ -63,6 +63,7 @@ function LastRoom () {
     if (inputValue === password) {
       setOpenSafe(true)
     } else {
+      setInputValue('')
       alert('Wrong password')
     }
   }
@@ -72,6 +73,7 @@ function LastRoom () {
    */
   function handleKeyPad () {
     setClickSafe(false)
+    setInputValue('')
   }
 
   if (isDoorOpen) {
