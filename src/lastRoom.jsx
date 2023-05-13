@@ -73,7 +73,7 @@ function LastRoom () {
     if (hasKey) {
       setIsCabinetOpen(true)
     } else {
-      alert('the cabinet is locked, needs a key')
+      alert('The cabinet is locked, needs a key')
     }
   }
 
@@ -139,6 +139,20 @@ function LastRoom () {
           }}
         />
       )}
+      {!isCabinetOpen && (
+  <img
+      src='./img/cabinet.png'
+      alt="letter"
+      onClick={clickCabinet}
+      style={{
+        position: 'absolute',
+        top: '450px',
+        left: '400px',
+        width: '300px',
+        cursor: 'pointer'
+      }}
+    />
+)}
       {!openSafe && (
       <img
         src="./img/safe.png"
@@ -251,19 +265,6 @@ function LastRoom () {
     </button>
   </div>
       )}
-
-<img
-      src='./img/cabinet.png'
-      alt="letter"
-      onClick={handleDoorClick}
-      style={{
-        position: 'absolute',
-        top: '450px',
-        left: '400px',
-        width: '300px',
-        cursor: 'pointer'
-      }}
-    />
     </div>
   )
 }
