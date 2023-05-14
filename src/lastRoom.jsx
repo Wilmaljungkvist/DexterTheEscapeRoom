@@ -69,6 +69,9 @@ function LastRoom () {
     }
   }
 
+  /**
+   *
+   */
   function clickCabinet () {
     if (hasKey) {
       setIsCabinetOpen(true)
@@ -152,7 +155,7 @@ function LastRoom () {
         cursor: 'pointer'
       }}
     />
-)}
+      )}
       {!openSafe && (
       <img
         src="./img/safe.png"
