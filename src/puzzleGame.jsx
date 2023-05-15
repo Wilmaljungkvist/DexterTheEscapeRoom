@@ -8,7 +8,6 @@ import React, { useState, useEffect } from 'react'
 function PuzzleGame ({ onPuzzleSolved }) {
   const [puzzle, setPuzzle] = useState([])
   const [solved, setSolved] = useState(false)
-  const [moves, setMoves] = useState(0)
 
   useEffect(() => {
     const newPuzzle = createPuzzle()
@@ -18,17 +17,13 @@ function PuzzleGame ({ onPuzzleSolved }) {
   useEffect(() => {
     const isSolved = checkSolved()
     setSolved(isSolved)
-    if (solved) {
-      onPuzzleSolved(true)
-      console.log('du klarade de')
-    }
-  }, [puzzle])
+    onPuzzleSolved(isSolved)
+  }, [puzzle, onPuzzleSolved])
 
   /**
    *
    */
   function createPuzzle () {
-    onPuzzleSolved(false)
     const numbers = [1, 2, 3, 4, 5, 6, null, 7, 8]
 
     const newPuzzle = [
@@ -83,7 +78,6 @@ function PuzzleGame ({ onPuzzleSolved }) {
         newPuzzle[row][col]
       ]
       setPuzzle(newPuzzle)
-      setMoves(moves + 1)
 
       if (checkSolved(newPuzzle)) {
         setSolved(true)
@@ -115,6 +109,7 @@ function PuzzleGame ({ onPuzzleSolved }) {
 
   return (
     <div className="puzzle">
+        <p>Solve the puzzle!</p>
       <div className="board">
         {puzzle.map((row, rowIndex) =>
           <div className="row" key={rowIndex}>
@@ -124,11 +119,6 @@ function PuzzleGame ({ onPuzzleSolved }) {
           </div>
         )}
       </div>
-      {solved &&
-        <div className="message">
-          Congratulations! You solved the puzzle in {moves} moves.
-        </div>
-      }
     </div>
   )
 }

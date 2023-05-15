@@ -21,6 +21,8 @@ function LastRoom () {
   const [plantPressed, setPlantPressed] = useState(false)
   const [isCabinetOpen, setIsCabinetOpen] = useState(false)
   const [isPuzzleSolved, setIsPuzzleSolved] = useState(false)
+  const [hasDoorKey, setHasDoorKey] = useState(false)
+  const [pickDoorKey, setPickDoorKey] = useState(false)
 
   /**
    * Function that sets pickKey and hasKey to true if key is picked up.
@@ -28,6 +30,14 @@ function LastRoom () {
   function pickUpKey () {
     setPickKey(true)
     setHasKey(true)
+  }
+
+  /**
+   * Function that sets pickKey and hasKey to true if key is picked up.
+   */
+   function pickUpDoorKey () {
+    setPickDoorKey(true)
+    setHasDoorKey(true)
   }
 
   /**
@@ -41,7 +51,7 @@ function LastRoom () {
    * Function for when the door is clicked.
    */
   function handleDoorClick () {
-    if (hasKey) {
+    if (hasDoorKey) {
       setIsDoorOpen(true)
     } else {
       alert('the door is locked')
@@ -105,49 +115,49 @@ function LastRoom () {
   /**
    *
    */
-  function handlePuzzleSolved () {
-    setIsPuzzleSolved(true)
+  function handlePuzzleSolved (isSolved) {
+    setIsPuzzleSolved(isSolved)
   }
 
   return (
     <div>
       <img
-        class="basement"
+        className="basement"
         src="./img/last.png"
         alt="Basement"
         useMap="#doormap"
       />
       <map name="doormap" cursor="pointer" style={{ backgroundColor: 'black' }}>
-        <area shape="rect" coords="900,200,1150,550" alt="test" onClick={handleDoorClick} />
+        <area shape="rect" coords="680,100,1000,650" alt="test" onClick={handleDoorClick} />
       </map>
 
-      {!pickKey && openSafe && (
+      {!pickKey && openSafe && !isPuzzleSolved && (
         <img
-          class="key"
+        className="key"
           src="./img/key.png"
           onClick={pickUpKey}
           alt="key"
         />
       )}
 
-      {!isCabinetOpen && (
+      {!isPuzzleSolved && (
   <img
-      class="cabinet"
+      className="cabinet"
       src='./img/cabinet.png'
       alt="letter"
       onClick={clickCabinet}
     />
       )}
 
-{isCabinetOpen && (
-  <div class='puzzle'>
+{isCabinetOpen && !hasDoorKey && (
+  <div className='puzzle'>
   <PuzzleGame onPuzzleSolved={handlePuzzleSolved} />
 </div>
 )}
 
       {!openSafe && (
       <img
-      class='safe'
+      className='safe'
         src="./img/safe.png"
         onClick={safe}
         alt="safe"
@@ -155,28 +165,28 @@ function LastRoom () {
       )}
 
       {clickSafe && !openSafe && (
-  <form class='form' onSubmit={handleSubmit}>
+  <form className='form' onSubmit={handleSubmit}>
     <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Enter password:</label>
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
-      <input class='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
-      <button class="keybtn" type="button" onClick={() => setInputValue(inputValue + '1')}>1</button>
-      <button class="keybtn" type="button" onClick={() => setInputValue(inputValue + '2')}>2</button>
-      <button class="keybtn" type="button" onClick={() => setInputValue(inputValue + '3')}>3</button>
-      <button class="keybtn" type="button" onClick={() => setInputValue(inputValue + '4')}>4</button>
-      <button class="keybtn" type="button" onClick={() => setInputValue(inputValue + '5')}>5</button>
-      <button class="keybtn" type="button" onClick={() => setInputValue(inputValue + '6')}>6</button>
-      <button class="keybtn" type="button" onClick={() => setInputValue(inputValue + '7')}>7</button>
-      <button class="keybtn" type="button" onClick={() => setInputValue(inputValue + '8')}>8</button>
-      <button class="keybtn" type="button" onClick={() => setInputValue(inputValue + '9')}>9</button>
-      <button class="keybtn" type="button" onClick={() => setInputValue(inputValue + '0')}>0</button>
-      <button class="keybtn" type="button" onClick={() => setInputValue(inputValue.slice(0, -1))}>delete</button>
-      <button class="subbtn" type="submit">OK</button>
-      <button class="subbtn" type="button" onClick={handleKeyPad}>X</button>
+      <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '1')}>1</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '2')}>2</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '3')}>3</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '4')}>4</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '5')}>5</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '6')}>6</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '7')}>7</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '8')}>8</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '9')}>9</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '0')}>0</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue.slice(0, -1))}>delete</button>
+      <button className="subbtn" type="submit">OK</button>
+      <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
     </div>
   </form>
       )}
       <img
-        class="plant"
+        className="plant"
         src="./img/plant.png"
         onClick={plant}
         alt="plant"
@@ -184,7 +194,7 @@ function LastRoom () {
       {plantPressed && (
   <div style={{ position: 'relative' }}>
     <img
-      class="letter"
+      className="letter"
       src='./img/letter.png'
       alt="letter"
     />
@@ -200,11 +210,11 @@ function LastRoom () {
     </button>
   </div>
       )}
-      {isPuzzleSolved && (
+      {isPuzzleSolved && !hasDoorKey && (
         <img
-        class="doorkey"
+        className="doorkey"
         src="./img/key.png"
-        onClick={pickUpKey}
+        onClick={pickUpDoorKey}
         alt="key"
       />
       )}
