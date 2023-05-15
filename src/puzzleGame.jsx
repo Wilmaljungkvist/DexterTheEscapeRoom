@@ -24,7 +24,7 @@ function PuzzleGame ({ onPuzzleSolved }) {
    *
    */
   function createPuzzle () {
-    const numbers = [1, 2, 3, 4, 5, 6, null, 7, 8]
+    const numbers = [null, 1, 3, 4, 2, 5, 7, 8, 6]
 
     const newPuzzle = [
       numbers.slice(0, 3),
