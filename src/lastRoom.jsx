@@ -8,7 +8,7 @@ import PuzzleGame from './puzzleGame'
 /**
  * First room component.
  *
- * @returns {string} // TO DO: Write the return type
+ * @returns {string} // TO DO: Write the return type.
  */
 function LastRoom () {
   const [hasKey, setHasKey] = useState(false)
