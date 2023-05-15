@@ -9,7 +9,7 @@
   }
 
 body {
-    background-color: pink;
+    background-color: rgb(219, 227, 243);
 }
 
 header {
@@ -38,4 +38,174 @@ header {
 
   .backstorytext {
     font-family: 'myfont', sans-serif;
+  }
+
+
+  .puzzle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .cell {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    transition: all 0.2s ease-in-out;
+  }  
+  
+  .cell:hover {
+    background-color: #f2f2f2;
+    transform: scale(1.1);
+  }
+  
+  .message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .basement {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1500px;
+    height: 800px;
+    border: solid 10px white;
+  }
+
+  .key {
+    position: absolute;
+            top: 650px;
+            left: 100px;
+            width: 30px;
+            cursor: pointer;
+  }
+
+  .cabinet {
+    position: absolute;
+        top: 450px;
+        left: 400px;
+        width: 300px;
+        cursor: pointer;
+  }
+
+  .puzzle {
+    position: fixed;
+    top: 240px;
+    left: 450px;
+    z-index: 9999;
+  }
+  
+
+  .safe {
+    position: absolute;
+    top: 600px;
+    left: 100px;
+    width: 100px;
+    cursor: pointer;
+  }
+  
+
+  .form {
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  .input {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    grid-column: span 3;
+  }
+
+  .keybtn {
+    padding: 10px;
+    font-size: 20px;
+    background-color: #d9d9d9;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'myfont';
+  }
+
+  .subbtn {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #9e8f6a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'myfont';
+  }
+
+  .plant {
+    position: absolute;
+    top: 360px;
+    left: 1100px;
+    width: 400px;
+    cursor: pointer;
+  }
+
+  .letter {
+    position: fixed;
+    top: 200px;
+    left: 500px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .doorkey {
+    position: absolute;
+    top: 650px;
+    left: 500px;
+    width: 30px;
+    cursor: pointer;
   }
