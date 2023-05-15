@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 
 /**
  *
+ * @param root0
+ * @param root0.onPuzzleSolved
  */
-function Puzzle () {
+function PuzzleGame ({ onPuzzleSolved }) {
   const [puzzle, setPuzzle] = useState([])
   const [solved, setSolved] = useState(false)
   const [moves, setMoves] = useState(0)
@@ -17,6 +19,7 @@ function Puzzle () {
     const isSolved = checkSolved()
     setSolved(isSolved)
     if (solved) {
+      onPuzzleSolved(true)
       console.log('du klarade de')
     }
   }, [puzzle])
@@ -25,6 +28,7 @@ function Puzzle () {
    *
    */
   function createPuzzle () {
+    onPuzzleSolved(false)
     const numbers = [1, 2, 3, 4, 5, 6, null, 7, 8]
 
     const newPuzzle = [
@@ -39,7 +43,7 @@ function Puzzle () {
   /**
    *
    */
-   function checkSolved () {
+  function checkSolved () {
     const flatPuzzle = puzzle.flat()
     for (let i = 0; i < flatPuzzle.length; i++) {
       if (flatPuzzle[i] !== i + 1 && !(i === 8 && flatPuzzle[i] === null)) {
@@ -129,4 +133,4 @@ function Puzzle () {
   )
 }
 
-export default Puzzle
+export default PuzzleGame

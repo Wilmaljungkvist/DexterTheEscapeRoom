@@ -2,8 +2,6 @@
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import Backstory from './backstory'
-// eslint-disable-next-line no-unused-vars
-import Puzzle from './puzzleGame'
 
 /**
  * Component for the title screen.
@@ -70,7 +68,6 @@ const TitleScreen = () => {
       <div style={buttonContainerStyle}>
         <button style={startButtonStyle} onClick={handleStart}>Spela</button>
         <button style={aboutMeButtonStyle} onClick={handleAboutMe}>Om spelet</button>
-        <Puzzle></Puzzle>
       </div>
     </div>
   )
