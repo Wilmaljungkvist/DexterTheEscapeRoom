@@ -57,8 +57,8 @@ const About = () => {
         <li>Ledtrådar: Om en spelare fastnar i ett rum ska spelaren kunna få lätta ledtrådar som inte ger svaret till pusslet.</li>
         <li>Flera språk: I dagsläget går det bara att spela på svenska, men vi vill ha fler språk.</li>
        </ol>
-       <p>Detta spel är skapat av Wilma Ljungkvist, till kursen mjukvaruutvecklingsprojekt. Där man under 10 veckor skulle ta fram ett mjukvaruutvecklingsprojekt. Spelet är skrivet i React och javascript och deployas visa netlify.</p>
-       <h3 className="thanks">Tack för att du väljer att spela!</h3>
+       <p>Detta spel är skapat av Wilma Ljungkvist, till kursen mjukvaruutvecklingsprojekt. Där man under 10 veckor skulle ta fram ett mjukvaruutvecklingsprojekt. Spelet är utvecklat med React och javascript och deployas visa netlify.</p>
+       <h3 className="thanks">Tack för att du väljer att spela Dexter: the escape room! Hoppas du hittar din älskade Dexter.</h3>
        </div>
       <div style={buttonContainerStyle}>
         <button style={backButtonStyle} onClick={handleBack}>Tillbaka</button>
