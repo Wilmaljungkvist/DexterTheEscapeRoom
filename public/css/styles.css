@@ -224,4 +224,8 @@ header {
     border:rgb(37, 51, 78) solid 10px; 
     font-family: 'myfont';
   }
+
+  .thanks {
+    text-align: center;
+  }
   
