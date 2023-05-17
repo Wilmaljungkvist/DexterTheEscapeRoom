@@ -13,12 +13,10 @@ body {
 }
 
 header {
+  margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
   }
   
   nav {
@@ -209,3 +207,21 @@ header {
     width: 30px;
     cursor: pointer;
   }
+
+  .dexter {
+    display: inline-block;
+    width: 100%; 
+  }
+
+  .title {
+    padding: 30px; 
+    background-color: #FFF;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border:rgb(37, 51, 78) solid 10px; 
+    font-family: 'myfont';
+  }
+  

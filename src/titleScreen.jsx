@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import Backstory from './backstory'
+// eslint-disable-next-line no-unused-vars
+import About from './about'
 
 /**
  * Component for the title screen.
@@ -10,6 +12,7 @@ import Backstory from './backstory'
  */
 const TitleScreen = () => {
   const [showBackstory, setShowBackstory] = useState(false)
+  const [showAbout, setShowAbout] = useState(false)
 
   /**
    * Shows backstory when the start button is pressed.
@@ -22,8 +25,7 @@ const TitleScreen = () => {
    * Shows about me when the about me button is pressed.
    */
   const handleAboutMe = () => {
-    // TODO: implement "about me" functionality
-    alert('About Me button pressed')
+    setShowAbout(true)
   }
 
   const buttonContainerStyle = {
@@ -38,11 +40,12 @@ const TitleScreen = () => {
     fontSize: '1.5rem',
     padding: '1rem 2rem',
     marginRight: '1rem',
-    backgroundColor: '#92e09f',
+    backgroundColor: '#116799',
     color: 'white',
     border: 'none',
     borderRadius: '0.5rem',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    fontFamily: 'myfont'
   }
 
   const aboutMeButtonStyle = {
@@ -53,17 +56,22 @@ const TitleScreen = () => {
     color: 'white',
     border: 'none',
     borderRadius: '0.5rem',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    fontFamily: 'myfont'
   }
 
   if (showBackstory) {
     return <Backstory />
   }
 
+  if (showAbout) {
+    return <About />
+  }
+
   return (
-    <div>
+    <div className="title">
        <header>
-      <h1>Dexter: The Escape Room</h1>
+      <img className="dexter" src="./img/headern.png" alt="Dexter: the escape room" />
        </header>
       <div style={buttonContainerStyle}>
         <button style={startButtonStyle} onClick={handleStart}>Spela</button>
