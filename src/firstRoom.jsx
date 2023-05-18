@@ -22,7 +22,7 @@ function FirstRoom () {
   const [isCabinetOpen, setIsCabinetOpen] = useState(false)
   const [isCabinetClicked, setIsCabinetClicked] = useState(false)
 
-  const riddleAnswer = 'answer'
+  const riddleAnswer = 'ingenting'
   /**
    * Function that sets pickKey and hasKey to true if key is picked up.
    */
@@ -118,7 +118,7 @@ function FirstRoom () {
       {isCabinetClicked && (
         <div className="riddlediv">
         <RiddleGame riddleAnswer={riddleAnswer}
-        question="What has keys but can't open locks?"
+        question="Fattiga har mig, rika behöver mig. Äter du mig dör du. Vad är jag?"
         whenSolved={handleRiddleSolved}></RiddleGame>
         </div>
       )}
