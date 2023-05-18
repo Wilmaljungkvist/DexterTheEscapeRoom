@@ -28,38 +28,6 @@ const TitleScreen = () => {
     setShowAbout(true)
   }
 
-  const buttonContainerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '2rem',
-    flexDirection: 'column'
-  }
-
-  const startButtonStyle = {
-    margin: '20px',
-    fontSize: '1.5rem',
-    padding: '1rem 2rem',
-    marginRight: '1rem',
-    backgroundColor: '#116799',
-    color: 'white',
-    border: 'none',
-    borderRadius: '0.5rem',
-    cursor: 'pointer',
-    fontFamily: 'myfont'
-  }
-
-  const aboutMeButtonStyle = {
-    margin: '20px',
-    fontSize: '1.5rem',
-    padding: '1rem 2rem',
-    backgroundColor: '#92cee0',
-    color: 'white',
-    border: 'none',
-    borderRadius: '0.5rem',
-    cursor: 'pointer',
-    fontFamily: 'myfont'
-  }
-
   if (showBackstory) {
     return <Backstory />
   }
@@ -73,9 +41,9 @@ const TitleScreen = () => {
        <header>
       <img className="dexter" src="./img/headern.png" alt="Dexter: the escape room" />
        </header>
-      <div style={buttonContainerStyle}>
-        <button style={startButtonStyle} onClick={handleStart}>Spela</button>
-        <button style={aboutMeButtonStyle} onClick={handleAboutMe}>Om spelet</button>
+      <div className="buttoncontainer">
+        <button className="startButton" onClick={handleStart}>Spela</button>
+        <button className="aboutButton" onClick={handleAboutMe}>Om spelet</button>
       </div>
     </div>
   )

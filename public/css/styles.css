@@ -304,3 +304,44 @@ header {
     width: 400px;
     cursor: pointer;
   }
+
+  .painting {
+    position: absolute;
+    top: 200px;
+    left: 600px;
+    width: 100px;
+    cursor: pointer;
+  }
+
+  .buttoncontainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-direction: column;
+  }
+
+  .startButton {
+    margin: 20px;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin-right: 1rem;
+    background-color: #116799;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: 'myfont';
+  }
+
+  .aboutButton {
+    margin: 20px;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin-right: 1rem;
+    background-color: #92cee0;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: 'myfont';
+  }

@@ -92,6 +92,20 @@ function FirstRoom () {
     }
   }
 
+  function handlePlantClick () {
+    setDisplayText('Hm, det fanns inget i krukan.')
+      setTimeout(() => {
+        setDisplayText('')
+      }, 3000)
+  }
+
+  function handlePaintingClick () {
+    setDisplayText('Tavlan sitter fast, den går inte att ta loss.')
+    setTimeout(() => {
+      setDisplayText('')
+    }, 3000)
+  }
+
   /**
    *
    */
@@ -132,21 +146,26 @@ function FirstRoom () {
       </map>
       {isCabinetClicked && !riddleSolved && (
         <div className="riddlediv">
-        <RiddleGame riddleAnswer={riddleAnswer}
-        question="Fattiga har mig, rika behöver mig. Äter du mig dör du. Vad är jag?"
-        whenSolved={handleRiddleSolved}></RiddleGame>
-        <button
-      onClick={() => setPaperClicked(false)}
+          <button
+      onClick={() => setIsCabinetClicked(false)}
       style={{
         position: 'absolute',
-        top: '230px',
-        right: '500px'
+        left: '100%'
       }}
     >
       X
     </button>
+        <RiddleGame riddleAnswer={riddleAnswer}
+        question="Fattiga har mig, rika behöver mig. Äter du mig dör du. Vad är jag?"
+        whenSolved={handleRiddleSolved}></RiddleGame>
         </div>
       )}
+      <img
+        className="plant"
+        src="./img/plant.png"
+        onClick={handlePlantClick}
+        alt="plant"
+      />
       {!riddleSolved && (
         <img
         className="cabinetfirst"
@@ -171,6 +190,13 @@ function FirstRoom () {
           alt="key"
         />
       )}
+
+<img
+        className="painting"
+        src="./img/painting.png"
+        onClick={handlePaintingClick}
+        alt="plant"
+      />
 
 {!paperClicked && isCabinetOpen && (
   <img

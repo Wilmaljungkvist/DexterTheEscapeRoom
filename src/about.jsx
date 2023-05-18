@@ -6,38 +6,19 @@ import TitleScreen from './titleScreen'
 /**
  * Component for the title screen.
  *
- * @returns {string} //TO DO: write return correct.
+ * @returns {JSX.Element} - The JSX element representing the About component.
  */
 const About = () => {
-  const [back, setBack] = useState(false)
+  const [seeAbout, setSeeAbout] = useState(false)
 
   /**
-   * Shows backstory when the start button is pressed.
+   * Goes back to titlescreen when button is pressed, sets seeAbout to false.
    */
   const handleBack = () => {
-    setBack(true)
+    setSeeAbout(true)
   }
 
-  const buttonContainerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '2rem',
-    flexDirection: 'column'
-  }
-
-  const backButtonStyle = {
-    margin: '20px',
-    fontSize: '1.5rem',
-    padding: '1rem 2rem',
-    backgroundColor: '#92cee0',
-    color: 'white',
-    border: 'none',
-    borderRadius: '0.5rem',
-    cursor: 'pointer',
-    fontFamily: 'myfont'
-  }
-
-  if (back) {
+  if (seeAbout) {
     return <TitleScreen />
   }
 
@@ -60,8 +41,8 @@ const About = () => {
        <p>Detta spel är skapat av Wilma Ljungkvist, till kursen mjukvaruutvecklingsprojekt. Där man under 10 veckor skulle ta fram ett mjukvaruutvecklingsprojekt. Spelet är utvecklat med React och javascript och deployas visa netlify.</p>
        <h3 className="thanks">Tack för att du väljer att spela Dexter: the escape room! Hoppas du hittar din älskade Dexter.</h3>
        </div>
-      <div style={buttonContainerStyle}>
-        <button style={backButtonStyle} onClick={handleBack}>Tillbaka</button>
+      <div className="buttoncontainer">
+        <button className="aboutbutton" onClick={handleBack}>Tillbaka</button>
       </div>
     </div>
   )
