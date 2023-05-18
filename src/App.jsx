@@ -6,12 +6,11 @@ import TitleScreen from './titleScreen'
 /**
  * The app component.
  *
- * @returns {string} //TO DO: return correct.
+ * @returns {JSX.Element} - The JSX element representing the app component.
  */
 function App () {
   return (
     <div className="App">
-      {/* <Message words="I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?" answer="pencil"></Message> */}
       <TitleScreen></TitleScreen>
     </div>
   )
