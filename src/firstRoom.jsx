@@ -21,6 +21,7 @@ function FirstRoom () {
   const [inputValue, setInputValue] = useState('')
   const [isCabinetOpen, setIsCabinetOpen] = useState(false)
   const [isCabinetClicked, setIsCabinetClicked] = useState(false)
+  const [riddleSolved, setRiddleSolved] = useState(false)
 
   const riddleAnswer = 'ingenting'
   /**
@@ -31,10 +32,14 @@ function FirstRoom () {
     setHasKey(true)
   }
 
-  function handleRiddleSolved(solved){
+  /**
+   *
+   * @param solved
+   */
+  function handleRiddleSolved (solved) {
     if (solved) {
+      setRiddleSolved(true)
       setIsCabinetOpen(true)
-      alert('You solved the riddle!')
     }
   }
 
@@ -86,6 +91,9 @@ function FirstRoom () {
     }
   }
 
+  /**
+   *
+   */
   function cabinetClicked () {
     setIsCabinetClicked(true)
   }
@@ -115,19 +123,21 @@ function FirstRoom () {
       <map name='doormap' cursor='pointer' style={{ backgroundColor: 'black' }} >
         <area shape='rect' coords="900,200,1150,550" alt='test' onClick={handleDoorClick} />
       </map>
-      {isCabinetClicked && (
+      {isCabinetClicked && !riddleSolved && (
         <div className="riddlediv">
         <RiddleGame riddleAnswer={riddleAnswer}
         question="Fattiga har mig, rika behöver mig. Äter du mig dör du. Vad är jag?"
         whenSolved={handleRiddleSolved}></RiddleGame>
         </div>
       )}
-      <img
+      {!riddleSolved && (
+        <img
         className="cabinetfirst"
         src='./img/cabinet.png'
         alt="cabinet"
         onClick={cabinetClicked}
       />
+      )}
       {!openSafe && (
       <img
       className='safe'
@@ -144,6 +154,20 @@ function FirstRoom () {
           alt="key"
         />
       )}
+
+<img
+        className="paper"
+        src='./img/paper.png'
+        alt="cabinet"
+        onClick={cabinetClicked}
+      />
+
+<img
+        className="weatherpaper"
+        src='./img/weather.png'
+        alt="cabinet"
+        onClick={cabinetClicked}
+      />
 
 {clickSafe && !openSafe && (
   <form className='form' onSubmit={handleSubmit}>

@@ -248,6 +248,7 @@ header {
     font-size: 24px;
     color: #fff;
     margin-bottom: 10px;
+    font-family: 'myfont';
   }
   
   .riddlelabel {
@@ -255,11 +256,13 @@ header {
     font-size: 18px;
     color: #fff;
     margin-bottom: 10px;
+    font-family: 'myfont';
   }
   
   .riddleinput {
     padding: 8px;
     font-size: 16px;
+    font-family: 'myfont';
   }
   
   .riddlebutton {
@@ -283,4 +286,21 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .paper {
+    position: absolute;
+    top: 550px;
+    left: 200px;
+    width: 100px;
+    cursor: pointer;
+  }
+
+  .weatherpaper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    cursor: pointer;
   }
