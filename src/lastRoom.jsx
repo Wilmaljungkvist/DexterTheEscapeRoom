@@ -55,7 +55,10 @@ function LastRoom () {
     if (hasDoorKey) {
       setIsDoorOpen(true)
     } else {
-      alert('the door is locked')
+      setDisplayText('The door is locked.')
+      setTimeout(() => {
+        setDisplayText('')
+      }, 3000)
     }
   }
 
@@ -79,7 +82,10 @@ function LastRoom () {
       setOpenSafe(true)
     } else {
       setInputValue('')
-      alert('Wrong password')
+      setDisplayText('Wrong password, try again.')
+      setTimeout(() => {
+        setDisplayText('')
+      }, 3000)
     }
   }
 
@@ -90,7 +96,10 @@ function LastRoom () {
     if (hasKey) {
       setIsCabinetOpen(true)
     } else {
-      alert('The cabinet is locked, needs a key')
+      setDisplayText('The cabinet is locked, needs key.')
+      setTimeout(() => {
+        setDisplayText('')
+      }, 3000)
     }
   }
 
