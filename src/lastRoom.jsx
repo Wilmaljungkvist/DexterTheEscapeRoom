@@ -23,6 +23,7 @@ function LastRoom () {
   const [isPuzzleSolved, setIsPuzzleSolved] = useState(false)
   const [hasDoorKey, setHasDoorKey] = useState(false)
   const [pickDoorKey, setPickDoorKey] = useState(false)
+  const [displayText, setDisplayText] = useState('')
 
   /**
    * Function that sets pickKey and hasKey to true if key is picked up.
@@ -218,6 +219,19 @@ function LastRoom () {
         alt="key"
       />
       )}
+      <p
+          style={{
+            position: 'absolute',
+            top: '700px',
+            left: '500px',
+            color: 'white',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            padding: '10px',
+            borderRadius: '5px'
+          }}
+        >
+          {displayText}
+        </p>
     </div>
   )
 }
