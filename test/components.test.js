@@ -15,15 +15,15 @@ describe('LastRoom component', () => {
 })
 
 test('password submission with correct password should open the safe', () => {
-  const component = renderer.create(<LastRoom />);
-  const instance = component.root;
-  const event = { target: { value: '6743' }, preventDefault: jest.fn() };
+  const component = renderer.create(<LastRoom />)
+  const instance = component.root
+  const event = { target: { value: '6743' }, preventDefault: jest.fn() }
 
-  const inputElement = instance.findByProps({ id: 'passwordInput' });
-  inputElement.props.onChange(event);
-  
-  const formElement = instance.findByType('form');
-  formElement.props.onSubmit(event);
+  const inputElement = instance.findByProps({ id: 'passwordInput' })
+  inputElement.props.onChange(event)
 
-  expect(instance.findByProps({ className: 'safe' })).toBeFalsy();
-});
+  const formElement = instance.findByType('form')
+  formElement.props.onSubmit(event)
+
+  expect(instance.findByProps({ className: 'safe' })).toBeFalsy()
+})

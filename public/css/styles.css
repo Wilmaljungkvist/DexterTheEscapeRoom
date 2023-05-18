@@ -120,6 +120,14 @@ header {
         cursor: pointer;
   }
 
+  .cabinetfirst {
+    position: absolute;
+    top: 350px;
+    left: 100px;
+    width: 300px;
+    cursor: pointer;
+  }
+
   .puzzle {
     position: fixed;
     top: 240px;
@@ -228,4 +236,71 @@ header {
   .thanks {
     text-align: center;
   }
+
+  .riddle {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
   
+  .riddlequestion {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+    font-family: 'myfont';
+  }
+  
+  .riddlelabel {
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+    font-family: 'myfont';
+  }
+  
+  .riddleinput {
+    padding: 8px;
+    font-size: 16px;
+    font-family: 'myfont';
+  }
+  
+  .riddlebutton {
+    margin: 20px; 
+    background-color: #116799;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-family: 'myfont';
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+  .riddlediv {
+    width: 600px; 
+    height: 200px; 
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .paper {
+    position: absolute;
+    top: 550px;
+    left: 200px;
+    width: 100px;
+    cursor: pointer;
+  }
+
+  .weatherpaper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    cursor: pointer;
+  }
