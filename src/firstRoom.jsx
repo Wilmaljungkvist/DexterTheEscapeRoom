@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import LastRoom from './lastRoom'
+// eslint-disable-next-line no-unused-vars
+import RiddleGame from './riddle'
 
 /**
  * First room component.
@@ -20,12 +22,20 @@ function FirstRoom () {
   const [isCabinetOpen, setIsCabinetOpen] = useState(false)
   const [isCabinetClicked, setIsCabinetClicked] = useState(false)
 
+  const riddleAnswer = 'answer'
   /**
    * Function that sets pickKey and hasKey to true if key is picked up.
    */
   function pickUpKey () {
     setPickKey(true)
     setHasKey(true)
+  }
+
+  function handleRiddleSolved(solved){
+    if (solved) {
+      setIsCabinetOpen(true)
+      alert('You solved the riddle!')
+    }
   }
 
   /**
@@ -76,6 +86,10 @@ function FirstRoom () {
     }
   }
 
+  function cabinetClicked () {
+    setIsCabinetClicked(true)
+  }
+
   /**
    *
    */
@@ -101,10 +115,18 @@ function FirstRoom () {
       <map name='doormap' cursor='pointer' style={{ backgroundColor: 'black' }} >
         <area shape='rect' coords="900,200,1150,550" alt='test' onClick={handleDoorClick} />
       </map>
+      {isCabinetClicked && (
+        <div className="riddlediv">
+        <RiddleGame riddleAnswer={riddleAnswer}
+        question="What has keys but can't open locks?"
+        whenSolved={handleRiddleSolved}></RiddleGame>
+        </div>
+      )}
       <img
         className="cabinetfirst"
         src='./img/cabinet.png'
-        alt="letter"
+        alt="cabinet"
+        onClick={cabinetClicked}
       />
       {!openSafe && (
       <img

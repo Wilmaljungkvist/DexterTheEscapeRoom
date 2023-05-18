@@ -236,4 +236,51 @@ header {
   .thanks {
     text-align: center;
   }
+
+  .riddle {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
   
+  .riddlequestion {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .riddlelabel {
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .riddleinput {
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .riddlebutton {
+    margin: 20px; 
+    background-color: #116799;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-family: 'myfont';
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+  .riddlediv {
+    width: 600px; 
+    height: 200px; 
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

@@ -7,28 +7,36 @@ import React, { useState } from 'react'
  * @param root0.riddleAnswer
  * @param root0.whenSolved
  */
-function RiddleGame ({ riddleAnswer, whenSolved }) {
+function RiddleGame ({ riddleAnswer, whenSolved, question }) {
   const [answer, setAnswer] = useState('')
 
-
+  /**
+   *
+   * @param event
+   */
   const handleSubmit = (event) => {
     event.preventDefault()
-    if(answer.toLowerCase() === riddleAnswer.toLowerCase()) {
-        whenSolved()
+    if (answer.toLowerCase() === riddleAnswer.toLowerCase()) {
+      whenSolved(true)
     } else {
-        setAnswer('')
+      setAnswer('')
     }
   }
 
+  /**
+   *
+   * @param event
+   */
   const handleInputChange = (event) => {
     setAnswer(event.target.value)
   }
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='answerInput'>Lös gåtan för att komma in i skåpet: </label>
-            <input type="text" id="answerInput" value={answer} onChange={handleInputChange} />
-            <button type="submit">Är det rätt svar?</button>
+    <div className="riddle">
+        <p className="riddlequestion">{question}</p>
+        <form className="riddlesubmit" onSubmit={handleSubmit}>
+            <label className="riddlelabel" htmlFor='answerInput'>Lös gåtan för att komma in i skåpet: </label>
+            <input className="riddleinput" type="text" id="answerInput" value={answer} onChange={handleInputChange} />
+            <button className="riddlebutton" type="submit">Är det rätt svar?</button>
         </form>
     </div>
   )
