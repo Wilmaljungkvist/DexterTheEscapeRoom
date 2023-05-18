@@ -16,7 +16,6 @@ function LastRoom () {
   const [pickKey, setPickKey] = useState(false)
   const [clickSafe, setClickSafe] = useState(false)
   const [openSafe, setOpenSafe] = useState(false)
-  const [password, setPassword] = useState('6743')
   const [inputValue, setInputValue] = useState('')
   const [plantPressed, setPlantPressed] = useState(false)
   const [isCabinetOpen, setIsCabinetOpen] = useState(false)
@@ -24,6 +23,7 @@ function LastRoom () {
   const [hasDoorKey, setHasDoorKey] = useState(false)
   const [pickDoorKey, setPickDoorKey] = useState(false)
   const [displayText, setDisplayText] = useState('')
+  const password = '6743'
 
   /**
    * Function that sets pickKey and hasKey to true if key is picked up.

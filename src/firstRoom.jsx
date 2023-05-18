@@ -17,12 +17,12 @@ function FirstRoom () {
   const [displayText, setDisplayText] = useState('')
   const [clickSafe, setClickSafe] = useState(false)
   const [openSafe, setOpenSafe] = useState(false)
-  const [password, setPassword] = useState('4829')
   const [inputValue, setInputValue] = useState('')
   const [isCabinetOpen, setIsCabinetOpen] = useState(false)
   const [isCabinetClicked, setIsCabinetClicked] = useState(false)
   const [riddleSolved, setRiddleSolved] = useState(false)
   const [paperClicked, setPaperClicked] = useState(false)
+  const password = '4829'
 
   const riddleAnswer = 'ingenting'
   /**
