@@ -120,6 +120,14 @@ header {
         cursor: pointer;
   }
 
+  .cabinetfirst {
+    position: absolute;
+    top: 350px;
+    left: 100px;
+    width: 300px;
+    cursor: pointer;
+  }
+
   .puzzle {
     position: fixed;
     top: 240px;

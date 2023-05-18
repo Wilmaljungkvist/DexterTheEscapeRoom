@@ -13,6 +13,10 @@ function FirstRoom () {
   const [isDoorOpen, setIsDoorOpen] = useState(false)
   const [pickKey, setPickKey] = useState(false)
   const [displayText, setDisplayText] = useState('')
+  const [clickSafe, setClickSafe] = useState(false)
+  const [openSafe, setOpenSafe] = useState(false)
+  const [password, setPassword] = useState('6743')
+  const [inputValue, setInputValue] = useState('')
 
   /**
    * Function that sets pickKey and hasKey to true if key is picked up.
@@ -20,6 +24,33 @@ function FirstRoom () {
   function pickUpKey () {
     setPickKey(true)
     setHasKey(true)
+  }
+
+  /**
+   * Function for when a password is inputed.
+   *
+   * @param {*} event - The password event.
+   */
+   function handleInputChange (event) {
+    setInputValue(event.target.value)
+  }
+
+  /**
+   * Function for when the password is submitted.
+   *
+   * @param {*} event - The submit event.
+   */
+  function handleSubmit (event) {
+    event.preventDefault()
+    if (inputValue === password) {
+      setOpenSafe(true)
+    } else {
+      setInputValue('')
+      setDisplayText('Wrong password, try again.')
+      setTimeout(() => {
+        setDisplayText('')
+      }, 3000)
+    }
   }
 
   /**
@@ -34,6 +65,14 @@ function FirstRoom () {
         setDisplayText('')
       }, 3000)
     }
+  }
+
+  /**
+   *
+   */
+   function handleKeyPad () {
+    setClickSafe(false)
+    setInputValue('')
   }
 
   if (isDoorOpen) {
@@ -54,7 +93,7 @@ function FirstRoom () {
         <area shape='rect' coords="900,200,1150,550" alt='test' onClick={handleDoorClick} />
       </map>
       <img
-        className="cabinet"
+        className="cabinetfirst"
         src='./img/cabinet.png'
         alt="letter"
       />
@@ -66,6 +105,30 @@ function FirstRoom () {
           width: '30px',
           cursor: 'pointer'
         }} />
+      )}
+
+      
+
+{clickSafe && !openSafe && (
+  <form className='form' onSubmit={handleSubmit}>
+    <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Enter password:</label>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
+      <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '1')}>1</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '2')}>2</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '3')}>3</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '4')}>4</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '5')}>5</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '6')}>6</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '7')}>7</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '8')}>8</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '9')}>9</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '0')}>0</button>
+      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue.slice(0, -1))}>delete</button>
+      <button className="subbtn" type="submit">OK</button>
+      <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
+    </div>
+  </form>
       )}
       {displayText && (
         <p
