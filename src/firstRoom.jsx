@@ -12,6 +12,7 @@ function FirstRoom () {
   const [hasKey, setHasKey] = useState(false)
   const [isDoorOpen, setIsDoorOpen] = useState(false)
   const [pickKey, setPickKey] = useState(false)
+  const [displayText, setDisplayText] = useState('')
 
   /**
    * Function that sets pickKey and hasKey to true if key is picked up.
@@ -28,7 +29,10 @@ function FirstRoom () {
     if (hasKey) {
       setIsDoorOpen(true)
     } else {
-      alert('the door is locked')
+      setDisplayText('The door is locked.')
+      setTimeout(() => {
+        setDisplayText('')
+      }, 3000)
     }
   }
 
@@ -49,14 +53,35 @@ function FirstRoom () {
       <map name='doormap' cursor='pointer' style={{ backgroundColor: 'black' }} >
         <area shape='rect' coords="900,200,1150,550" alt='test' onClick={handleDoorClick} />
       </map>
+      <img
+        className="cabinet"
+        src='./img/cabinet.png'
+        alt="letter"
+      />
       {!pickKey && (
-      <img src="./img/key.png" onClick={pickUpKey} alt="key" style={{
-        position: 'absolute',
-        top: '650px',
-        left: '400px',
-        width: '30px',
-        cursor: 'pointer'
-      }} />)}
+        <img src="./img/key.png" onClick={pickUpKey} alt="key" style={{
+          position: 'absolute',
+          top: '650px',
+          left: '400px',
+          width: '30px',
+          cursor: 'pointer'
+        }} />
+      )}
+      {displayText && (
+        <p
+          style={{
+            position: 'absolute',
+            top: '700px',
+            left: '500px',
+            color: 'white',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            padding: '10px',
+            borderRadius: '5px'
+          }}
+        >
+          {displayText}
+        </p>
+      )}
     </div>
   )
 }
