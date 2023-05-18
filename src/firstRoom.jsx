@@ -17,11 +17,12 @@ function FirstRoom () {
   const [displayText, setDisplayText] = useState('')
   const [clickSafe, setClickSafe] = useState(false)
   const [openSafe, setOpenSafe] = useState(false)
-  const [password, setPassword] = useState('6743')
+  const [password, setPassword] = useState('4829')
   const [inputValue, setInputValue] = useState('')
   const [isCabinetOpen, setIsCabinetOpen] = useState(false)
   const [isCabinetClicked, setIsCabinetClicked] = useState(false)
   const [riddleSolved, setRiddleSolved] = useState(false)
+  const [paperClicked, setPaperClicked] = useState(false)
 
   const riddleAnswer = 'ingenting'
   /**
@@ -109,6 +110,9 @@ function FirstRoom () {
   if (isDoorOpen) {
     return <LastRoom />
   }
+  function HandleClickPaper () {
+    setPaperClicked(true)
+  }
 
   return (
     <div>
@@ -155,19 +159,35 @@ function FirstRoom () {
         />
       )}
 
-<img
-        className="paper"
-        src='./img/paper.png'
-        alt="cabinet"
-        onClick={cabinetClicked}
-      />
+{!paperClicked && isCabinetOpen && (
+  <img
+  className="paper"
+  src='./img/paper.png'
+  alt="cabinet"
+  onClick={HandleClickPaper}
+/>
+)}
 
-<img
-        className="weatherpaper"
-        src='./img/weather.png'
-        alt="cabinet"
-        onClick={cabinetClicked}
-      />
+{paperClicked && (
+  <div>
+  <img
+  className="weatherpaper"
+  src='./img/weather.png'
+  alt="cabinet"
+  onClick={cabinetClicked}
+/>
+<button
+      onClick={() => setPaperClicked(false)}
+      style={{
+        position: 'absolute',
+        top: '230px',
+        right: '500px'
+      }}
+    >
+      X
+    </button>
+</div>
+)}
 
 {clickSafe && !openSafe && (
   <form className='form' onSubmit={handleSubmit}>

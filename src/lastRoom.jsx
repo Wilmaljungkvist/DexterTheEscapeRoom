@@ -141,7 +141,7 @@ function LastRoom () {
         <area shape="rect" coords="680,100,1000,650" alt="test" onClick={handleDoorClick} />
       </map>
 
-      {!pickKey && openSafe && !isPuzzleSolved && (
+      {!pickKey && openSafe && (
         <img
         className="key"
           src="./img/key.png"
@@ -228,7 +228,8 @@ function LastRoom () {
         alt="key"
       />
       )}
-      <p
+      {displayText && (
+        <p
           style={{
             position: 'absolute',
             top: '700px',
@@ -241,6 +242,7 @@ function LastRoom () {
         >
           {displayText}
         </p>
+      )}
     </div>
   )
 }
