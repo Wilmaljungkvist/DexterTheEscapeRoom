@@ -85,7 +85,7 @@ function FirstRoom () {
     if (hasKey) {
       setIsDoorOpen(true)
     } else {
-      setDisplayText('The door is locked.')
+      setDisplayText('Dörren är låst.')
       setTimeout(() => {
         setDisplayText('')
       }, 3000)

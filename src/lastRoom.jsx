@@ -8,7 +8,7 @@ import PuzzleGame from './puzzleGame'
 /**
  * First room component.
  *
- * @returns {string} // TO DO: Write the return type.
+ * @returns {JSX.Element} - The JSX element representing the LastRoom component.
  */
 function LastRoom () {
   const [hasKey, setHasKey] = useState(false)
@@ -34,9 +34,9 @@ function LastRoom () {
   }
 
   /**
-   * Function that sets pickKey and hasKey to true if key is picked up.
+   * Function that sets pickDoorKey and hasDoorKey to true if key is picked up.
    */
-   function pickUpDoorKey () {
+  function pickUpDoorKey () {
     setPickDoorKey(true)
     setHasDoorKey(true)
   }
@@ -44,7 +44,7 @@ function LastRoom () {
   /**
    * Function for what happens when the safe is clicked.
    */
-  function safe () {
+  function handleSafeClick () {
     setClickSafe(true)
   }
 
@@ -55,7 +55,7 @@ function LastRoom () {
     if (hasDoorKey) {
       setIsDoorOpen(true)
     } else {
-      setDisplayText('The door is locked.')
+      setDisplayText('Dörren är låst.')
       setTimeout(() => {
         setDisplayText('')
       }, 3000)
@@ -82,7 +82,7 @@ function LastRoom () {
       setOpenSafe(true)
     } else {
       setInputValue('')
-      setDisplayText('Wrong password, try again.')
+      setDisplayText('Fel lösenord, försök igen.')
       setTimeout(() => {
         setDisplayText('')
       }, 3000)
@@ -96,7 +96,7 @@ function LastRoom () {
     if (hasKey) {
       setIsCabinetOpen(true)
     } else {
-      setDisplayText('The cabinet is locked, needs key.')
+      setDisplayText('Skåpet är låst.')
       setTimeout(() => {
         setDisplayText('')
       }, 3000)
@@ -124,6 +124,7 @@ function LastRoom () {
 
   /**
    *
+   * @param isSolved
    */
   function handlePuzzleSolved (isSolved) {
     setIsPuzzleSolved(isSolved)
@@ -169,7 +170,7 @@ function LastRoom () {
       <img
       className='safe'
         src="./img/safe.png"
-        onClick={safe}
+        onClick={handleSafeClick}
         alt="safe"
       />
       )}
