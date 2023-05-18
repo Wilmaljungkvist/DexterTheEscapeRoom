@@ -110,6 +110,9 @@ function FirstRoom () {
   if (isDoorOpen) {
     return <LastRoom />
   }
+  /**
+   *
+   */
   function HandleClickPaper () {
     setPaperClicked(true)
   }
