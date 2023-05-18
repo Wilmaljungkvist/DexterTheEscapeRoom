@@ -33,14 +33,14 @@ function FirstRoom () {
    *
    * @param {*} event - The password event.
    */
-   function handleInputChange (event) {
+  function handleInputChange (event) {
     setInputValue(event.target.value)
   }
 
   /**
    * Function for what happens when the safe is clicked.
    */
-   function safe () {
+  function safe () {
     setClickSafe(true)
   }
 
@@ -79,7 +79,7 @@ function FirstRoom () {
   /**
    *
    */
-   function handleKeyPad () {
+  function handleKeyPad () {
     setClickSafe(false)
     setInputValue('')
   }
@@ -143,7 +143,7 @@ function FirstRoom () {
       <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
     </div>
   </form>
-      )}
+)}
       {displayText && (
         <p
           style={{
