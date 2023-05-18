@@ -17,6 +17,8 @@ function FirstRoom () {
   const [openSafe, setOpenSafe] = useState(false)
   const [password, setPassword] = useState('6743')
   const [inputValue, setInputValue] = useState('')
+  const [isCabinetOpen, setIsCabinetOpen] = useState(false)
+  const [isCabinetClicked, setIsCabinetClicked] = useState(false)
 
   /**
    * Function that sets pickKey and hasKey to true if key is picked up.
@@ -33,6 +35,13 @@ function FirstRoom () {
    */
    function handleInputChange (event) {
     setInputValue(event.target.value)
+  }
+
+  /**
+   * Function for what happens when the safe is clicked.
+   */
+   function safe () {
+    setClickSafe(true)
   }
 
   /**
@@ -97,17 +106,22 @@ function FirstRoom () {
         src='./img/cabinet.png'
         alt="letter"
       />
-      {!pickKey && (
-        <img src="./img/key.png" onClick={pickUpKey} alt="key" style={{
-          position: 'absolute',
-          top: '650px',
-          left: '400px',
-          width: '30px',
-          cursor: 'pointer'
-        }} />
+      {!openSafe && (
+      <img
+      className='safe'
+        src="./img/safe.png"
+        onClick={safe}
+        alt="safe"
+      />
       )}
-
-      
+      {!pickKey && openSafe && (
+        <img
+        className="key"
+          src="./img/key.png"
+          onClick={pickUpKey}
+          alt="key"
+        />
+      )}
 
 {clickSafe && !openSafe && (
   <form className='form' onSubmit={handleSubmit}>
