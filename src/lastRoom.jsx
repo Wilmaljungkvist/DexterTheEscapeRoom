@@ -6,7 +6,7 @@ import Endstory from './endstory'
 import PuzzleGame from './puzzleGame'
 
 /**
- * First room component.
+ * LastRoom component.
  *
  * @returns {JSX.Element} - The JSX element representing the LastRoom component.
  */

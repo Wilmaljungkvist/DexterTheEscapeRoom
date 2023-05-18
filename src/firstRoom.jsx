@@ -135,6 +135,16 @@ function FirstRoom () {
         <RiddleGame riddleAnswer={riddleAnswer}
         question="Fattiga har mig, rika behöver mig. Äter du mig dör du. Vad är jag?"
         whenSolved={handleRiddleSolved}></RiddleGame>
+        <button
+      onClick={() => setPaperClicked(false)}
+      style={{
+        position: 'absolute',
+        top: '230px',
+        right: '500px'
+      }}
+    >
+      X
+    </button>
         </div>
       )}
       {!riddleSolved && (
