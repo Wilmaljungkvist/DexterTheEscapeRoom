@@ -6,6 +6,7 @@ import React, { useState } from 'react'
  * @param root0
  * @param root0.riddleAnswer
  * @param root0.whenSolved
+ * @param root0.question
  */
 function RiddleGame ({ riddleAnswer, whenSolved, question }) {
   const [answer, setAnswer] = useState('')
@@ -31,14 +32,14 @@ function RiddleGame ({ riddleAnswer, whenSolved, question }) {
     setAnswer(event.target.value)
   }
   return (
-    <div className="riddle">
-        <p className="riddlequestion">{question}</p>
-        <form className="riddlesubmit" onSubmit={handleSubmit}>
-            <label className="riddlelabel" htmlFor='answerInput'>Lös gåtan för att komma in i skåpet: </label>
-            <input className="riddleinput" type="text" id="answerInput" value={answer} onChange={handleInputChange} />
-            <button className="riddlebutton" type="submit">Är det rätt svar?</button>
-        </form>
-    </div>
+        <div className="riddle">
+            <p className="riddlequestion">{question}</p>
+            <form className="riddlesubmit" onSubmit={handleSubmit}>
+                <label className="riddlelabel" htmlFor='answerInput'>Lös gåtan för att komma in i skåpet: </label>
+                <input className="riddleinput" type="text" id="answerInput" value={answer} onChange={handleInputChange} />
+                <button className="riddlebutton" type="submit">Är det rätt svar?</button>
+            </form>
+        </div>
   )
 }
 

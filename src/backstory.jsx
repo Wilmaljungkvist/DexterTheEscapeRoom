@@ -65,7 +65,7 @@ const Backstory = () => {
   }, [showText, currentStep, displayText, story])
 
   /**
-   * Shows next picture and text if there are more to the story.
+   * Handles if next button is pressed.
    */
   const handleNext = () => {
     setCurrentStep(0)
@@ -75,7 +75,7 @@ const Backstory = () => {
   }
 
   /**
-   * Starts the first game when the start button is pressed.
+   * Handle if start button is pressed.
    */
   const handleStart = () => {
     setShowFirstRoom(true)
@@ -94,26 +94,26 @@ const Backstory = () => {
         alt="backstory image"
       />
       <div
-      className="storydiv"
+        className="storydiv"
       >
         <p class="backstorytext">{displayText}</p>
       </div>
       {currentStep < story.length - 1
         ? (
-        <button
-          className="startnextbtn"
-          onClick={handleNext}
-        >
-          Nästa
-        </button>
+          <button
+            className="startnextbtn"
+            onClick={handleNext}
+          >
+            Nästa
+          </button>
           )
         : (
-        <button
-          className="startnextbtn"
-          onClick={handleStart}
-      >
-          Starta
-        </button>
+          <button
+            className="startnextbtn"
+            onClick={handleStart}
+          >
+            Starta
+          </button>
           )}
     </div>
   )

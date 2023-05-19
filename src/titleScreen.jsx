@@ -38,9 +38,9 @@ const TitleScreen = () => {
 
   return (
     <div className="title">
-       <header>
-      <img className="dexter" src="./img/headern.png" alt="Dexter: the escape room" />
-       </header>
+      <header>
+        <img className="dexter" src="./img/headern.png" alt="Dexter: the escape room" />
+      </header>
       <div className="buttoncontainer">
         <button className="startButton" onClick={handleStart}>Spela</button>
         <button className="aboutButton" onClick={handleAboutMe}>Om spelet</button>

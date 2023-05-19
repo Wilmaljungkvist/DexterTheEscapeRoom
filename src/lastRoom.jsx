@@ -144,7 +144,7 @@ function LastRoom () {
 
       {!pickKey && openSafe && (
         <img
-        className="key"
+          className="key"
           src="./img/key.png"
           onClick={pickUpKey}
           alt="key"
@@ -152,49 +152,49 @@ function LastRoom () {
       )}
 
       {!isPuzzleSolved && (
-  <img
-      className="cabinet"
-      src='./img/cabinet.png'
-      alt="letter"
-      onClick={clickCabinet}
-    />
+        <img
+          className="cabinet"
+          src='./img/cabinet.png'
+          alt="letter"
+          onClick={clickCabinet}
+        />
       )}
 
-{isCabinetOpen && !hasDoorKey && (
-  <div className='puzzle'>
-  <PuzzleGame onPuzzleSolved={handlePuzzleSolved} />
-</div>
-)}
+      {isCabinetOpen && !hasDoorKey && (
+        <div className='puzzle'>
+          <PuzzleGame onPuzzleSolved={handlePuzzleSolved} />
+        </div>
+      )}
 
       {!openSafe && (
-      <img
-      className='safe'
-        src="./img/safe.png"
-        onClick={handleSafeClick}
-        alt="safe"
-      />
+        <img
+          className='safe'
+          src="./img/safe.png"
+          onClick={handleSafeClick}
+          alt="safe"
+        />
       )}
 
       {clickSafe && !openSafe && (
-  <form className='form' onSubmit={handleSubmit}>
-    <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Enter password:</label>
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
-      <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '1')}>1</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '2')}>2</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '3')}>3</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '4')}>4</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '5')}>5</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '6')}>6</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '7')}>7</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '8')}>8</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '9')}>9</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '0')}>0</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue.slice(0, -1))}>delete</button>
-      <button className="subbtn" type="submit">OK</button>
-      <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
-    </div>
-  </form>
+        <form className='form' onSubmit={handleSubmit}>
+          <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Enter password:</label>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
+            <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '1')}>1</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '2')}>2</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '3')}>3</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '4')}>4</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '5')}>5</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '6')}>6</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '7')}>7</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '8')}>8</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '9')}>9</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '0')}>0</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue.slice(0, -1))}>delete</button>
+            <button className="subbtn" type="submit">OK</button>
+            <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
+          </div>
+        </form>
       )}
       <img
         className="plant"
@@ -203,31 +203,31 @@ function LastRoom () {
         alt="plant"
       />
       {plantPressed && (
-  <div style={{ position: 'relative' }}>
-    <img
-      className="letter"
-      src='./img/letter.png'
-      alt="letter"
-    />
-    <button
-      onClick={() => setPlantPressed(false)}
-      style={{
-        position: 'absolute',
-        top: '230px',
-        right: '500px'
-      }}
-    >
-      X
-    </button>
-  </div>
+        <div style={{ position: 'relative' }}>
+          <img
+            className="letter"
+            src='./img/letter.png'
+            alt="letter"
+          />
+          <button
+            onClick={() => setPlantPressed(false)}
+            style={{
+              position: 'absolute',
+              top: '230px',
+              right: '500px'
+            }}
+          >
+            X
+          </button>
+        </div>
       )}
       {isPuzzleSolved && !hasDoorKey && (
         <img
-        className="doorkey"
-        src="./img/key.png"
-        onClick={pickUpDoorKey}
-        alt="key"
-      />
+          className="doorkey"
+          src="./img/key.png"
+          onClick={pickUpDoorKey}
+          alt="key"
+        />
       )}
       {displayText && (
         <p

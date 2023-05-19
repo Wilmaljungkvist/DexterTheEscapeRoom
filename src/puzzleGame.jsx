@@ -75,7 +75,7 @@ function PuzzleGame ({ onPuzzleSolved }) {
 
     if (
       (row === emptyRow && Math.abs(col - emptyCol) === 1) ||
-      (col === emptyCol && Math.abs(row - emptyRow) === 1)
+            (col === emptyCol && Math.abs(row - emptyRow) === 1)
     ) {
       [newPuzzle[row][col], newPuzzle[emptyRow][emptyCol]] = [newPuzzle[emptyRow][emptyCol],
         newPuzzle[row][col]
@@ -96,33 +96,33 @@ function PuzzleGame ({ onPuzzleSolved }) {
    */
   function renderCell (row, col, value) {
     return (
-      <div
-        className="cell"
-        key={`${row}-${col}`}
-        onClick={() => handleMove(row, col)}
-        style={{
-          opacity: value === null ? 0 : 1,
-          cursor: solved ? 'default' : 'pointer'
-        }}
-      >
-        {value}
-      </div>
+            <div
+                className="cell"
+                key={`${row}-${col}`}
+                onClick={() => handleMove(row, col)}
+                style={{
+                  opacity: value === null ? 0 : 1,
+                  cursor: solved ? 'default' : 'pointer'
+                }}
+            >
+                {value}
+            </div>
     )
   }
 
   return (
-    <div className="puzzle">
-        <p>Solve the puzzle!</p>
-      <div className="board">
-        {puzzle.map((row, rowIndex) =>
-          <div className="row" key={rowIndex}>
-            {row.map((value, colIndex) =>
-              renderCell(rowIndex, colIndex, value)
-            )}
-          </div>
-        )}
-      </div>
-    </div>
+        <div className="puzzle">
+            <p>Solve the puzzle!</p>
+            <div className="board">
+                {puzzle.map((row, rowIndex) =>
+                    <div className="row" key={rowIndex}>
+                        {row.map((value, colIndex) =>
+                          renderCell(rowIndex, colIndex, value)
+                        )}
+                    </div>
+                )}
+            </div>
+        </div>
   )
 }
 

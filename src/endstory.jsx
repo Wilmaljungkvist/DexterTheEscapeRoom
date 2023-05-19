@@ -41,7 +41,7 @@ const Endstory = () => {
   }, [showText, currentStep, displayText, story])
 
   /**
-   * Shows next picture and text if there are more to the story.
+   * Handles if next button is pressed.
    */
   const handleNext = () => {
     setCurrentStep(currentStep + 1)
@@ -50,7 +50,7 @@ const Endstory = () => {
   }
 
   /**
-   * Goes to the titlescreen when the button is pushed.
+   * Handles if end button is pressed.
    */
   const handleEnd = () => {
     setShowFirstRoom(true)
@@ -64,31 +64,31 @@ const Endstory = () => {
   return (
     <div style={{ position: 'relative', height: '100vh' }}>
       <img
-      className="story"
+        className="story"
         src={story[currentStep].image}
         alt="backstory image"
       />
       <div
-      className="storydiv"
+        className="storydiv"
       >
         <p class="backstorytext">{displayText}</p>
       </div>
       {currentStep < story.length - 1
         ? (
-        <button
-          className="startnextbtn"
-          onClick={handleNext}
-        >
-          Nästa
-        </button>
+          <button
+            className="startnextbtn"
+            onClick={handleNext}
+          >
+            Nästa
+          </button>
           )
         : (
-        <button
-          className="startnextbtn"
-          onClick={handleEnd}
-        >
-         Avsluta
-        </button>
+          <button
+            className="startnextbtn"
+            onClick={handleEnd}
+          >
+            Avsluta
+          </button>
           )}
     </div>
   )

@@ -26,7 +26,7 @@ function FirstRoom () {
 
   const riddleAnswer = 'ingenting'
   /**
-   * Function that sets pickKey and hasKey to true if key is picked up.
+   * Handles key pickup.
    */
   function pickUpKey () {
     setPickKey(true)
@@ -34,18 +34,19 @@ function FirstRoom () {
   }
 
   /**
+   * Handles the riddle if the riddle is solved.
    *
-   * @param solved
+   * @param {boolean} solved - Is true if the riddle is solved.
    */
   function handleRiddleSolved (solved) {
     if (solved) {
-      setRiddleSolved(true)
-      setIsCabinetOpen(true)
+      setRiddleSolved(solved)
+      setIsCabinetOpen(solved)
     }
   }
 
   /**
-   * Function for when a password is inputed.
+   * Handles change in password input.
    *
    * @param {*} event - The password event.
    */
@@ -54,14 +55,14 @@ function FirstRoom () {
   }
 
   /**
-   * Function for what happens when the safe is clicked.
+   * Handles click on safe.
    */
   function safe () {
     setClickSafe(true)
   }
 
   /**
-   * Function for when the password is submitted.
+   * Handles password input.
    *
    * @param {*} event - The submit event.
    */
@@ -79,7 +80,7 @@ function FirstRoom () {
   }
 
   /**
-   * Function that sets the door to open if the door is clicked when the user has the key.
+   * Handles click on the door.
    */
   function handleDoorClick () {
     if (hasKey) {
@@ -92,13 +93,19 @@ function FirstRoom () {
     }
   }
 
+  /**
+   * Handles click on the plant.
+   */
   function handlePlantClick () {
     setDisplayText('Hm, det fanns inget i krukan.')
-      setTimeout(() => {
-        setDisplayText('')
-      }, 3000)
+    setTimeout(() => {
+      setDisplayText('')
+    }, 3000)
   }
 
+  /**
+   * Handles click on the painting.
+   */
   function handlePaintingClick () {
     setDisplayText('Tavlan sitter fast, den går inte att ta loss.')
     setTimeout(() => {
@@ -107,14 +114,14 @@ function FirstRoom () {
   }
 
   /**
-   *
+   * Handles click on cabinet.
    */
   function cabinetClicked () {
     setIsCabinetClicked(true)
   }
 
   /**
-   *
+   * Handles click on keypad.
    */
   function handleKeyPad () {
     setClickSafe(false)
@@ -125,7 +132,7 @@ function FirstRoom () {
     return <LastRoom />
   }
   /**
-   *
+   * Handle click on paper.
    */
   function HandleClickPaper () {
     setPaperClicked(true)
@@ -140,24 +147,24 @@ function FirstRoom () {
         width: '1500px',
         height: '800px',
         border: 'solid 10px white'
-      }}/>
+      }} />
       <map name='doormap' cursor='pointer' style={{ backgroundColor: 'black' }} >
         <area shape='rect' coords="900,200,1150,550" alt='test' onClick={handleDoorClick} />
       </map>
       {isCabinetClicked && !riddleSolved && (
         <div className="riddlediv">
           <button
-      onClick={() => setIsCabinetClicked(false)}
-      style={{
-        position: 'absolute',
-        left: '100%'
-      }}
-    >
-      X
-    </button>
-        <RiddleGame riddleAnswer={riddleAnswer}
-        question="Fattiga har mig, rika behöver mig. Äter du mig dör du. Vad är jag?"
-        whenSolved={handleRiddleSolved}></RiddleGame>
+            onClick={() => setIsCabinetClicked(false)}
+            style={{
+              position: 'absolute',
+              left: '100%'
+            }}
+          >
+            X
+          </button>
+          <RiddleGame riddleAnswer={riddleAnswer}
+            question="Fattiga har mig, rika behöver mig. Äter du mig dör du. Vad är jag?"
+            whenSolved={handleRiddleSolved}></RiddleGame>
         </div>
       )}
       <img
@@ -168,87 +175,87 @@ function FirstRoom () {
       />
       {!riddleSolved && (
         <img
-        className="cabinetfirst"
-        src='./img/cabinet.png'
-        alt="cabinet"
-        onClick={cabinetClicked}
-      />
+          className="cabinetfirst"
+          src='./img/cabinet.png'
+          alt="cabinet"
+          onClick={cabinetClicked}
+        />
       )}
       {!openSafe && (
-      <img
-      className='safe'
-        src="./img/safe.png"
-        onClick={safe}
-        alt="safe"
-      />
+        <img
+          className='safe'
+          src="./img/safe.png"
+          onClick={safe}
+          alt="safe"
+        />
       )}
       {!pickKey && openSafe && (
         <img
-        className="key"
+          className="key"
           src="./img/key.png"
           onClick={pickUpKey}
           alt="key"
         />
       )}
 
-<img
+      <img
         className="painting"
         src="./img/painting.png"
         onClick={handlePaintingClick}
         alt="plant"
       />
 
-{!paperClicked && isCabinetOpen && (
-  <img
-  className="paper"
-  src='./img/paper.png'
-  alt="cabinet"
-  onClick={HandleClickPaper}
-/>
-)}
+      {!paperClicked && isCabinetOpen && (
+        <img
+          className="paper"
+          src='./img/paper.png'
+          alt="cabinet"
+          onClick={HandleClickPaper}
+        />
+      )}
 
-{paperClicked && (
-  <div>
-  <img
-  className="weatherpaper"
-  src='./img/weather.png'
-  alt="cabinet"
-  onClick={cabinetClicked}
-/>
-<button
-      onClick={() => setPaperClicked(false)}
-      style={{
-        position: 'absolute',
-        top: '230px',
-        right: '500px'
-      }}
-    >
-      X
-    </button>
-</div>
-)}
+      {paperClicked && (
+        <div>
+          <img
+            className="weatherpaper"
+            src='./img/weather.png'
+            alt="cabinet"
+            onClick={cabinetClicked}
+          />
+          <button
+            onClick={() => setPaperClicked(false)}
+            style={{
+              position: 'absolute',
+              top: '230px',
+              right: '500px'
+            }}
+          >
+            X
+          </button>
+        </div>
+      )}
 
-{clickSafe && !openSafe && (
-  <form className='form' onSubmit={handleSubmit}>
-    <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Enter password:</label>
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
-      <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '1')}>1</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '2')}>2</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '3')}>3</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '4')}>4</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '5')}>5</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '6')}>6</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '7')}>7</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '8')}>8</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '9')}>9</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '0')}>0</button>
-      <button className="keybtn" type="button" onClick={() => setInputValue(inputValue.slice(0, -1))}>delete</button>
-      <button className="subbtn" type="submit">OK</button>
-      <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
-    </div>
-  </form>
-)}
+      {clickSafe && !openSafe && (
+        <form className='form' onSubmit={handleSubmit}>
+          <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Enter password:</label>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
+            <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '1')}>1</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '2')}>2</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '3')}>3</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '4')}>4</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '5')}>5</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '6')}>6</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '7')}>7</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '8')}>8</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '9')}>9</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '0')}>0</button>
+            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue.slice(0, -1))}>delete</button>
+            <button className="subbtn" type="submit">OK</button>
+            <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
+          </div>
+        </form>
+      )}
       {displayText && (
         <p
           style={{
