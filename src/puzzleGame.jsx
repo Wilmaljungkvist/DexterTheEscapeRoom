@@ -1,12 +1,12 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react'
 
 /**
+ * PuzzleGame component represents a puzzle game.
  *
- * @param root0
- *
- * @param root0.onPuzzleSolved
- *
- * @returns {JSX.Element} - The JSX element representing the Backstory component.
+ * @param {object} props - The props object.
+ * @param {Function} props.onPuzzleSolved - Callback function called when the puzzle is solved.
+ * @returns {JSX.Element} - The JSX element representing the PuzzleGame component.
  */
 function PuzzleGame ({ onPuzzleSolved }) {
   const [puzzle, setPuzzle] = useState([])
@@ -24,7 +24,9 @@ function PuzzleGame ({ onPuzzleSolved }) {
   }, [puzzle, onPuzzleSolved])
 
   /**
+   * Creates a new puzzle.
    *
+   * @returns {number[][]} - The new puzzle.
    */
   function createPuzzle () {
     const numbers = [null, 1, 3, 4, 2, 5, 7, 8, 6]
@@ -39,7 +41,9 @@ function PuzzleGame ({ onPuzzleSolved }) {
   }
 
   /**
+   * Checks if the puzzle is solved.
    *
+   * @returns {boolean} - True if the puzzle is solved, false otherwise.
    */
   function checkSolved () {
     const flatPuzzle = puzzle.flat()
@@ -52,9 +56,10 @@ function PuzzleGame ({ onPuzzleSolved }) {
   }
 
   /**
+   * Handles the move of a puzzle piece.
    *
-   * @param row
-   * @param col
+   * @param {number} row - The row index of the clicked piece.
+   * @param {number} col - The column index of the clicked piece.
    */
   function handleMove (row, col) {
     if (solved) {
@@ -75,9 +80,10 @@ function PuzzleGame ({ onPuzzleSolved }) {
 
     if (
       (row === emptyRow && Math.abs(col - emptyCol) === 1) ||
-            (col === emptyCol && Math.abs(row - emptyRow) === 1)
+      (col === emptyCol && Math.abs(row - emptyRow) === 1)
     ) {
-      [newPuzzle[row][col], newPuzzle[emptyRow][emptyCol]] = [newPuzzle[emptyRow][emptyCol],
+      [newPuzzle[row][col], newPuzzle[emptyRow][emptyCol]] = [
+        newPuzzle[emptyRow][emptyCol],
         newPuzzle[row][col]
       ]
       setPuzzle(newPuzzle)
@@ -89,40 +95,42 @@ function PuzzleGame ({ onPuzzleSolved }) {
   }
 
   /**
+   * Renders a puzzle cell.
    *
-   * @param row
-   * @param col
-   * @param value
+   * @param {number} row - The row index of the cell.
+   * @param {number} col - The column index of the cell.
+   * @param {number|null} value - The value of the cell.
+   * @returns {JSX.Element} - The JSX element representing the puzzle cell.
    */
   function renderCell (row, col, value) {
     return (
-            <div
-                className="cell"
-                key={`${row}-${col}`}
-                onClick={() => handleMove(row, col)}
-                style={{
-                  opacity: value === null ? 0 : 1,
-                  cursor: solved ? 'default' : 'pointer'
-                }}
-            >
-                {value}
-            </div>
+      <div
+        className="cell"
+        key={`${row}-${col}`}
+        onClick={() => handleMove(row, col)}
+        style={{
+          opacity: value === null ? 0 : 1,
+          cursor: solved ? 'default' : 'pointer'
+        }}
+      >
+        {value}
+      </div>
     )
   }
 
   return (
-        <div className="puzzle">
-            <p>Solve the puzzle!</p>
-            <div className="board">
-                {puzzle.map((row, rowIndex) =>
-                    <div className="row" key={rowIndex}>
-                        {row.map((value, colIndex) =>
-                          renderCell(rowIndex, colIndex, value)
-                        )}
-                    </div>
-                )}
-            </div>
-        </div>
+    <div className="puzzle">
+      <p>Solve the puzzle!</p>
+      <div className="board">
+        {puzzle.map((row, rowIndex) => (
+          <div className="row" key={rowIndex}>
+            {row.map((value, colIndex) =>
+              renderCell(rowIndex, colIndex, value)
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
 
