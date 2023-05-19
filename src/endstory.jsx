@@ -17,11 +17,11 @@ const Endstory = () => {
   const story = [
     {
       image: './img/dexter.png',
-      text: 'När du öppnar dörren får du äntligen syn på Dexter som snällt stått och väntat på att bli insläppt. Han stryker sig mot dina ben och du tar honom i ett hårt grepp ut igen'
+      text: 'När du öppnar dörren får du äntligen syn på Dexter som snällt stått och väntat på att bli insläppt. Han stryker sig mot dina ben och du går ut i den friska luften.'
     },
     {
       image: './img/sun.png',
-      text: 'Äntligen hade du kommit ut och kunde känna den friska luften i din näsa, utsikten ut mot havet härifrån var väldigt vacker och solen hade börjat gå upp. Du kände att allt ditt slit hade varit värt det, hade det inte varit för Dexter hade du inte fått se denna vackra utsikt.'
+      text: 'Äntligen kunde du känna den friska luften i din näsa, aldrig hade du uppskattat att vara ute så mycket. utsikten mot havet härifrån var väldigt vacker och solen hade börjat gå upp. Du kände att allt ditt slit hade varit värt det, hade det inte varit för Dexter hade du inte fått se denna vackra utsikt.'
     }
   ]
 
@@ -50,7 +50,7 @@ const Endstory = () => {
   }
 
   /**
-   * Starts the first game when the start button is pressed.
+   * Goes to the titlescreen when the button is pushed.
    */
   const handleEnd = () => {
     setShowFirstRoom(true)
