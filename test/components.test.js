@@ -1,18 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import LastRoom from '../src/lastRoom'
-import Backstory from '../src/backstory'
-import Endstory from '../src/endstory'
-import firstRoom from '../src/firstRoom'
-import PuzzleGame from '../src/puzzleGame'
-import TitleScreen from '../src/titleScreen'
-
-describe('LastRoom component', () => {
-  test('renders correctly', () => {
-    const tree = renderer.create(<LastRoom />).toJSON()
-    expect(tree)
-  })
-})
+import LastRoom from '../src/components/LastRoom'
 
 test('password submission with correct password should open the safe', () => {
   const component = renderer.create(<LastRoom />)
@@ -22,8 +10,8 @@ test('password submission with correct password should open the safe', () => {
   const inputElement = instance.findByProps({ id: 'passwordInput' })
   inputElement.props.onChange(event)
 
-  const formElement = instance.findByType('form')
-  formElement.props.onSubmit(event)
+  const buttonElement = instance.findByProps({ type: 'submit' })
+  buttonElement.props.onClick(event)
 
   expect(instance.findByProps({ className: 'safe' })).toBeFalsy()
 })
