@@ -383,3 +383,13 @@ header {
     max-height: 15%;
     overflow: auto;
   }
+
+  .displaytext {
+    position: absolute;
+    top: 700px;
+    left: 500px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+  }

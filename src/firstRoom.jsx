@@ -57,7 +57,7 @@ function FirstRoom () {
   /**
    * Handles click on safe.
    */
-  function safe () {
+  function handleSafeClick () {
     setClickSafe(true)
   }
 
@@ -121,7 +121,7 @@ function FirstRoom () {
   }
 
   /**
-   * Handles click on keypad.
+   * Handles when keypad should be seen.
    */
   function handleKeyPad () {
     setClickSafe(false)
@@ -140,14 +140,12 @@ function FirstRoom () {
 
   return (
     <div>
-      <img src="./img/basement.png" alt="Basement" useMap="#doormap" style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '1500px',
-        height: '800px',
-        border: 'solid 10px white'
-      }} />
+      <img
+      className="basement"
+      src="./img/basement.png"
+      alt="Basement"
+      useMap="#doormap"
+       />
       <map name='doormap' cursor='pointer' style={{ backgroundColor: 'black' }} >
         <area shape='rect' coords="900,200,1150,550" alt='test' onClick={handleDoorClick} />
       </map>
@@ -185,7 +183,7 @@ function FirstRoom () {
         <img
           className='safe'
           src="./img/safe.png"
-          onClick={safe}
+          onClick={handleSafeClick}
           alt="safe"
         />
       )}
@@ -202,14 +200,14 @@ function FirstRoom () {
         className="painting"
         src="./img/painting.png"
         onClick={handlePaintingClick}
-        alt="plant"
+        alt="painting"
       />
 
       {!paperClicked && isCabinetOpen && (
         <img
           className="paper"
           src='./img/paper.png'
-          alt="cabinet"
+          alt="paper"
           onClick={HandleClickPaper}
         />
       )}
@@ -219,7 +217,7 @@ function FirstRoom () {
           <img
             className="weatherpaper"
             src='./img/weather.png'
-            alt="cabinet"
+            alt="weather paper"
             onClick={cabinetClicked}
           />
           <button
@@ -240,33 +238,32 @@ function FirstRoom () {
           <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Enter password:</label>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
             <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '1')}>1</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '2')}>2</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '3')}>3</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '4')}>4</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '5')}>5</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '6')}>6</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '7')}>7</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '8')}>8</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '9')}>9</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '0')}>0</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue.slice(0, -1))}>delete</button>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((number) => (
+              <button
+                key={number}
+                className="keybtn"
+                type="button"
+                onClick={() => setInputValue(inputValue + number)}
+              >
+                {number}
+              </button>
+            ))}
+            <button
+              className="keybtn"
+              type="button"
+              onClick={() => setInputValue(inputValue.slice(0, -1))}
+            >
+              radera
+            </button>
             <button className="subbtn" type="submit">OK</button>
             <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
           </div>
         </form>
       )}
+
       {displayText && (
         <p
-          style={{
-            position: 'absolute',
-            top: '700px',
-            left: '500px',
-            color: 'white',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            padding: '10px',
-            borderRadius: '5px'
-          }}
+        className="displaytext"
         >
           {displayText}
         </p>

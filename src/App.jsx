@@ -8,7 +8,7 @@ import TitleScreen from './TitleScreen'
  *
  * @returns {JSX.Element} - The JSX element representing the App component.
  */
-function App() {
+function App () {
   return (
     <div className="App">
       <TitleScreen></TitleScreen>

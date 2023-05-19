@@ -21,7 +21,6 @@ function LastRoom () {
   const [isCabinetOpen, setIsCabinetOpen] = useState(false)
   const [isPuzzleSolved, setIsPuzzleSolved] = useState(false)
   const [hasDoorKey, setHasDoorKey] = useState(false)
-  const [pickDoorKey, setPickDoorKey] = useState(false)
   const [displayText, setDisplayText] = useState('')
   const password = '6743'
 
@@ -34,22 +33,21 @@ function LastRoom () {
   }
 
   /**
-   * Function that sets pickDoorKey and hasDoorKey to true if key is picked up.
+   * Handles the door key when it is picked up.
    */
   function pickUpDoorKey () {
-    setPickDoorKey(true)
     setHasDoorKey(true)
   }
 
   /**
-   * Function for what happens when the safe is clicked.
+   * Handles the safe when it's clicked.
    */
   function handleSafeClick () {
     setClickSafe(true)
   }
 
   /**
-   * Function for when the door is clicked.
+   * Handles the door when it's clicked.
    */
   function handleDoorClick () {
     if (hasDoorKey) {
@@ -63,7 +61,7 @@ function LastRoom () {
   }
 
   /**
-   * Function for when a password is inputed.
+   * Handles change in input of the password.
    *
    * @param {*} event - The password event.
    */
@@ -72,7 +70,7 @@ function LastRoom () {
   }
 
   /**
-   * Function for when the password is submitted.
+   * Handles the submitted password.
    *
    * @param {*} event - The submit event.
    */
@@ -90,7 +88,7 @@ function LastRoom () {
   }
 
   /**
-   *
+   * Handles the cabinet when it's clicked.
    */
   function clickCabinet () {
     if (hasKey) {
@@ -104,7 +102,7 @@ function LastRoom () {
   }
 
   /**
-   *
+   * Handles when the keypad should be seeen.
    */
   function handleKeyPad () {
     setClickSafe(false)
@@ -116,15 +114,16 @@ function LastRoom () {
   }
 
   /**
-   *
+   * Handles when the plant is clicked.
    */
-  function plant () {
+  function plantClicked () {
     setPlantPressed(true)
   }
 
   /**
+   * Is true when the puzzle is solved.
    *
-   * @param isSolved
+   * @param {boolean} isSolved - Shows if the puzzle is solved.
    */
   function handlePuzzleSolved (isSolved) {
     setIsPuzzleSolved(isSolved)
@@ -155,7 +154,7 @@ function LastRoom () {
         <img
           className="cabinet"
           src='./img/cabinet.png'
-          alt="letter"
+          alt="cabinet"
           onClick={clickCabinet}
         />
       )}
@@ -175,31 +174,37 @@ function LastRoom () {
         />
       )}
 
-      {clickSafe && !openSafe && (
-        <form className='form' onSubmit={handleSubmit}>
-          <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Enter password:</label>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
-            <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '1')}>1</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '2')}>2</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '3')}>3</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '4')}>4</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '5')}>5</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '6')}>6</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '7')}>7</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '8')}>8</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '9')}>9</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue + '0')}>0</button>
-            <button className="keybtn" type="button" onClick={() => setInputValue(inputValue.slice(0, -1))}>delete</button>
-            <button className="subbtn" type="submit">OK</button>
-            <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
-          </div>
-        </form>
-      )}
+{clickSafe && !openSafe && (
+  <form className='form' onSubmit={handleSubmit}>
+    <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Enter password:</label>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
+      <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
+      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((number) => (
+        <button
+          key={number}
+          className="keybtn"
+          type="button"
+          onClick={() => setInputValue(inputValue + number)}
+        >
+          {number}
+        </button>
+      ))}
+      <button
+        className="keybtn"
+        type="button"
+        onClick={() => setInputValue(inputValue.slice(0, -1))}
+      >
+        radera
+      </button>
+      <button className="subbtn" type="submit">OK</button>
+      <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
+    </div>
+  </form>
+)}
       <img
         className="plant"
         src="./img/plant.png"
-        onClick={plant}
+        onClick={plantClicked}
         alt="plant"
       />
       {plantPressed && (
@@ -226,20 +231,12 @@ function LastRoom () {
           className="doorkey"
           src="./img/key.png"
           onClick={pickUpDoorKey}
-          alt="key"
+          alt="door key"
         />
       )}
       {displayText && (
         <p
-          style={{
-            position: 'absolute',
-            top: '700px',
-            left: '500px',
-            color: 'white',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            padding: '10px',
-            borderRadius: '5px'
-          }}
+        className="displaytext"
         >
           {displayText}
         </p>
