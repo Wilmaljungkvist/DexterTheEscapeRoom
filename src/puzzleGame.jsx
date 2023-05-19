@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react'
 /**
  *
  * @param root0
+ *
  * @param root0.onPuzzleSolved
+ *
+ * @returns {JSX.Element} - The JSX element representing the Backstory component.
  */
 function PuzzleGame ({ onPuzzleSolved }) {
   const [puzzle, setPuzzle] = useState([])

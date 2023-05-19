@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react'
 // eslint-disable-next-line no-unused-vars
-import FirstRoom from './firstRoom'
+import FirstRoom from './FirstRoom'
 
 /**
- * Component for showing the backstory to the escape room.
+ * Component for showing the Backstory to the escape room.
  *
- * @returns {string} //TO DO: write correct return.
+ * @returns {JSX.Element} - The JSX element representing the Backstory component.
  */
 const Backstory = () => {
   const [currentStep, setCurrentStep] = useState(0)
@@ -89,73 +89,29 @@ const Backstory = () => {
   return (
     <div style={{ position: 'relative', height: '100vh' }}>
       <img
+        className="story"
         src={story[currentStep].image}
         alt="backstory image"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          border: 'solid 10px white'
-        }}
       />
       <div
-        style={{
-          position: 'absolute',
-          top: '90%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          backgroundColor: '#ebe0df',
-          fontSize: '20px',
-          boxShadow: '10px 5px 5px black',
-          borderRadius: '20px',
-          padding: '1rem',
-          maxHeight: '15%',
-          overflow: 'auto'
-        }}
+      className="storydiv"
       >
         <p class="backstorytext">{displayText}</p>
       </div>
       {currentStep < story.length - 1
         ? (
         <button
+          className="startnextbtn"
           onClick={handleNext}
-          style={{
-            position: 'absolute',
-            bottom: '0.5rem',
-            right: '1rem',
-            fontSize: '1.5rem',
-            fontFamily: 'coffee',
-            backgroundColor: '#ebe0df',
-            borderRadius: '1rem',
-            padding: '0.5rem 1rem',
-            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease'
-          }}
         >
           Nästa
         </button>
           )
         : (
         <button
+          className="startnextbtn"
           onClick={handleStart}
-          style={{
-            position: 'absolute',
-            bottom: '1rem',
-            right: '1rem',
-            fontSize: '1.5rem',
-            fontFamily: 'coffee',
-            backgroundColor: '#ebe0df',
-            borderRadius: '1rem',
-            padding: '0.5rem 1rem',
-            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease'
-          }}
-        >
+      >
           Starta
         </button>
           )}

@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
-import Backstory from './backstory'
+import Backstory from './Backstory'
 // eslint-disable-next-line no-unused-vars
-import About from './about'
+import About from './About'
 
 /**
  * Component for the title screen.

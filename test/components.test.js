@@ -1,11 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import LastRoom from '../src/lastRoom'
-import Backstory from '../src/backstory'
-import Endstory from '../src/endstory'
-import firstRoom from '../src/firstRoom'
-import PuzzleGame from '../src/puzzleGame'
-import TitleScreen from '../src/titleScreen'
+import LastRoom from '../src/LastRoom'
+import Backstory from '../src/Backstory'
+import Endstory from '../src/Endstory'
+import firstRoom from '../src/FirstRoom'
+import PuzzleGame from '../src/PuzzleGame'
+import TitleScreen from '../src/TitleScreen'
 
 describe('LastRoom component', () => {
   test('renders correctly', () => {

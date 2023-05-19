@@ -1,14 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
-import LastRoom from './lastRoom'
+import LastRoom from './LastRoom'
 // eslint-disable-next-line no-unused-vars
-import RiddleGame from './riddle'
+import RiddleGame from './Riddle'
 
 /**
  * First room component.
  *
- * @returns {string} // TO DO: Write the return type
+ * @returns {JSX.Element} - The JSX element representing the FirstRoom component.
  */
 function FirstRoom () {
   const [hasKey, setHasKey] = useState(false)

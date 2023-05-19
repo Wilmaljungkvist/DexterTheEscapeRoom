@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
-import Endstory from './endstory'
+import Endstory from './Endstory'
 // eslint-disable-next-line no-unused-vars
-import PuzzleGame from './puzzleGame'
+import PuzzleGame from './PuzzleGame'
 
 /**
  * LastRoom component.

@@ -1,10 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
-import TitleScreen from './titleScreen'
+import TitleScreen from './TitleScreen'
 
 /**
- * Component for the title screen.
+ * Component for the About page.
  *
  * @returns {JSX.Element} - The JSX element representing the About component.
  */
