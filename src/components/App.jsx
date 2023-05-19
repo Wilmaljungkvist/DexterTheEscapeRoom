@@ -1,7 +1,5 @@
 /* eslint-disable jsdoc/no-undefined-types */
 // eslint-disable-next-line no-unused-vars
-import { useState } from 'react'
-// eslint-disable-next-line no-unused-vars
 import TitleScreen from './TitleScreen'
 
 /**
