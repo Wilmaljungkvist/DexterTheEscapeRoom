@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders LastRoom component correctly 1`] = `
+<div>
+  <img
+    alt="Basement"
+    className="basement"
+    src="./img/last.png"
+    useMap="#doormap"
+  />
+  <map
+    cursor="pointer"
+    name="doormap"
+    style={
+      {
+        "backgroundColor": "black",
+      }
+    }
+  >
+    <area
+      alt="test"
+      coords="680,100,1000,650"
+      onClick={[Function]}
+      shape="rect"
+    />
+  </map>
+  <img
+    alt="cabinet"
+    className="cabinet"
+    onClick={[Function]}
+    src="./img/cabinet.png"
+  />
+  <img
+    alt="safe"
+    className="safe"
+    onClick={[Function]}
+    src="./img/safe.png"
+  />
+  <img
+    alt="plant"
+    className="plant"
+    onClick={[Function]}
+    src="./img/plant.png"
+  />
+</div>
+`;
