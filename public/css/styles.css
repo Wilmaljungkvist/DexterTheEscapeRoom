@@ -95,7 +95,7 @@ header {
     text-align: center;
   }
 
-  .basement {
+  .background-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -104,7 +104,7 @@ header {
     border: solid 10px white;
   }
 
-  .key {
+  .key-image {
     position: absolute;
             top: 650px;
             left: 100px;
@@ -112,7 +112,7 @@ header {
             cursor: pointer;
   }
 
-  .cabinet {
+  .cabinet-image {
     position: absolute;
         top: 450px;
         left: 400px;
@@ -120,7 +120,7 @@ header {
         cursor: pointer;
   }
 
-  .cabinetfirst {
+  .cabinet-first {
     position: absolute;
     top: 350px;
     left: 100px;
@@ -128,7 +128,7 @@ header {
     cursor: pointer;
   }
 
-  .puzzle {
+  .puzzle-div {
     position: fixed;
     top: 240px;
     left: 450px;
@@ -136,7 +136,7 @@ header {
   }
   
 
-  .safe {
+  .safe-image {
     position: absolute;
     top: 600px;
     left: 100px;
@@ -168,7 +168,7 @@ header {
     grid-column: span 3;
   }
 
-  .keybtn {
+  .key-btn {
     padding: 10px;
     font-size: 20px;
     background-color: #d9d9d9;
@@ -179,7 +179,7 @@ header {
     font-family: 'myfont';
   }
 
-  .subbtn {
+  .submit-btn {
     padding: 10px 20px;
     font-size: 20px;
     background-color: #9e8f6a;
@@ -190,7 +190,7 @@ header {
     font-family: 'myfont';
   }
 
-  .plant {
+  .plant-image {
     position: absolute;
     top: 360px;
     left: 1100px;
@@ -198,7 +198,7 @@ header {
     cursor: pointer;
   }
 
-  .letter {
+  .letter-image {
     position: fixed;
     top: 200px;
     left: 500px;
@@ -208,7 +208,7 @@ header {
     align-items: center;
   }
 
-  .doorkey {
+  .door-key {
     position: absolute;
     top: 650px;
     left: 500px;
@@ -216,7 +216,7 @@ header {
     cursor: pointer;
   }
 
-  .dexter {
+  .dexter-image {
     display: inline-block;
     width: 100%; 
   }
@@ -240,14 +240,14 @@ header {
     text-align: center;
   }
   
-  .riddlequestion {
+  .riddle-question {
     font-size: 24px;
     color: #fff;
     margin-bottom: 10px;
     font-family: 'myfont';
   }
   
-  .riddlelabel {
+  .riddle-label {
     display: block;
     font-size: 18px;
     color: #fff;
@@ -255,13 +255,13 @@ header {
     font-family: 'myfont';
   }
   
-  .riddleinput {
+  .riddle-input {
     padding: 8px;
     font-size: 16px;
     font-family: 'myfont';
   }
   
-  .riddlebutton {
+  .riddle-button {
     margin: 20px; 
     background-color: #116799;
     color: #fff;
@@ -274,7 +274,7 @@ header {
   }
   
 
-  .riddlediv {
+  .riddle-div {
     width: 600px; 
     height: 200px; 
     z-index: 9999;
@@ -284,7 +284,7 @@ header {
     transform: translate(-50%, -50%);
   }
 
-  .paper {
+  .paper-image {
     position: absolute;
     top: 550px;
     left: 200px;
@@ -292,7 +292,7 @@ header {
     cursor: pointer;
   }
 
-  .weatherpaper {
+  .weather-paper {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -380,7 +380,7 @@ header {
     overflow: auto;
   }
 
-  .displaytext {
+  .display-text {
     position: absolute;
     top: 700px;
     left: 500px;

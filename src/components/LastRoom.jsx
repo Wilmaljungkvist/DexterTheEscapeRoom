@@ -133,7 +133,7 @@ function LastRoom () {
   return (
     <div>
       <img
-        className="basement"
+        className="background-image"
         src="./img/last.png"
         alt="Basement"
         useMap="#doormap"
