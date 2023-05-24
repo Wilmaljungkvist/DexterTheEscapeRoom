@@ -18,15 +18,15 @@ const Backstory = () => {
   const story = [
     {
       image: './img/forrest.png',
-      text: 'Dexter är din katt som är en svart Cornish Rex. Han är din absoluta bästa vän, och det är lite sorgligt, men sant, eftersom du precis har flyttat till en ny stad och ännu inte hunnit skaffa många vänner än. Det var en vanlig dag, och du hade precis kommit hem mycket trött efter ett 8-timmars pass på ditt lagerjobb.'
+      text: 'Dexter är din katt som är en svart Cornish Rex. Han är din absoluta bästa vän, det är lite sorgligt men sant. Det är rimligt eftersom du precis flyttat till en ny stad och ännu inte hunnit skaffa några vänner än. Det var en vanlig dag och du hade precis kommit hem mycket trött efter ett 8-timmars pass på ditt lagerjobb.'
     },
     {
       image: './img/home.png',
-      text: 'Du möttes av Dexter vid dörren, som hälsade dig välkommen hem med ett glatt "meow". Du kände dig genast lite lugnare och gladare när du såg hans mjuka päls och hörde hans välkomnande ljud.'
+      text: 'Du möttes av Dexter vid dörren, som hälsade dig välkommen hem med ett glatt "meow". Du kände dig genast lite lugnare och gladare.'
     },
     {
       image: './img/light.png',
-      text: 'Du bestämde dig för att se din favorit serie och satte dig ner på soffan för att slappna av en stund.'
+      text: 'Du bestämde dig för att se din favorit serie och satte dig ner på soffan.'
     },
     {
       image: './img/dark.png',
@@ -38,7 +38,7 @@ const Backstory = () => {
     },
     {
       image: './img/kitchen.png',
-      text: 'När du kom till köket såg nu något underligt, en del av tapeten hade rivits av och det visades nu en del av en dörr. Du bestämmer dig för att öppna dörren för att se om de är hit Dexter farit'
+      text: 'När du kom till köket såg nu något underligt, en del av tapeten hade rivits av och det visades nu en del av en dörr. Du bestämmer dig för att öppna dörren för att se om de är hit Dexter försvunnit.'
     },
     {
       image: './img/stairs.png',
@@ -46,7 +46,7 @@ const Backstory = () => {
     },
     {
       image: './img/basement.png',
-      text: 'När du kom till botten av trappan befann du dig i en gammal källare. Det såg ut som om ingen hade bott där på flera år, och det fanns spindelnät överallt. Men något kändes fel, och du hade en känsla av att det fanns något mer som gömde sig där. Källardörren stängdes med en smäll, och du sprang snabbt upp för att försöka ta dig ut. Men du insåg snart att dörren var låst och att du behövde hitta en annan väg ut, men också hitta Dexter. Dina enda ledtrådar var ytterligare en låst dörr framför dig och en vält färgburk med tassavtryck på golvet som visade att Dexter hade gått genom den dörren. “Bara att börja leta efter en väg ut” tänkte du, ovetandes om det stora äventyret framför dig'
+      text: 'När du kom till botten av trappan befann du dig i en gammal källare. Det såg ut som om ingen hade varit där på flera år. Det va tomt, men något kändes fel, och du hade en känsla av att det fanns något mer som gömde sig där. Källardörren stängdes med en smäll, och du sprang snabbt upp för att försöka ta dig ut. Men du insåg snart att dörren var låst och att du behövde hitta en annan väg ut, men också hitta Dexter. Dina enda ledtrådar var ytterligare en låst dörr framför dig och en vält färgburk med tassavtryck på golvet som visade att Dexter hade gått genom den dörren. “Bara att börja leta efter en väg ut” tänkte du, ovetandes om det stora äventyret framför dig.'
     }
   ]
 
@@ -90,19 +90,19 @@ const Backstory = () => {
   return (
     <div style={{ position: 'relative', height: '100vh' }}>
       <img
-        className="story"
+        className="story-image"
         src={story[currentStep].image}
-        alt="backstory image"
+        alt="Bilder för bakgrundshistorian"
       />
       <div
-        className="storydiv"
+        className="story-div"
       >
-        <p class="backstorytext">{displayText}</p>
+        <p>{displayText}</p>
       </div>
       {currentStep < story.length - 1
         ? (
           <button
-            className="startnextbtn"
+            className="start-next-btn"
             onClick={handleNext}
           >
             Nästa
@@ -110,7 +110,7 @@ const Backstory = () => {
           )
         : (
           <button
-            className="startnextbtn"
+            className="start-next-btn"
             onClick={handleStart}
           >
             Starta

@@ -301,7 +301,7 @@ header {
     cursor: pointer;
   }
 
-  .painting {
+  .first-painting {
     position: absolute;
     top: 200px;
     left: 600px;
@@ -342,7 +342,7 @@ header {
     font-family: 'myfont';
   }
 
-  .startnextbtn {
+  .start-next-btn {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
@@ -356,7 +356,7 @@ header {
     transition: all 0.3s ease;
   }
 
-  .story {
+  .story-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -366,7 +366,7 @@ header {
     border: solid 10px white;
   }
 
-  .storydiv {
+  .story-div {
     position: absolute;
     top: 90%;
     left: 50%;
