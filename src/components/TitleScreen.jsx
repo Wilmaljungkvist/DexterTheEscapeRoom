@@ -37,13 +37,13 @@ const TitleScreen = () => {
   }
 
   return (
-    <div className="title">
+    <div className="title-div">
       <header>
-        <img className="dexter" src="./img/headern.png" alt="Dexter: the escape room" />
+        <img className="dexter-image" src="./img/headern.png" alt="Dexter: the escape room" />
       </header>
-      <div className="buttoncontainer">
-        <button className="startButton" onClick={handleStart}>Spela</button>
-        <button className="aboutButton" onClick={handleAboutMe}>Om spelet</button>
+      <div className="button-container">
+        <button className="start-button" onClick={handleStart}>Spela</button>
+        <button className="about-button" onClick={handleAboutMe}>Om spelet</button>
       </div>
     </div>
   )
