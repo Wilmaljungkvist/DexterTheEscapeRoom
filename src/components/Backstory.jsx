@@ -97,7 +97,7 @@ const Backstory = () => {
       <div
         className="story-div"
       >
-        <p>{displayText}</p>
+        <p className="backstory-text">{displayText}</p>
       </div>
       {currentStep < story.length - 1
         ? (

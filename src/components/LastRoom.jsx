@@ -135,7 +135,7 @@ function LastRoom () {
       <img
         className="background-image"
         src="./img/last.png"
-        alt="Basement"
+        alt="Bild på sista rummet som består av en dörr och två tavlor på väggen. Tavlorna föreställer ett berg och en med fyra blommor."
         useMap="#doormap"
       />
       <map name="doormap" cursor="pointer" style={{ backgroundColor: 'black' }}>
@@ -144,18 +144,18 @@ function LastRoom () {
 
       {!pickKey && openSafe && (
         <img
-          className="key"
+          className="key-image"
           src="./img/key.png"
           onClick={pickUpKey}
-          alt="key"
+          alt="Nyckeln till skåpet."
         />
       )}
 
       {!isPuzzleSolved && (
         <img
-          className="cabinet"
+          className="cabinet-image"
           src='./img/cabinet.png'
-          alt="cabinet"
+          alt="Bild på ett skåp med två luckor."
           onClick={clickCabinet}
         />
       )}
@@ -168,10 +168,10 @@ function LastRoom () {
 
       {!openSafe && (
         <img
-          className='safe'
+          className='safe-image'
           src="./img/safe.png"
           onClick={handleSafeClick}
-          alt="safe"
+          alt="Ett kassaskåp som måste öppnas med en kod."
         />
       )}
 
@@ -183,7 +183,7 @@ function LastRoom () {
       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((number) => (
         <button
           key={number}
-          className="keybtn"
+          className="key-btn"
           type="button"
           onClick={() => setInputValue(inputValue + number)}
         >
@@ -191,29 +191,29 @@ function LastRoom () {
         </button>
       ))}
       <button
-        className="keybtn"
+        className="key-btn"
         type="button"
         onClick={() => setInputValue(inputValue.slice(0, -1))}
       >
         radera
       </button>
-      <button className="subbtn" type="submit">OK</button>
-      <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
+      <button className="subit-btn" type="submit">OK</button>
+      <button className="subit-btn" type="button" onClick={handleKeyPad}>X</button>
     </div>
   </form>
 )}
       <img
-        className="plant"
+        className="plant-image"
         src="./img/plant.png"
         onClick={plantClicked}
-        alt="plant"
+        alt="En stor grön växt i en kruka."
       />
       {plantPressed && (
         <div style={{ position: 'relative' }}>
           <img
-            className="letter"
+            className="letter-image"
             src='./img/letter.png'
-            alt="letter"
+            alt="Ett brev med siffror och en tillhörande färg."
           />
           <button
             onClick={() => setPlantPressed(false)}
@@ -229,15 +229,15 @@ function LastRoom () {
       )}
       {isPuzzleSolved && !hasDoorKey && (
         <img
-          className="doorkey"
+          className="door-key"
           src="./img/key.png"
           onClick={pickUpDoorKey}
-          alt="door key"
+          alt="Nyckeln till dörren"
         />
       )}
       {displayText && (
         <p
-        className="displaytext"
+        className="display-text"
         >
           {displayText}
         </p>
