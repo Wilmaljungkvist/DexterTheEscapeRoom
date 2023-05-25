@@ -65,19 +65,19 @@ const Endstory = () => {
   return (
     <div style={{ position: 'relative', height: '100vh' }}>
       <img
-        className="story"
+        className="story-image"
         src={story[currentStep].image}
-        alt="backstory image"
+        alt="Bilder för sluthistorien"
       />
       <div
-        className="storydiv"
+        className="story-div"
       >
-        <p class="backstorytext">{displayText}</p>
+        <p className="backstory-text">{displayText}</p>
       </div>
       {currentStep < story.length - 1
         ? (
           <button
-            className="startnextbtn"
+            className="start-next-btn"
             onClick={handleNext}
           >
             Nästa
@@ -85,7 +85,7 @@ const Endstory = () => {
           )
         : (
           <button
-            className="startnextbtn"
+            className="start-next-btn"
             onClick={handleEnd}
           >
             Avsluta

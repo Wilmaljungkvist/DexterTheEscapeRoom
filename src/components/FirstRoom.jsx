@@ -24,8 +24,8 @@ function FirstRoom () {
   const [riddleSolved, setRiddleSolved] = useState(false)
   const [paperClicked, setPaperClicked] = useState(false)
   const password = '4829'
-
   const riddleAnswer = 'ingenting'
+
   /**
    * Handles key pickup.
    */
@@ -35,7 +35,7 @@ function FirstRoom () {
   }
 
   /**
-   * Handles the riddle if the riddle is solved.
+   * Handles the cabinet if the riddle is solved.
    *
    * @param {boolean} solved - Is true if the riddle is solved.
    */
@@ -73,7 +73,7 @@ function FirstRoom () {
       setOpenSafe(true)
     } else {
       setInputValue('')
-      setDisplayText('Wrong password, try again.')
+      setDisplayText('Fel lösenord, försök igen.')
       setTimeout(() => {
         setDisplayText('')
       }, 3000)
@@ -142,16 +142,16 @@ function FirstRoom () {
   return (
     <div>
       <img
-      className="basement"
+      className="background-image"
       src="./img/basement.png"
-      alt="Basement"
+      alt="En källare med en dörr, en färgburk och ett hål bredvid dörren. Kattavtryck syns från färgen till hålet."
       useMap="#doormap"
        />
-      <map name='doormap' cursor='pointer' style={{ backgroundColor: 'black' }} >
-        <area shape='rect' coords="900,200,1150,550" alt='test' onClick={handleDoorClick} />
+      <map name='doormap' cursor='pointer'>
+        <area shape='rect' coords="900,200,1150,550" alt='En mappning utav dörren i källaren.' onClick={handleDoorClick} />
       </map>
       {isCabinetClicked && !riddleSolved && (
-        <div className="riddlediv">
+        <div className="riddle-div">
           <button
             onClick={() => setIsCabinetClicked(false)}
             style={{
@@ -167,48 +167,48 @@ function FirstRoom () {
         </div>
       )}
       <img
-        className="plant"
+        className="plant-image"
         src="./img/plant.png"
         onClick={handlePlantClick}
-        alt="plant"
+        alt="En bild på en växt med en brun kruka och stora gröna blad."
       />
       {!riddleSolved && (
         <img
-          className="cabinetfirst"
+          className="cabinet-first"
           src='./img/cabinet.png'
-          alt="cabinet"
+          alt="Bild på ett brunt skåp med två luckor."
           onClick={cabinetClicked}
         />
       )}
       {!openSafe && (
         <img
-          className='safe'
+          className='safe-image'
           src="./img/safe.png"
           onClick={handleSafeClick}
-          alt="safe"
+          alt="Bild på ett grått kassaskåp som öppnas med en kod."
         />
       )}
       {!pickKey && openSafe && (
         <img
-          className="key"
+          className="key-image"
           src="./img/key.png"
           onClick={pickUpKey}
-          alt="key"
+          alt="Bild på en nyckel till dörren."
         />
       )}
 
       <img
-        className="painting"
+        className="first-painting"
         src="./img/painting.png"
         onClick={handlePaintingClick}
-        alt="painting"
+        alt="Bild på en tavla med en solros."
       />
 
       {!paperClicked && isCabinetOpen && (
         <img
-          className="paper"
+          className="paper-image"
           src='./img/paper.png'
-          alt="paper"
+          alt="Ett papper som ligger på golvet i källaren."
           onClick={HandleClickPaper}
         />
       )}
@@ -216,9 +216,9 @@ function FirstRoom () {
       {paperClicked && (
         <div>
           <img
-            className="weatherpaper"
+            className="weather-paper"
             src='./img/weather.png'
-            alt="weather paper"
+            alt="Inzoomad bild på pappret som låg på golvet, fyra solar med olika många solstrålar."
             onClick={cabinetClicked}
           />
           <button
@@ -242,7 +242,7 @@ function FirstRoom () {
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((number) => (
               <button
                 key={number}
-                className="keybtn"
+                className="key-btn"
                 type="button"
                 onClick={() => setInputValue(inputValue + number)}
               >
@@ -250,21 +250,21 @@ function FirstRoom () {
               </button>
             ))}
             <button
-              className="keybtn"
+              className="key-btn"
               type="button"
               onClick={() => setInputValue(inputValue.slice(0, -1))}
             >
               radera
             </button>
-            <button className="subbtn" type="submit">OK</button>
-            <button className="subbtn" type="button" onClick={handleKeyPad}>X</button>
+            <button className="submit-btn" type="submit">OK</button>
+            <button className="submit-btn" type="button" onClick={handleKeyPad}>X</button>
           </div>
         </form>
       )}
 
       {displayText && (
         <p
-        className="displaytext"
+        className="display-text"
         >
           {displayText}
         </p>

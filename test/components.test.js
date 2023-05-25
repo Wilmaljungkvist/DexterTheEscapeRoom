@@ -1,5 +1,6 @@
 import renderer from 'react-test-renderer'
 import { render, fireEvent } from '@testing-library/react'
+// eslint-disable-next-line no-unused-vars
 import LastRoom from '../src/components/LastRoom'
 
 test('renders LastRoom component correctly', () => {
@@ -23,4 +24,3 @@ test('entering incorrect password displays error message', () => {
   const errorMessage = getByText('Fel lösenord, försök igen.')
   expect(errorMessage).toBeTruthy()
 })
-

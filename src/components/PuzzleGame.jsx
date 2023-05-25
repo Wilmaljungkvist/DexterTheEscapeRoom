@@ -120,7 +120,7 @@ function PuzzleGame ({ onPuzzleSolved }) {
   }
 
   return (
-    <div className="puzzle">
+    <div className="puzzle-game">
       <p>Solve the puzzle!</p>
       <div className="board">
         {puzzle.map((row, rowIndex) => (

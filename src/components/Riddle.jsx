@@ -39,19 +39,19 @@ function RiddleGame ({ riddleAnswer, whenSolved, question }) {
 
   return (
     <div className="riddle">
-      <p className="riddlequestion">{question}</p>
-      <form className="riddlesubmit" onSubmit={handleSubmit}>
-        <label className="riddlelabel" htmlFor="answerInput">
+      <p className="riddle-question">{question}</p>
+      <form className="riddle-submit" onSubmit={handleSubmit}>
+        <label className="riddle-label" htmlFor="answerInput">
           Lös gåtan för att komma in i skåpet:
         </label>
         <input
-          className="riddleinput"
+          className="riddle-input"
           type="text"
           id="answerInput"
           value={answer}
           onChange={handleInputChange}
         />
-        <button className="riddlebutton" type="submit">
+        <button className="riddle-button" type="submit">
           Är det rätt svar?
         </button>
       </form>
