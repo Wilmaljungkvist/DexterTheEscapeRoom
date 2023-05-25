@@ -198,7 +198,7 @@ function FirstRoom () {
       )}
 
       <img
-        className="painting"
+        className="first-painting"
         src="./img/painting.png"
         onClick={handlePaintingClick}
         alt="Bild på en tavla med en solros."

@@ -18,7 +18,7 @@ const Backstory = () => {
   const story = [
     {
       image: './img/forrest.png',
-      text: 'Dexter är din katt som är en svart Cornish Rex. Han är din absoluta bästa vän, det är lite sorgligt men sant. Det är rimligt eftersom du precis flyttat till en ny stad och ännu inte hunnit skaffa några vänner än. Det var en vanlig dag och du hade precis kommit hem mycket trött efter ett 8-timmars pass på ditt lagerjobb.'
+      text: 'Dexter är din katt som är en svart Cornish Rex. Han är din absoluta bästa vän, det är lite sorgligt men sant. Det är dock inte så konstigt eftersom du precis flyttat till en ny stad och ännu inte hunnit skaffa några vänner än. Det var en vanlig dag och du hade precis kommit hem mycket trött efter ett 8-timmars pass på ditt lagerjobb.'
     },
     {
       image: './img/home.png',
@@ -30,7 +30,7 @@ const Backstory = () => {
     },
     {
       image: './img/dark.png',
-      text: '6 timmar senare hade du sett en helt säsong och insåg att tiden gick lite snabbare än du hade velat.'
+      text: '6 timmar senare hade du sett en hel säsong och insåg att tiden gick lite snabbare än du hade velat.'
     },
     {
       image: './img/bedroom.png',

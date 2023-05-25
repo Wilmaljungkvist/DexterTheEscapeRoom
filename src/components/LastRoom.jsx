@@ -161,7 +161,7 @@ function LastRoom () {
       )}
 
       {isCabinetOpen && !hasDoorKey && (
-        <div className='puzzle'>
+        <div className='puzzle-div'>
           <PuzzleGame onPuzzleSolved={handlePuzzleSolved} />
         </div>
       )}
@@ -197,8 +197,8 @@ function LastRoom () {
       >
         radera
       </button>
-      <button className="subit-btn" type="submit">OK</button>
-      <button className="subit-btn" type="button" onClick={handleKeyPad}>X</button>
+      <button className="submit-btn" type="submit">OK</button>
+      <button className="submit-btn" type="button" onClick={handleKeyPad}>X</button>
     </div>
   </form>
 )}
