@@ -220,7 +220,7 @@ function LastRoom () {
             style={{
               position: 'absolute',
               top: '230px',
-              right: '500px'
+              left: '60%'
             }}
           >
             X
