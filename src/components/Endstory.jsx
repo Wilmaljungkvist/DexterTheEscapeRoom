@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 import TitleScreen from './TitleScreen'
 
 /**
- * Component for showing the endstory to the escape room.
+ * Component for showing the endstory in the escape room.
  *
  * @returns {JSX.Element} - The JSX element representing the Endstory component.
  */
