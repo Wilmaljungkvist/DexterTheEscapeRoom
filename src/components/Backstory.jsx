@@ -7,7 +7,7 @@ import FirstRoom from './FirstRoom'
 /**
  * Component for showing the Backstory to the escape room.
  *
- * @returns {JSX.Element} - The JSX element representing the Backstory component.
+ * @returns {JSX.Element} - the JSX element representing the Backstory component.
  */
 const Backstory = () => {
   const [currentStep, setCurrentStep] = useState(0)

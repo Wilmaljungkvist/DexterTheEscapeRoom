@@ -121,7 +121,8 @@ function PuzzleGame ({ onPuzzleSolved }) {
 
   return (
     <div className="puzzle-game">
-      <p>Solve the puzzle!</p>
+      <p style={{ fontFamily: 'myfont' }}>Klara pusslet!</p>
+
       <div className="board">
         {puzzle.map((row, rowIndex) => (
           <div className="row" key={rowIndex}>
