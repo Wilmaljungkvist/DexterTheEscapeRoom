@@ -1,3 +1,17 @@
-This is an online based escape room called Dexter: the escape room. The game is a click game in which you find clues to escape the rooms to find your cat Dexter.
+# Dexter: The Escape room
 
-Some future implementations that I did not have the time to implement but I would like to is hints, timer, more puzzles and rooms. So that is coming soon. Maybe also updating the pictures. 
+Dexter: The Escape Room är ett webbaserat escape room-spel där målet är att hitta din försvunna katt, Dexter. Spelet utforskar olika rum och utmaningar genom att interagera med muspekaren och lösa gåtor genom att skriva in svar på tangentbordet. I framtiden planerar jag att implementera en tryckbricka för att lösa gåtor istället för tangentbordet. Då jag vill att det ska enbart ska vara ett point-and-click spel.
+
+Planerade features:
+
+    Timer: En timer-funktion kommer att införas för att mäta hur lång tid det tar för användaren att klara spelet.
+
+    Ledtrådar: För att hjälpa användare som fastnar kommer en ledtrådsfunktion att implementeras. Denna funktion ger användaren möjlighet att få ledtrådar eller tips för att fortsätta framåt i spelet.
+
+    Inloggning och sparande: Användare kommer att ha möjlighet att skapa ett konto och logga in för att spara sina framsteg. Detta gör att användare kan återuppta spelet där de slutade och fortsätta utforska fler rum i framtiden, utan att behöva börja om.
+
+    High-Score lista: En high-score lista kommer att införas för att ge användarna en möjlighet att "tävla" mot andra användare.
+
+    Fler rum: Fler rum ska implementeras för att öka utmaningen och för att användaren ska kunna spela under en längre tid. 
+
+För att spela ska du navigera till https://dexter-escape.netlify.app/
