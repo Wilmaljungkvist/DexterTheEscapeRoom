@@ -3,8 +3,8 @@
 exports[`renders LastRoom component correctly 1`] = `
 <div>
   <img
-    alt="Basement"
-    className="basement"
+    alt="Bild på sista rummet som består av en dörr och två tavlor på väggen. Tavlorna föreställer ett berg och en med fyra blommor."
+    className="background-image"
     src="./img/last.png"
     useMap="#doormap"
   />
@@ -25,20 +25,20 @@ exports[`renders LastRoom component correctly 1`] = `
     />
   </map>
   <img
-    alt="cabinet"
-    className="cabinet"
+    alt="Bild på ett skåp med två luckor."
+    className="cabinet-image"
     onClick={[Function]}
     src="./img/cabinet.png"
   />
   <img
-    alt="safe"
-    className="safe"
+    alt="Ett kassaskåp som måste öppnas med en kod."
+    className="safe-image"
     onClick={[Function]}
     src="./img/safe.png"
   />
   <img
-    alt="plant"
-    className="plant"
+    alt="En stor grön växt i en kruka."
+    className="plant-image"
     onClick={[Function]}
     src="./img/plant.png"
   />
