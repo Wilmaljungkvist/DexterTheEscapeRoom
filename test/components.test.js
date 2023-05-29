@@ -11,7 +11,7 @@ test('renders LastRoom component correctly', () => {
 
 test('entering incorrect password displays error message', () => {
   const { getByAltText, getByLabelText, getByText } = render(<LastRoom />)
-  const safe = getByAltText('safe')
+  const safe = getByAltText('Ett kassaskåp som måste öppnas med en kod.')
 
   fireEvent.click(safe)
 
