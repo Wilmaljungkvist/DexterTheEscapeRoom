@@ -13,7 +13,7 @@ import React, { useState } from 'react'
  */
 function RiddleGame ({ riddleAnswer, whenSolved, question }) {
   const [answer, setAnswer] = useState('')
-  const [showPlaceholder, setShowPlaceholder] = useState(false);
+  const [showPlaceholder, setShowPlaceholder] = useState(false)
 
   /**
    * Handles the form submission.
