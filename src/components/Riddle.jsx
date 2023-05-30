@@ -24,7 +24,7 @@ function RiddleGame ({ riddleAnswer, whenSolved, question }) {
     if (answer.toLowerCase() === riddleAnswer.toLowerCase()) {
       whenSolved(true)
     } else {
-      setAnswer('')
+      setAnswer('Fel svar, Försök igen!')
     }
   }
 
