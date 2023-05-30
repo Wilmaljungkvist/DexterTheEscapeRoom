@@ -13,6 +13,7 @@ import React, { useState } from 'react'
  */
 function RiddleGame ({ riddleAnswer, whenSolved, question }) {
   const [answer, setAnswer] = useState('')
+  const [showPlaceholder, setShowPlaceholder] = useState(false)
 
   /**
    * Handles the form submission.
@@ -25,6 +26,7 @@ function RiddleGame ({ riddleAnswer, whenSolved, question }) {
       whenSolved(true)
     } else {
       setAnswer('')
+      setShowPlaceholder(true)
     }
   }
 
@@ -50,6 +52,7 @@ function RiddleGame ({ riddleAnswer, whenSolved, question }) {
           id="answerInput"
           value={answer}
           onChange={handleInputChange}
+          placeholder={showPlaceholder ? 'Fel svar, försök igen!' : ''}
         />
         <button className="riddle-button" type="submit">
           Är det rätt svar?
