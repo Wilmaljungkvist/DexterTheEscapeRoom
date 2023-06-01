@@ -15,7 +15,7 @@ test('entering incorrect password displays error message', () => {
 
   fireEvent.click(safe)
 
-  const passwordInput = getByLabelText('Enter password:')
+  const passwordInput = getByLabelText('Skriv in lösenordet:')
   const okButton = getByText('OK')
 
   fireEvent.change(passwordInput, { target: { value: '1234' } })

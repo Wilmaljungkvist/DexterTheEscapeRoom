@@ -177,7 +177,7 @@ function LastRoom () {
 
 {clickSafe && !openSafe && (
   <form className='form' onSubmit={handleSubmit}>
-    <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Enter password:</label>
+    <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Skriv in lösenordet:</label>
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
       <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((number) => (

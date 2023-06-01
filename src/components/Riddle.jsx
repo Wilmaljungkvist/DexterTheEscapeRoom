@@ -16,7 +16,7 @@ function RiddleGame ({ riddleAnswer, whenSolved, question }) {
   const [showPlaceholder, setShowPlaceholder] = useState(false)
 
   /**
-   * Handles the form submission.
+   * Handles the form submission and makes answer to lowercase.
    *
    * @param {Event} event - The form submission event.
    */
