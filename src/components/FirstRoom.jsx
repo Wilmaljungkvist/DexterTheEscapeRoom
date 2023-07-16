@@ -5,6 +5,8 @@ import React, { useState } from 'react'
 import LastRoom from './LastRoom'
 // eslint-disable-next-line no-unused-vars
 import RiddleGame from './Riddle'
+// eslint-disable-next-line no-unused-vars
+import Safe from './Safe'
 
 /**
  * First room component.
@@ -16,9 +18,7 @@ function FirstRoom () {
   const [isDoorOpen, setIsDoorOpen] = useState(false)
   const [pickKey, setPickKey] = useState(false)
   const [displayText, setDisplayText] = useState('')
-  const [clickSafe, setClickSafe] = useState(false)
   const [openSafe, setOpenSafe] = useState(false)
-  const [inputValue, setInputValue] = useState('')
   const [isCabinetOpen, setIsCabinetOpen] = useState(false)
   const [isCabinetClicked, setIsCabinetClicked] = useState(false)
   const [riddleSolved, setRiddleSolved] = useState(false)
@@ -47,40 +47,6 @@ function FirstRoom () {
   }
 
   /**
-   * Handles change in password input.
-   *
-   * @param {*} event - The password event.
-   */
-  function handleInputChange (event) {
-    setInputValue(event.target.value)
-  }
-
-  /**
-   * Handles click on safe.
-   */
-  function handleSafeClick () {
-    setClickSafe(true)
-  }
-
-  /**
-   * Handles password input.
-   *
-   * @param {*} event - The submit event.
-   */
-  function handleSubmit (event) {
-    event.preventDefault()
-    if (inputValue === password) {
-      setOpenSafe(true)
-    } else {
-      setInputValue('')
-      setDisplayText('Fel lösenord, försök igen.')
-      setTimeout(() => {
-        setDisplayText('')
-      }, 3000)
-    }
-  }
-
-  /**
    * Handles click on the door.
    */
   function handleDoorClick () {
@@ -91,6 +57,12 @@ function FirstRoom () {
       setTimeout(() => {
         setDisplayText('')
       }, 3000)
+    }
+  }
+
+  function handleSafeSolved (solved) {
+    if (solved) {
+      setOpenSafe(solved)
     }
   }
 
@@ -119,14 +91,6 @@ function FirstRoom () {
    */
   function cabinetClicked () {
     setIsCabinetClicked(true)
-  }
-
-  /**
-   * Handles when keypad should be seen.
-   */
-  function handleKeyPad () {
-    setClickSafe(false)
-    setInputValue('')
   }
 
   if (isDoorOpen) {
@@ -181,12 +145,7 @@ function FirstRoom () {
         />
       )}
       {!openSafe && (
-        <img
-          className='safe-image'
-          src="./img/safe.png"
-          onClick={handleSafeClick}
-          alt="Bild på ett grått kassaskåp som öppnas med en kod."
-        />
+        <Safe password={password} whenSolved={handleSafeSolved}></Safe>
       )}
       {!pickKey && openSafe && (
         <img
@@ -232,34 +191,6 @@ function FirstRoom () {
             X
           </button>
         </div>
-      )}
-
-      {clickSafe && !openSafe && (
-        <form className='form' onSubmit={handleSubmit}>
-          <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Skriv in lösenordet:</label>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
-            <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((number) => (
-              <button
-                key={number}
-                className="key-btn"
-                type="button"
-                onClick={() => setInputValue(inputValue + number)}
-              >
-                {number}
-              </button>
-            ))}
-            <button
-              className="key-btn"
-              type="button"
-              onClick={() => setInputValue(inputValue.slice(0, -1))}
-            >
-              radera
-            </button>
-            <button className="submit-btn" type="submit">OK</button>
-            <button className="submit-btn" type="button" onClick={handleKeyPad}>X</button>
-          </div>
-        </form>
       )}
 
       {displayText && (

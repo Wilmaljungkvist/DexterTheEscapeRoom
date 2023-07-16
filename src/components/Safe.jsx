@@ -6,7 +6,7 @@ import React, { useState } from 'react'
  * @param {Object} props - The component props.
  * @returns {JSX.Element} - The JSX element representing the Safe component.
  */
-function Safe({ password }) {
+function Safe({ password, whenSolved }) {
   const [openSafe, setOpenSafe] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [displayText, setDisplayText] = useState('');
@@ -37,6 +37,7 @@ function Safe({ password }) {
     event.preventDefault()
     if (inputValue === password) {
       setOpenSafe(true)
+      whenSolved(true)
     } else {
       setInputValue('')
       setDisplayText('Fel lösenord, försök igen.');
