@@ -4,8 +4,6 @@ import React, { useState } from 'react'
 import Backstory from './Backstory'
 // eslint-disable-next-line no-unused-vars
 import About from './About'
-// eslint-disable-next-line no-unused-vars
-import Safe from './Safe'
 
 /**
  * Component for the title screen.
@@ -47,7 +45,6 @@ const TitleScreen = () => {
         <button className="start-button" onClick={handleStart}>Spela</button>
         <button className="about-button" onClick={handleAboutMe}>Om spelet</button>
       </div>
-      <Safe password="1234"></Safe>
     </div>
   )
 }
