@@ -60,6 +60,11 @@ function FirstRoom () {
     }
   }
 
+  /**
+   * Handles the safe if the riddle is solved.
+   *
+   * @param {boolean} solved - Is true if the riddle is solved.
+   */
   function handleSafeSolved (solved) {
     if (solved) {
       setOpenSafe(solved)

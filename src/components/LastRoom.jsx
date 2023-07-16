@@ -33,6 +33,11 @@ function LastRoom () {
     setHasKey(true)
   }
 
+  /**
+   * Handles the safe if the riddle is solved.
+   *
+   * @param {boolean} solved - Is true if the riddle is solved.
+   */
   function handleSafeSolved (solved) {
     if (solved) {
       setOpenSafe(solved)
@@ -54,24 +59,6 @@ function LastRoom () {
       setIsDoorOpen(true)
     } else {
       setDisplayText('Dörren är låst.')
-      setTimeout(() => {
-        setDisplayText('')
-      }, 3000)
-    }
-  }
-
-  /**
-   * Handles the submitted password.
-   *
-   * @param {*} event - The submit event.
-   */
-  function handleSubmit (event) {
-    event.preventDefault()
-    if (inputValue === password) {
-      setOpenSafe(true)
-    } else {
-      setInputValue('')
-      setDisplayText('Fel lösenord, försök igen.')
       setTimeout(() => {
         setDisplayText('')
       }, 3000)
