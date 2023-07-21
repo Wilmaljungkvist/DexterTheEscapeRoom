@@ -1,6 +1,6 @@
 /* eslint-disable jsdoc/no-undefined-types */
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import TitleScreen from './TitleScreen'
 // eslint-disable-next-line no-unused-vars
@@ -13,8 +13,6 @@ import StoryViewer from './StoryViewer'
  */
 const Endstory = () => {
   const [currentStep, setCurrentStep] = useState(0)
-  const [showText, setShowText] = useState(false)
-  const [displayText, setDisplayText] = useState('')
   const [showFirstRoom, setShowFirstRoom] = useState(false)
 
   const story = [
@@ -28,28 +26,11 @@ const Endstory = () => {
     }
   ]
 
-  useEffect(() => {
-    setShowText(true)
-    if (showText) {
-      const text = story[currentStep].text
-      const timeoutId = setTimeout(() => {
-        if (displayText.length < text.length) {
-          setDisplayText(text.slice(0, displayText.length + 1))
-        } else {
-          setShowText(false)
-        }
-      }, 20)
-      return () => clearTimeout(timeoutId)
-    }
-  }, [showText, currentStep, displayText, story])
-
   /**
    * Handles if next button is pressed.
    */
   const handleNext = () => {
     setCurrentStep(currentStep + 1)
-    setShowText(true)
-    setDisplayText('')
   }
 
   /**
