@@ -56,8 +56,8 @@ const Backstory = () => {
    * Handles if next button is pressed.
    */
   const handleNext = () => {
-    setCurrentStep(0)
-    setCurrentStep(currentStep + 1)
+    setShowFirstRoom(false)
+    setCurrentStep((prevStep) => prevStep + 1)
   }
 
   /**

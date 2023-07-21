@@ -28,6 +28,10 @@ function StoryViewer ({ image, text }) {
     }
   }, [showText, displayText, text])
 
+  useEffect(() => {
+    setDisplayText('')
+  }, [text])
+
   return (
     <div style={{ position: 'relative', height: '100vh' }}>
       <img className="story-image" src={image} alt="Story Image" />
