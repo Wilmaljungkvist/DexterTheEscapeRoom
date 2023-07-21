@@ -80,7 +80,7 @@ const Backstory = () => {
           <StoryButton onClick={handleNext} label="Nästa"></StoryButton>
           )
         : (
-          <StoryButton onClick={handleNext} label="Starta"></StoryButton>
+          <StoryButton onClick={handleStart} label="Starta"></StoryButton>
           )}
     </div>
   )

@@ -50,20 +50,10 @@ const Endstory = () => {
       <StoryViewer image={story[currentStep].image} text={story[currentStep].text} ></StoryViewer>
       {currentStep < story.length - 1
         ? (
-          <button
-            className="start-next-btn"
-            onClick={handleNext}
-          >
-            Nästa
-          </button>
+          <StoryButton onClick={handleNext} label="Nästa"></StoryButton>
           )
         : (
-          <button
-            className="start-next-btn"
-            onClick={handleEnd}
-          >
-            Avsluta
-          </button>
+          <StoryButton onClick={handleEnd} label="Avsluta"></StoryButton>
           )}
     </div>
   )
