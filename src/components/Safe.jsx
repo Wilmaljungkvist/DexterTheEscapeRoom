@@ -1,30 +1,34 @@
+/* eslint-disable jsdoc/no-undefined-types */
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 
 /**
- * Safe component.
+ * Safe component - Represents a safe that can be opened with a password.
  *
- * @param {Object} props - The component props.
+ * @param {object} props - The component props.
+ * @param {string} props.password - The correct password to open the safe.
+ * @param {Function} props.whenSolved - A callback function called when the safe is successfully opened.
  * @returns {JSX.Element} - The JSX element representing the Safe component.
  */
-function Safe({ password, whenSolved }) {
-  const [openSafe, setOpenSafe] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const [displayText, setDisplayText] = useState('');
-  const [clickSafe, setClickSafe] = useState(false);
+function Safe ({ password, whenSolved }) {
+  const [openSafe, setOpenSafe] = useState(false)
+  const [inputValue, setInputValue] = useState('')
+  const [displayText, setDisplayText] = useState('')
+  const [clickSafe, setClickSafe] = useState(false)
 
   /**
    * Handles change in password input.
    *
    * @param {*} event - The password event.
    */
-  function handleInputChange(event) {
-    setInputValue(event.target.value);
+  function handleInputChange (event) {
+    setInputValue(event.target.value)
   }
 
   /**
    * Handles click on safe.
    */
-  function handleSafeClick() {
+  function handleSafeClick () {
     setClickSafe(true)
   }
 
@@ -33,14 +37,14 @@ function Safe({ password, whenSolved }) {
    *
    * @param {*} event - The submit event.
    */
-  function handleSubmit(event) {
+  function handleSubmit (event) {
     event.preventDefault()
     if (inputValue === password) {
       setOpenSafe(true)
       whenSolved(true)
     } else {
       setInputValue('')
-      setDisplayText('Fel lösenord, försök igen.');
+      setDisplayText('Fel lösenord, försök igen.')
       setTimeout(() => {
         setDisplayText('')
       }, 3000)
@@ -50,7 +54,7 @@ function Safe({ password, whenSolved }) {
   /**
    * Handles when keypad should be seen.
    */
-  function handleKeyPad() {
+  function handleKeyPad () {
     setClickSafe(false)
     setInputValue('')
   }
