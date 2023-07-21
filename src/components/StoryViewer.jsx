@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from 'react'
 
 /**
- * Component for viewing the stories in Backstory and Enstory.
+ * Component for viewing the stories in Backstory and Endstory.
  *
- * @param root0
- * @param root0.image
- * @param root0.text
- * @returns {JSX.Element} - the JSX element representing the StoryViewer component.
+ * @param {object} props - The component props.
+ * @param {string} props.image - The image URL to be displayed.
+ * @param {string} props.text - The text content to be displayed.
+ * @returns {JSX.Element} - The JSX element representing the StoryViewer component.
  */
 function StoryViewer ({ image, text }) {
   const [showText, setShowText] = useState(false)
