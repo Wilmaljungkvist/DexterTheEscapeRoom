@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react'
 // eslint-disable-next-line no-unused-vars
 import FirstRoom from './FirstRoom'
+// eslint-disable-next-line no-unused-vars
+import StoryViewer from './StoryViewer'
 
 /**
  * Component for showing the Backstory to the escape room.
@@ -89,16 +91,7 @@ const Backstory = () => {
 
   return (
     <div style={{ position: 'relative', height: '100vh' }}>
-      <img
-        className="story-image"
-        src={story[currentStep].image}
-        alt="Bilder för bakgrundshistorian"
-      />
-      <div
-        className="story-div"
-      >
-        <p className="backstory-text">{displayText}</p>
-      </div>
+      <StoryViewer image={story[currentStep].image} text={story[currentStep].text} ></StoryViewer>
       {currentStep < story.length - 1
         ? (
           <button
