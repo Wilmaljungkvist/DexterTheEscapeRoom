@@ -9,6 +9,8 @@ import PuzzleGame from './PuzzleGame'
 import Safe from './Safe'
 // eslint-disable-next-line no-unused-vars
 import PuzzleAndCabinet from './PuzzleAndCabinet'
+// eslint-disable-next-line no-unused-vars
+import PlantAndLetter from './PlantAndLetter'
 
 /**
  * LastRoom component.
@@ -138,31 +140,7 @@ function LastRoom () {
         <Safe password={password} whenSolved={handleSafeSolved}></Safe>
       )}
 
-      <img
-        className="plant-image"
-        src="./img/plant.png"
-        onClick={plantClicked}
-        alt="En stor grön växt i en kruka."
-      />
-      {plantPressed && (
-        <div style={{ position: 'relative' }}>
-          <img
-            className="letter-image"
-            src='./img/letter.png'
-            alt="Ett brev med siffror och en tillhörande färg."
-          />
-          <button
-            onClick={() => setPlantPressed(false)}
-            style={{
-              position: 'absolute',
-              top: '230px',
-              left: '60%'
-            }}
-          >
-            X
-          </button>
-        </div>
-      )}
+     <PlantAndLetter plantPressed={plantPressed} plantClicked={plantClicked} />
       {isPuzzleSolved && !hasDoorKey && (
         <img
           className="door-key"
