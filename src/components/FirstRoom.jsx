@@ -4,9 +4,9 @@ import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import LastRoom from './LastRoom'
 // eslint-disable-next-line no-unused-vars
-import RiddleGame from './Riddle'
-// eslint-disable-next-line no-unused-vars
 import Safe from './Safe'
+// eslint-disable-next-line no-unused-vars
+import RiddleAndCabinet from './RiddleAndCabinet'
 
 /**
  * First room component.
@@ -24,7 +24,6 @@ function FirstRoom () {
   const [riddleSolved, setRiddleSolved] = useState(false)
   const [paperClicked, setPaperClicked] = useState(false)
   const password = '4829'
-  const riddleAnswer = 'ingenting'
 
   /**
    * Handles key pickup.
@@ -119,36 +118,16 @@ function FirstRoom () {
       <map name='doormap' cursor='pointer'>
         <area shape='rect' coords="900,200,1150,550" alt='En mappning utav dörren i källaren.' onClick={handleDoorClick} />
       </map>
-      {isCabinetClicked && !riddleSolved && (
-        <div className="riddle-div">
-          <button
-            onClick={() => setIsCabinetClicked(false)}
-            style={{
-              position: 'absolute',
-              left: '100%'
-            }}
-          >
-            X
-          </button>
-          <RiddleGame riddleAnswer={riddleAnswer}
-            question="Fattiga har mig, rika behöver mig. Äter du mig dör du. Vad är jag?"
-            whenSolved={handleRiddleSolved}></RiddleGame>
-        </div>
-      )}
+      <RiddleAndCabinet
+        isCabinetOpen={isCabinetOpen}
+        handleRiddleSolved={handleRiddleSolved}
+      />
       <img
         className="plant-image"
         src="./img/plant.png"
         onClick={handlePlantClick}
         alt="En bild på en växt med en brun kruka och stora gröna blad."
       />
-      {!riddleSolved && (
-        <img
-          className="cabinet-first"
-          src='./img/cabinet.png'
-          alt="Bild på ett brunt skåp med två luckor."
-          onClick={cabinetClicked}
-        />
-      )}
       {!openSafe && (
         <Safe password={password} whenSolved={handleSafeSolved}></Safe>
       )}

@@ -1,5 +1,4 @@
 /* eslint-disable jsdoc/no-undefined-types */
-// eslint-disable-next-line no-unused-vars/* eslint-disable jsdoc/no-undefined-types */
 import React, { useState } from 'react'
 
 /**

@@ -18,7 +18,7 @@ function PuzzleAndCabinet ({ hasKey, isCabinetOpen, hasDoorKey, handlePuzzleSolv
     <>
       {!isCabinetOpen && (
         <img
-          className="cabinet-image"
+          className="cabinet-first"
           src='./img/cabinet.png'
           alt="Bild på ett skåp med två luckor."
           onClick={clickCabinet}
