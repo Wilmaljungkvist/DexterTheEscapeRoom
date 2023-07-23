@@ -7,6 +7,8 @@ import Endstory from './Endstory'
 import PuzzleGame from './PuzzleGame'
 // eslint-disable-next-line no-unused-vars
 import Safe from './Safe'
+// eslint-disable-next-line no-unused-vars
+import PuzzleAndCabinet from './PuzzleAndCabinet'
 
 /**
  * LastRoom component.
@@ -119,16 +121,13 @@ function LastRoom () {
           alt="Nyckeln till skåpet."
         />
       )}
-
-      {!isPuzzleSolved && (
-        <img
-          className="cabinet-image"
-          src='./img/cabinet.png'
-          alt="Bild på ett skåp med två luckor."
-          onClick={clickCabinet}
-        />
-      )}
-
+        <PuzzleAndCabinet
+        hasKey={hasKey}
+        isCabinetOpen={isCabinetOpen}
+        hasDoorKey={hasDoorKey}
+        handlePuzzleSolved={handlePuzzleSolved}
+        clickCabinet={clickCabinet}
+      />
       {isCabinetOpen && !hasDoorKey && (
         <div className='puzzle-div'>
           <PuzzleGame onPuzzleSolved={handlePuzzleSolved} />
