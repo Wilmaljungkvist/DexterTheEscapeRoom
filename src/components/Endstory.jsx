@@ -5,7 +5,8 @@ import React, { useState } from 'react'
 import TitleScreen from './TitleScreen'
 // eslint-disable-next-line no-unused-vars
 import StoryViewer from './StoryViewer'
-
+// eslint-disable-next-line no-unused-vars
+import StoryButton from './StoryButton'
 /**
  * Component for showing the endstory in the escape room.
  *
