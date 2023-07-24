@@ -1,6 +1,7 @@
 // RiddleAndCabinet.js
 import React, { useState } from 'react'
 import RiddleGame from './Riddle'
+import WeatherPaper from './WeatherPaper'
 
 /**
  *
@@ -41,6 +42,7 @@ function RiddleAndCabinet ({ isCabinetOpen, handleRiddleSolved }) {
           onClick={cabinetClicked}
         />
       )}
+      <WeatherPaper isCabinetOpen={isCabinetOpen}></WeatherPaper>
       {isCabinetClicked && !isCabinetOpen && (
         <div className="riddle-div">
           <button

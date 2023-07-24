@@ -20,9 +20,6 @@ function FirstRoom () {
   const [displayText, setDisplayText] = useState('')
   const [openSafe, setOpenSafe] = useState(false)
   const [isCabinetOpen, setIsCabinetOpen] = useState(false)
-  const [isCabinetClicked, setIsCabinetClicked] = useState(false)
-  const [riddleSolved, setRiddleSolved] = useState(false)
-  const [paperClicked, setPaperClicked] = useState(false)
   const password = '4829'
 
   /**
@@ -40,7 +37,6 @@ function FirstRoom () {
    */
   function handleRiddleSolved (solved) {
     if (solved) {
-      setRiddleSolved(solved)
       setIsCabinetOpen(solved)
     }
   }
@@ -90,21 +86,8 @@ function FirstRoom () {
     }, 3000)
   }
 
-  /**
-   * Handles click on cabinet.
-   */
-  function cabinetClicked () {
-    setIsCabinetClicked(true)
-  }
-
   if (isDoorOpen) {
     return <LastRoom />
-  }
-  /**
-   * Handle click on paper.
-   */
-  function HandleClickPaper () {
-    setPaperClicked(true)
   }
 
   return (
@@ -146,36 +129,6 @@ function FirstRoom () {
         onClick={handlePaintingClick}
         alt="Bild på en tavla med en solros."
       />
-
-      {!paperClicked && isCabinetOpen && (
-        <img
-          className="paper-image"
-          src='./img/paper.png'
-          alt="Ett papper som ligger på golvet i källaren."
-          onClick={HandleClickPaper}
-        />
-      )}
-
-      {paperClicked && (
-        <div>
-          <img
-            className="weather-paper"
-            src='./img/weather.png'
-            alt="Inzoomad bild på pappret som låg på golvet, fyra solar med olika många solstrålar."
-            onClick={cabinetClicked}
-          />
-          <button
-            onClick={() => setPaperClicked(false)}
-            style={{
-              position: 'absolute',
-              top: '230px',
-              right: '500px'
-            }}
-          >
-            X
-          </button>
-        </div>
-      )}
 
       {displayText && (
         <p
