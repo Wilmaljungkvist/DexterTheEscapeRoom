@@ -12,7 +12,7 @@ import StoryButton from './StoryButton'
  *
  * @returns {JSX.Element} - The JSX element representing the Endstory component.
  */
-const Endstory = () => {
+function Endstory () {
   const [currentStep, setCurrentStep] = useState(0)
   const [showFirstRoom, setShowFirstRoom] = useState(false)
 
