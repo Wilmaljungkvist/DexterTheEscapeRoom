@@ -3,11 +3,11 @@
 import React, { useState } from 'react'
 
 /**
- * First room component.
+ * Component for the Riddle and cabinet.
  *
- * @param root0
- * @param root0.isRiddleSolved
- * @returns {JSX.Element} - The JSX element representing the FirstRoom component.
+ * @param {object} props - The props object.
+ * @param {Function} props.isCabinetOpen - Callback function called when the cabinet is open.
+ * @returns {JSX.Element} - The JSX element representing the WeatherPaper component.
  */
 function WeatherPaper ({ isCabinetOpen }) {
   const [paperClicked, setPaperClicked] = useState(false)
