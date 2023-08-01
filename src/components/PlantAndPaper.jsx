@@ -3,19 +3,20 @@
 import React, { useState } from 'react'
 
 /**
- * A React component that represents a plant and a letter.
+ * Component for the plant and paper.
  *
  * @param {object} props - The props object.
  * @param {Function} props.plantClicked - Callback function called when the plant is clicked.
+ * @param {Function} props.plantPressed - Callback function called when the plant is pressed.
  * @returns {JSX.Element} - The JSX element representing the PlantAndLetter component.
  */
-function PlantAndLetter ({ plantClicked }) {
+function PlantAndPaper ({ plantPressed, plantClicked }) {
   const [showLetter, setShowLetter] = useState(false)
 
   /**
    * Handles hiding the letter when the "X" button is clicked.
    */
-  const hideLetter = () => {
+  const hidePaper = () => {
     setShowLetter(false)
   }
 
@@ -38,7 +39,7 @@ function PlantAndLetter ({ plantClicked }) {
             alt="Ett brev med siffror och en tillhörande färg."
           />
           <button
-            onClick={hideLetter}
+            onClick={hidePaper}
             style={{
               position: 'absolute',
               top: '230px',
@@ -53,4 +54,4 @@ function PlantAndLetter ({ plantClicked }) {
   )
 }
 
-export default PlantAndLetter
+export default PlantAndPaper

@@ -9,7 +9,7 @@ import Safe from './Safe'
 import RiddleAndCabinet from './RiddleAndCabinet'
 
 /**
- * First room component.
+ * Component for the first room.
  *
  * @returns {JSX.Element} - The JSX element representing the FirstRoom component.
  */

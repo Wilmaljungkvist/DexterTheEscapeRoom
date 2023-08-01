@@ -5,13 +5,15 @@ import React from 'react'
 import PuzzleGame from './PuzzleGame'
 
 /**
+ * Component for the Puzzle and cabinet.
  *
- * @param root0
- * @param root0.hasKey
- * @param root0.isCabinetOpen
- * @param root0.hasDoorKey
- * @param root0.handlePuzzleSolved
- * @param root0.clickCabinet
+ * @param {object} props - The props object.
+ * @param {Function} props.hasKey - Callback function called when the key to the cabinet is found.
+ * @param {Function} props.isCabinetOpen - Callback function called when the cabinet is open.
+ * @param {Function} props.hasDoorKey - Callback function called when the key to the door is found.
+ * @param {Function} props.handlePuzzleSolved - Callback function called when the puzzle is solved.
+ * @param {Function} props.clickCabinet - Callback function called when the cabinet is clicked.
+ * @returns {JSX.Element} - The JSX element representing the PlantAndLetter component.
  */
 function PuzzleAndCabinet ({ hasKey, isCabinetOpen, hasDoorKey, handlePuzzleSolved, clickCabinet }) {
   return (

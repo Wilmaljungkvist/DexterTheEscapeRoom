@@ -10,10 +10,10 @@ import Safe from './Safe'
 // eslint-disable-next-line no-unused-vars
 import PuzzleAndCabinet from './PuzzleAndCabinet'
 // eslint-disable-next-line no-unused-vars
-import PlantAndLetter from './PlantAndLetter'
+import PlantAndPaper from './PlantAndPaper'
 
 /**
- * LastRoom component.
+ * Component for the last room.
  *
  * @returns {JSX.Element} - The JSX element representing the LastRoom component.
  */
@@ -140,7 +140,7 @@ function LastRoom () {
         <Safe password={password} whenSolved={handleSafeSolved}></Safe>
       )}
 
-     <PlantAndLetter plantClicked={plantClicked} />
+     <PlantAndPaper plantPressed={plantPressed} plantClicked={plantClicked} />
       {isPuzzleSolved && !hasDoorKey && (
         <img
           className="door-key"
