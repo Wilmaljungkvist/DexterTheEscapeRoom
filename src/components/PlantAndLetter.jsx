@@ -6,11 +6,10 @@ import React, { useState } from 'react'
  * A React component that represents a plant and a letter.
  *
  * @param {object} props - The props object.
- * @param {Function} props.plantPressed - Callback function called when the plant is pressed.
  * @param {Function} props.plantClicked - Callback function called when the plant is clicked.
  * @returns {JSX.Element} - The JSX element representing the PlantAndLetter component.
  */
-function PlantAndLetter ({ plantPressed, plantClicked }) {
+function PlantAndLetter ({ plantClicked }) {
   const [showLetter, setShowLetter] = useState(false)
 
   /**

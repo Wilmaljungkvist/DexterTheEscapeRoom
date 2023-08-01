@@ -13,7 +13,7 @@ import StoryButton from './StoryButton'
  *
  * @returns {JSX.Element} - the JSX element representing the Backstory component.
  */
-const Backstory = () => {
+function Backstory () {
   const [currentStep, setCurrentStep] = useState(0)
   const [showFirstRoom, setShowFirstRoom] = useState(false)
 

@@ -140,7 +140,7 @@ function LastRoom () {
         <Safe password={password} whenSolved={handleSafeSolved}></Safe>
       )}
 
-     <PlantAndLetter plantPressed={plantPressed} plantClicked={plantClicked} />
+     <PlantAndLetter plantClicked={plantClicked} />
       {isPuzzleSolved && !hasDoorKey && (
         <img
           className="door-key"
