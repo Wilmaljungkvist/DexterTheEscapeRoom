@@ -13,7 +13,7 @@ import PuzzleGame from './PuzzleGame'
  * @param {Function} props.hasDoorKey - Callback function called when the key to the door is found.
  * @param {Function} props.handlePuzzleSolved - Callback function called when the puzzle is solved.
  * @param {Function} props.clickCabinet - Callback function called when the cabinet is clicked.
- * @returns {JSX.Element} - The JSX element representing the PlantAndLetter component.
+ * @returns {JSX.Element} - The JSX element representing the PuzzleAndCabinet component.
  */
 function PuzzleAndCabinet ({ hasKey, isCabinetOpen, hasDoorKey, handlePuzzleSolved, clickCabinet }) {
   return (

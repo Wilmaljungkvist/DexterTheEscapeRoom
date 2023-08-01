@@ -1,13 +1,18 @@
-// RiddleAndCabinet.js
+/* eslint-disable jsdoc/no-undefined-types */
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
+// eslint-disable-next-line no-unused-vars
 import RiddleGame from './Riddle'
+// eslint-disable-next-line no-unused-vars
 import WeatherPaper from './WeatherPaper'
 
 /**
+ * Component for the Riddle and cabinet.
  *
- * @param root0
- * @param root0.isCabinetOpen
- * @param root0.handleRiddleSolved
+ * @param {object} props - The props object.
+ * @param {Function} props.handleRiddleSolved - Callback function called when the riddle is solved.
+ * @param {Function} props.isCabinetOpen - Callback function called when the cabinet is open.
+ * @returns {JSX.Element} - The JSX element representing the PuzzleAndCabinet component.
  */
 function RiddleAndCabinet ({ isCabinetOpen, handleRiddleSolved }) {
   const [isCabinetClicked, setIsCabinetClicked] = useState(false)
