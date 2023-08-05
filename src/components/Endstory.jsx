@@ -1,18 +1,19 @@
 /* eslint-disable jsdoc/no-undefined-types */
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import TitleScreen from './TitleScreen'
-
+// eslint-disable-next-line no-unused-vars
+import StoryViewer from './StoryViewer'
+// eslint-disable-next-line no-unused-vars
+import StoryButton from './StoryButton'
 /**
  * Component for showing the endstory in the escape room.
  *
  * @returns {JSX.Element} - The JSX element representing the Endstory component.
  */
-const Endstory = () => {
+function Endstory () {
   const [currentStep, setCurrentStep] = useState(0)
-  const [showText, setShowText] = useState(false)
-  const [displayText, setDisplayText] = useState('')
   const [showFirstRoom, setShowFirstRoom] = useState(false)
 
   const story = [
@@ -26,32 +27,15 @@ const Endstory = () => {
     }
   ]
 
-  useEffect(() => {
-    setShowText(true)
-    if (showText) {
-      const text = story[currentStep].text
-      const timeoutId = setTimeout(() => {
-        if (displayText.length < text.length) {
-          setDisplayText(text.slice(0, displayText.length + 1))
-        } else {
-          setShowText(false)
-        }
-      }, 20)
-      return () => clearTimeout(timeoutId)
-    }
-  }, [showText, currentStep, displayText, story])
-
   /**
-   * Handles if next button is pressed.
+   * Handles when next button is pressed.
    */
   const handleNext = () => {
     setCurrentStep(currentStep + 1)
-    setShowText(true)
-    setDisplayText('')
   }
 
   /**
-   * Handles if end button is pressed.
+   * Handles when end button is pressed.
    */
   const handleEnd = () => {
     setShowFirstRoom(true)
@@ -64,32 +48,13 @@ const Endstory = () => {
 
   return (
     <div style={{ position: 'relative', height: '100vh' }}>
-      <img
-        className="story-image"
-        src={story[currentStep].image}
-        alt="Bilder för sluthistorien"
-      />
-      <div
-        className="story-div"
-      >
-        <p className="backstory-text">{displayText}</p>
-      </div>
+      <StoryViewer image={story[currentStep].image} text={story[currentStep].text} ></StoryViewer>
       {currentStep < story.length - 1
         ? (
-          <button
-            className="start-next-btn"
-            onClick={handleNext}
-          >
-            Nästa
-          </button>
+          <StoryButton onClick={handleNext} label="Nästa"></StoryButton>
           )
         : (
-          <button
-            className="start-next-btn"
-            onClick={handleEnd}
-          >
-            Avsluta
-          </button>
+          <StoryButton onClick={handleEnd} label="Avsluta"></StoryButton>
           )}
     </div>
   )

@@ -5,9 +5,15 @@ import React, { useState } from 'react'
 import Endstory from './Endstory'
 // eslint-disable-next-line no-unused-vars
 import PuzzleGame from './PuzzleGame'
+// eslint-disable-next-line no-unused-vars
+import Safe from './Safe'
+// eslint-disable-next-line no-unused-vars
+import PuzzleAndCabinet from './PuzzleAndCabinet'
+// eslint-disable-next-line no-unused-vars
+import PlantAndPaper from './PlantAndPaper'
 
 /**
- * LastRoom component.
+ * Component for the last room.
  *
  * @returns {JSX.Element} - The JSX element representing the LastRoom component.
  */
@@ -15,9 +21,7 @@ function LastRoom () {
   const [hasKey, setHasKey] = useState(false)
   const [isDoorOpen, setIsDoorOpen] = useState(false)
   const [pickKey, setPickKey] = useState(false)
-  const [clickSafe, setClickSafe] = useState(false)
   const [openSafe, setOpenSafe] = useState(false)
-  const [inputValue, setInputValue] = useState('')
   const [plantPressed, setPlantPressed] = useState(false)
   const [isCabinetOpen, setIsCabinetOpen] = useState(false)
   const [isPuzzleSolved, setIsPuzzleSolved] = useState(false)
@@ -26,7 +30,7 @@ function LastRoom () {
   const password = '6743'
 
   /**
-   * Function that sets pickKey and hasKey to true if key is picked up.
+   * Function that sets pickKey and hasKey to true when key is picked up.
    */
   function pickUpKey () {
     setPickKey(true)
@@ -34,17 +38,21 @@ function LastRoom () {
   }
 
   /**
-   * Handles the door key when it is picked up.
+   * Handles the safe when the riddle is solved.
+   *
+   * @param {boolean} solved - Is true when the riddle is solved.
    */
-  function pickUpDoorKey () {
-    setHasDoorKey(true)
+  function handleSafeSolved (solved) {
+    if (solved) {
+      setOpenSafe(solved)
+    }
   }
 
   /**
-   * Handles the safe when it's clicked.
+   * Handles the doorkey when it is picked up.
    */
-  function handleSafeClick () {
-    setClickSafe(true)
+  function pickUpDoorKey () {
+    setHasDoorKey(true)
   }
 
   /**
@@ -55,33 +63,6 @@ function LastRoom () {
       setIsDoorOpen(true)
     } else {
       setDisplayText('Dörren är låst.')
-      setTimeout(() => {
-        setDisplayText('')
-      }, 3000)
-    }
-  }
-
-  /**
-   * Handles change in input of the password.
-   *
-   * @param {*} event - The password event.
-   */
-  function handleInputChange (event) {
-    setInputValue(event.target.value)
-  }
-
-  /**
-   * Handles the submitted password.
-   *
-   * @param {*} event - The submit event.
-   */
-  function handleSubmit (event) {
-    event.preventDefault()
-    if (inputValue === password) {
-      setOpenSafe(true)
-    } else {
-      setInputValue('')
-      setDisplayText('Fel lösenord, försök igen.')
       setTimeout(() => {
         setDisplayText('')
       }, 3000)
@@ -102,14 +83,6 @@ function LastRoom () {
     }
   }
 
-  /**
-   * Handles when the keypad should be seeen.
-   */
-  function handleKeyPad () {
-    setClickSafe(false)
-    setInputValue('')
-  }
-
   if (isDoorOpen) {
     return <Endstory></Endstory>
   }
@@ -124,7 +97,7 @@ function LastRoom () {
   /**
    * Is true when the puzzle is solved.
    *
-   * @param {boolean} isSolved - Shows if the puzzle is solved.
+   * @param {boolean} isSolved - true when the puzzle is solved.
    */
   function handlePuzzleSolved (isSolved) {
     setIsPuzzleSolved(isSolved)
@@ -150,16 +123,13 @@ function LastRoom () {
           alt="Nyckeln till skåpet."
         />
       )}
-
-      {!isPuzzleSolved && (
-        <img
-          className="cabinet-image"
-          src='./img/cabinet.png'
-          alt="Bild på ett skåp med två luckor."
-          onClick={clickCabinet}
-        />
-      )}
-
+        <PuzzleAndCabinet
+        hasKey={hasKey}
+        isCabinetOpen={isCabinetOpen}
+        hasDoorKey={hasDoorKey}
+        handlePuzzleSolved={handlePuzzleSolved}
+        clickCabinet={clickCabinet}
+      />
       {isCabinetOpen && !hasDoorKey && (
         <div className='puzzle-div'>
           <PuzzleGame onPuzzleSolved={handlePuzzleSolved} />
@@ -167,66 +137,10 @@ function LastRoom () {
       )}
 
       {!openSafe && (
-        <img
-          className='safe-image'
-          src="./img/safe.png"
-          onClick={handleSafeClick}
-          alt="Ett kassaskåp som måste öppnas med en kod."
-        />
+        <Safe password={password} whenSolved={handleSafeSolved}></Safe>
       )}
 
-{clickSafe && !openSafe && (
-  <form className='form' onSubmit={handleSubmit}>
-    <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Skriv in lösenordet:</label>
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
-      <input className='input' id="passwordInput" type="password" value={inputValue} onChange={handleInputChange} />
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((number) => (
-        <button
-          key={number}
-          className="key-btn"
-          type="button"
-          onClick={() => setInputValue(inputValue + number)}
-        >
-          {number}
-        </button>
-      ))}
-      <button
-        className="key-btn"
-        type="button"
-        onClick={() => setInputValue(inputValue.slice(0, -1))}
-      >
-        radera
-      </button>
-      <button className="submit-btn" type="submit">OK</button>
-      <button className="submit-btn" type="button" onClick={handleKeyPad}>X</button>
-    </div>
-  </form>
-)}
-      <img
-        className="plant-image"
-        src="./img/plant.png"
-        onClick={plantClicked}
-        alt="En stor grön växt i en kruka."
-      />
-      {plantPressed && (
-        <div style={{ position: 'relative' }}>
-          <img
-            className="letter-image"
-            src='./img/letter.png'
-            alt="Ett brev med siffror och en tillhörande färg."
-          />
-          <button
-            onClick={() => setPlantPressed(false)}
-            style={{
-              position: 'absolute',
-              top: '230px',
-              left: '60%'
-            }}
-          >
-            X
-          </button>
-        </div>
-      )}
+     <PlantAndPaper plantPressed={plantPressed} plantClicked={plantClicked} />
       {isPuzzleSolved && !hasDoorKey && (
         <img
           className="door-key"

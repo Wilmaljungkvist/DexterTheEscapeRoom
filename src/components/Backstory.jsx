@@ -1,18 +1,20 @@
 /* eslint-disable jsdoc/no-undefined-types */
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import FirstRoom from './FirstRoom'
+// eslint-disable-next-line no-unused-vars
+import StoryViewer from './StoryViewer'
+// eslint-disable-next-line no-unused-vars
+import StoryButton from './StoryButton'
 
 /**
  * Component for showing the Backstory to the escape room.
  *
  * @returns {JSX.Element} - the JSX element representing the Backstory component.
  */
-const Backstory = () => {
+function Backstory () {
   const [currentStep, setCurrentStep] = useState(0)
-  const [showText, setShowText] = useState(false)
-  const [displayText, setDisplayText] = useState('')
   const [showFirstRoom, setShowFirstRoom] = useState(false)
 
   const story = [
@@ -50,33 +52,16 @@ const Backstory = () => {
     }
   ]
 
-  useEffect(() => {
-    setShowText(true)
-    if (showText) {
-      const text = story[currentStep].text
-      const timeoutId = setTimeout(() => {
-        if (displayText.length < text.length) {
-          setDisplayText(text.slice(0, displayText.length + 1))
-        } else {
-          setShowText(false)
-        }
-      }, 20)
-      return () => clearTimeout(timeoutId)
-    }
-  }, [showText, currentStep, displayText, story])
-
   /**
-   * Handles if next button is pressed.
+   * Handles when next button is pressed.
    */
   const handleNext = () => {
-    setCurrentStep(0)
-    setCurrentStep(currentStep + 1)
-    setShowText(true)
-    setDisplayText('')
+    setShowFirstRoom(false)
+    setCurrentStep((prevStep) => prevStep + 1)
   }
 
   /**
-   * Handle if start button is pressed.
+   * Handles when start button is pressed.
    */
   const handleStart = () => {
     setShowFirstRoom(true)
@@ -89,32 +74,13 @@ const Backstory = () => {
 
   return (
     <div style={{ position: 'relative', height: '100vh' }}>
-      <img
-        className="story-image"
-        src={story[currentStep].image}
-        alt="Bilder för bakgrundshistorian"
-      />
-      <div
-        className="story-div"
-      >
-        <p className="backstory-text">{displayText}</p>
-      </div>
+      <StoryViewer image={story[currentStep].image} text={story[currentStep].text} ></StoryViewer>
       {currentStep < story.length - 1
         ? (
-          <button
-            className="start-next-btn"
-            onClick={handleNext}
-          >
-            Nästa
-          </button>
+          <StoryButton onClick={handleNext} label="Nästa"></StoryButton>
           )
         : (
-          <button
-            className="start-next-btn"
-            onClick={handleStart}
-          >
-            Starta
-          </button>
+          <StoryButton onClick={handleStart} label="Starta"></StoryButton>
           )}
     </div>
   )
