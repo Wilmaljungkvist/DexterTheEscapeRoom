@@ -31,9 +31,9 @@ function FirstRoom () {
   }
 
   /**
-   * Handles the cabinet if the riddle is solved.
+   * Handles the cabinet when the riddle is solved.
    *
-   * @param {boolean} solved - Is true if the riddle is solved.
+   * @param {boolean} solved - Is true when the riddle is solved.
    */
   function handleRiddleSolved (solved) {
     if (solved) {
@@ -42,7 +42,7 @@ function FirstRoom () {
   }
 
   /**
-   * Handles click on the door.
+   * Handles when the door is clicked.
    */
   function handleDoorClick () {
     if (hasKey) {
@@ -56,9 +56,9 @@ function FirstRoom () {
   }
 
   /**
-   * Handles the safe if the riddle is solved.
+   * Handles the safe when the riddle is solved.
    *
-   * @param {boolean} solved - Is true if the riddle is solved.
+   * @param {boolean} solved - Is true when the riddle is solved.
    */
   function handleSafeSolved (solved) {
     if (solved) {
@@ -67,7 +67,7 @@ function FirstRoom () {
   }
 
   /**
-   * Handles click on the plant.
+   * Handles when the plant is clicked.
    */
   function handlePlantClick () {
     setDisplayText('Hm, det fanns inget i krukan.')
@@ -77,7 +77,7 @@ function FirstRoom () {
   }
 
   /**
-   * Handles click on the painting.
+   * Handles when the painting is clicked.
    */
   function handlePaintingClick () {
     setDisplayText('Tavlan sitter fast, den går inte att ta loss.')

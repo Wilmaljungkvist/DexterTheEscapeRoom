@@ -7,14 +7,14 @@ import React, { useState } from 'react'
  *
  * @param {object} props - The props object.
  * @param {Function} props.plantClicked - Callback function called when the plant is clicked.
- * @param {Function} props.plantPressed - Callback function called when the plant is pressed.
- * @returns {JSX.Element} - The JSX element representing the PlantAndLetter component.
+ * @param {boolean} props.plantPressed - Is true when plant is clicked.
+ * @returns {JSX.Element} - The JSX element representing the PlantAndPaper component.
  */
 function PlantAndPaper ({ plantPressed, plantClicked }) {
   const [showLetter, setShowLetter] = useState(false)
 
   /**
-   * Handles hiding the letter when the "X" button is clicked.
+   * Hides the paper when the "X" button is clicked.
    */
   const hidePaper = () => {
     setShowLetter(false)

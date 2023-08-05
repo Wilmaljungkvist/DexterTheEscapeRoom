@@ -5,10 +5,10 @@ import React from 'react'
 /**
  * Component for the buttons in the Endstory and Backstory.
  *
- * @param {object} props - The component props.
+ * @param {object} props - The props for the component.
  * @param {Function} props.onClick - The click event handler for the button.
  * @param {string} props.label - The label/text to be displayed on the button.
- * @returns {JSX.Element} - The JSX element representing the ButtonComponent.
+ * @returns {JSX.Element} - The JSX element representing the StoryButton Component.
  */
 function ButtonComponent ({ onClick, label }) {
   return (

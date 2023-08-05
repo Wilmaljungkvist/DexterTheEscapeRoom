@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 
 /**
- * Safe component - Represents a safe that can be opened with a password.
+ * Component for the safe.
  *
  * @param {object} props - The component props.
  * @param {string} props.password - The correct password to open the safe.

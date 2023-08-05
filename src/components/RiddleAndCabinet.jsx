@@ -11,7 +11,7 @@ import WeatherPaper from './WeatherPaper'
  *
  * @param {object} props - The props object.
  * @param {Function} props.handleRiddleSolved - Callback function called when the riddle is solved.
- * @param {Function} props.isCabinetOpen - Callback function called when the cabinet is open.
+ * @param {boolean} props.isCabinetOpen - Is true when the cabinet is opened.
  * @returns {JSX.Element} - The JSX element representing the RiddleAndCabinet component.
  */
 function RiddleAndCabinet ({ isCabinetOpen, handleRiddleSolved }) {
@@ -26,9 +26,9 @@ function RiddleAndCabinet ({ isCabinetOpen, handleRiddleSolved }) {
   }
 
   /**
-   * Handles if the riddle is solved.
+   * Handles when the riddle is solved.
    *
-   * @param {boolean} solved - Is true if the riddle is solved.
+   * @param {boolean} solved - Is true when the riddle is solved.
    */
   function handleRiddleSolvedInternal (solved) {
     if (solved) {

@@ -28,14 +28,14 @@ function Endstory () {
   ]
 
   /**
-   * Handles if next button is pressed.
+   * Handles when next button is pressed.
    */
   const handleNext = () => {
     setCurrentStep(currentStep + 1)
   }
 
   /**
-   * Handles if end button is pressed.
+   * Handles when end button is pressed.
    */
   const handleEnd = () => {
     setShowFirstRoom(true)

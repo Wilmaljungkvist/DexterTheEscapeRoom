@@ -3,13 +3,13 @@
 import React, { useState } from 'react'
 
 /**
- * RiddleGame component represents a riddle game.
+ * Component for the riddle game.
  *
  * @param {object} props - The props object.
  * @param {string} props.riddleAnswer - The correct answer to the riddle.
  * @param {Function} props.whenSolved - Callback function called when the riddle is solved.
  * @param {string} props.question - The riddle question.
- * @returns {JSX.Element} - The JSX element representing the About component.
+ * @returns {JSX.Element} - The JSX element representing the Riddle component.
  */
 function RiddleGame ({ riddleAnswer, whenSolved, question }) {
   const [answer, setAnswer] = useState('')

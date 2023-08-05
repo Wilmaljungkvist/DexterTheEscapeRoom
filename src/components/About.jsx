@@ -9,11 +9,11 @@ import TitleScreen from './TitleScreen'
  *
  * @returns {JSX.Element} - The JSX element representing the About component.
  */
-const About = () => {
+function About () {
   const [seeAbout, setSeeAbout] = useState(false)
 
   /**
-   * Handles if back button is pressed.
+   * Handles when back button is pressed.
    */
   const handleBack = () => {
     setSeeAbout(true)

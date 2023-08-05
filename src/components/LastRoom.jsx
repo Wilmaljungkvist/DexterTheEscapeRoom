@@ -30,7 +30,7 @@ function LastRoom () {
   const password = '6743'
 
   /**
-   * Function that sets pickKey and hasKey to true if key is picked up.
+   * Function that sets pickKey and hasKey to true when key is picked up.
    */
   function pickUpKey () {
     setPickKey(true)
@@ -38,9 +38,9 @@ function LastRoom () {
   }
 
   /**
-   * Handles the safe if the riddle is solved.
+   * Handles the safe when the riddle is solved.
    *
-   * @param {boolean} solved - Is true if the riddle is solved.
+   * @param {boolean} solved - Is true when the riddle is solved.
    */
   function handleSafeSolved (solved) {
     if (solved) {
@@ -49,7 +49,7 @@ function LastRoom () {
   }
 
   /**
-   * Handles the door key when it is picked up.
+   * Handles the doorkey when it is picked up.
    */
   function pickUpDoorKey () {
     setHasDoorKey(true)
@@ -97,7 +97,7 @@ function LastRoom () {
   /**
    * Is true when the puzzle is solved.
    *
-   * @param {boolean} isSolved - Shows if the puzzle is solved.
+   * @param {boolean} isSolved - true when the puzzle is solved.
    */
   function handlePuzzleSolved (isSolved) {
     setIsPuzzleSolved(isSolved)

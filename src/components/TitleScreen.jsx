@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/no-undefined-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
@@ -8,7 +9,7 @@ import About from './About'
 /**
  * Component for the title screen.
  *
- * @returns {string} //TO DO: write return correct.
+ * @returns {JSX.Element} - The JSX element representing the TitleScreen component.
  */
 const TitleScreen = () => {
   const [showBackstory, setShowBackstory] = useState(false)

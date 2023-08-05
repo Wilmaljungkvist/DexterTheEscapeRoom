@@ -53,7 +53,7 @@ function Backstory () {
   ]
 
   /**
-   * Handles if next button is pressed.
+   * Handles when next button is pressed.
    */
   const handleNext = () => {
     setShowFirstRoom(false)
@@ -61,7 +61,7 @@ function Backstory () {
   }
 
   /**
-   * Handle if start button is pressed.
+   * Handles when start button is pressed.
    */
   const handleStart = () => {
     setShowFirstRoom(true)

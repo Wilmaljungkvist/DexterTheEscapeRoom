@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 
 /**
- * PuzzleGame component represents a puzzle game.
+ * Component to the puzzle game.
  *
  * @param {object} props - The props object.
  * @param {Function} props.onPuzzleSolved - Callback function called when the puzzle is solved.
