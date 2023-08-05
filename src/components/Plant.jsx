@@ -21,7 +21,6 @@ function Plant () {
 
   /**
    * Handles when the close button is clicked.
-   * Closes the div and hides the text.
    */
   function handleCloseClick () {
     setClickPlant(false)

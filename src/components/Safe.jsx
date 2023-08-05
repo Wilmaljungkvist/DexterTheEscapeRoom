@@ -72,6 +72,9 @@ function Safe ({ password, whenSolved }) {
 
       {clickSafe && !openSafe && (
         <form className="form" onSubmit={handleSubmit}>
+          <button className="close-button" type="button" onClick={handleKeyPad}>
+              X
+            </button>
           <label htmlFor="passwordInput" style={{ fontSize: '20px', marginBottom: '10px', fontFamily: 'myfont' }}>Skriv in lösenordet:</label>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridGap: '10px' }}>
             <input className="input" id="passwordInput" type="password" value={inputValue} data-testid="passwordInput" onChange={handleInputChange} />
@@ -84,9 +87,6 @@ function Safe ({ password, whenSolved }) {
               radera
             </button>
             <button className="submit-btn" type="submit">OK</button>
-            <button className="submit-btn" type="button" onClick={handleKeyPad}>
-              X
-            </button>
           </div>
         </form>
       )}
