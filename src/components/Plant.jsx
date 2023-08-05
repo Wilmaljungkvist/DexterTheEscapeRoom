@@ -1,35 +1,41 @@
 /* eslint-disable jsdoc/no-undefined-types */
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import RiddleAndCabinet from '.RiddleAndCabinet'
 
 /**
  * Component for the Puzzle and cabinet.
  *
- * @param {object} props - The props object.
- * @param {boolean} props.hasKey - Is true when the key is found.
- * @param {boolean} props.isCabinetOpen - Is true when the cabinet is open.
- * @param {booleab} props.hasDoorKey - Is true when the key to the door is found.
- * @param {Function} props.handlePuzzleSolved - Callback function called when the puzzle is solved.
- * @param {Function} props.clickCabinet - Callback function called when the cabinet is clicked.
  * @returns {JSX.Element} - The JSX element representing the PuzzleAndCabinet component.
  */
-function Plant ({ hasKey, isCabinetOpen, hasDoorKey, handlePuzzleSolved, clickCabinet }) {
+function Plant () {
+  const [displayText, setDisplayText] = useState('')
+
+  /**
+   * Handles when the plant is clicked on.
+   */
+  function handlePlantClick () {
+    setDisplayText('Hm, det fanns inget i krukan.')
+    setTimeout(() => {
+      setDisplayText('')
+    }, 3000)
+  }
+
   return (
     <>
-      {!isCabinetOpen && (
-        <img
-          className="cabinet-image"
-          src='./img/cabinet.png'
-          alt="Bild på ett skåp med två luckor."
-          onClick={clickCabinet}
-        />
-      )}
-      {isCabinetOpen && !hasDoorKey && (
-        <div className='puzzle-div'>
-          <PuzzleGame onPuzzleSolved={handlePuzzleSolved} />
-        </div>
+      <img
+        className="plant-image"
+        src="./img/plant.png"
+        onClick={handlePlantClick}
+        alt="En bild på en växt med en brun kruka och stora gröna blad."
+      />
+      {displayText && (
+        <p
+        className="display-text"
+        >
+          {displayText}
+        </p>
       )}
     </>
   )

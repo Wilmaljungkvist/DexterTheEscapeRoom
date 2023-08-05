@@ -66,16 +66,6 @@ function FirstRoom () {
     }
   }
 
-  /**
-   * Handles when the plant is clicked.
-   */
-  function handlePlantClick () {
-    setDisplayText('Hm, det fanns inget i krukan.')
-    setTimeout(() => {
-      setDisplayText('')
-    }, 3000)
-  }
-
   if (isDoorOpen) {
     return <LastRoom />
   }
@@ -94,12 +84,6 @@ function FirstRoom () {
       <RiddleAndCabinet
         isCabinetOpen={isCabinetOpen}
         handleRiddleSolved={handleRiddleSolved}
-      />
-      <img
-        className="plant-image"
-        src="./img/plant.png"
-        onClick={handlePlantClick}
-        alt="En bild på en växt med en brun kruka och stora gröna blad."
       />
       {!openSafe && (
         <Safe password={password} whenSolved={handleSafeSolved}></Safe>
