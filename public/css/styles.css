@@ -392,3 +392,32 @@ header {
     padding: 10px;
     border-radius: 5px;
   }
+
+  /* Your existing CSS styles for .plant-image, .backstory-text, etc. */
+
+.plant-div {
+  position: relative;
+  position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ebe0df;
+    font-size: 20px;
+    box-shadow: 10px 5px 5px black;
+    border-radius: 20px;
+    padding: 1rem;
+    max-height: 15%;
+    overflow: auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}

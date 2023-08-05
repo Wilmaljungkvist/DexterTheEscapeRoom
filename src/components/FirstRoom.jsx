@@ -6,6 +6,8 @@ import LastRoom from './LastRoom'
 // eslint-disable-next-line no-unused-vars
 import Safe from './Safe'
 // eslint-disable-next-line no-unused-vars
+import Plant from './Plant'
+// eslint-disable-next-line no-unused-vars
 import RiddleAndCabinet from './RiddleAndCabinet'
 
 /**
@@ -66,26 +68,6 @@ function FirstRoom () {
     }
   }
 
-  /**
-   * Handles when the plant is clicked.
-   */
-  function handlePlantClick () {
-    setDisplayText('Hm, det fanns inget i krukan.')
-    setTimeout(() => {
-      setDisplayText('')
-    }, 3000)
-  }
-
-  /**
-   * Handles when the painting is clicked.
-   */
-  function handlePaintingClick () {
-    setDisplayText('Tavlan sitter fast, den går inte att ta loss.')
-    setTimeout(() => {
-      setDisplayText('')
-    }, 3000)
-  }
-
   if (isDoorOpen) {
     return <LastRoom />
   }
@@ -105,12 +87,6 @@ function FirstRoom () {
         isCabinetOpen={isCabinetOpen}
         handleRiddleSolved={handleRiddleSolved}
       />
-      <img
-        className="plant-image"
-        src="./img/plant.png"
-        onClick={handlePlantClick}
-        alt="En bild på en växt med en brun kruka och stora gröna blad."
-      />
       {!openSafe && (
         <Safe password={password} whenSolved={handleSafeSolved}></Safe>
       )}
@@ -123,12 +99,7 @@ function FirstRoom () {
         />
       )}
 
-      <img
-        className="first-painting"
-        src="./img/painting.png"
-        onClick={handlePaintingClick}
-        alt="Bild på en tavla med en solros."
-      />
+      <Plant></Plant>
 
       {displayText && (
         <p
