@@ -30,12 +30,14 @@ exports[`renders LastRoom component correctly 1`] = `
     onClick={[Function]}
     src="./img/cabinet.png"
   />
-  <img
-    alt="Ett kassaskåp som måste öppnas med en kod."
-    className="safe-image"
-    onClick={[Function]}
-    src="./img/safe.png"
-  />
+  <div>
+    <img
+      alt="Bild på ett grått kassaskåp som öppnas med en kod."
+      className="safe-image"
+      onClick={[Function]}
+      src="./img/safe.png"
+    />
+  </div>
   <img
     alt="En stor grön växt i en kruka."
     className="plant-image"

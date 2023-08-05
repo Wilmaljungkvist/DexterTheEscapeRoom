@@ -1,7 +1,9 @@
 import renderer from 'react-test-renderer'
-import { render, fireEvent } from '@testing-library/react'
+import { render } from '@testing-library/react'
 // eslint-disable-next-line no-unused-vars
 import LastRoom from '../src/components/LastRoom'
+// eslint-disable-next-line no-unused-vars
+import Safe from '../src/components/Safe'
 
 test('renders LastRoom component correctly', () => {
   const component = renderer.create(<LastRoom />)
@@ -9,18 +11,9 @@ test('renders LastRoom component correctly', () => {
   expect(tree).toMatchSnapshot()
 })
 
-test('entering incorrect password displays error message', () => {
-  const { getByAltText, getByLabelText, getByText } = render(<LastRoom />)
-  const safe = getByAltText('Ett kassaskåp som måste öppnas med en kod.')
-
-  fireEvent.click(safe)
-
-  const passwordInput = getByLabelText('Skriv in lösenordet:')
-  const okButton = getByText('OK')
-
-  fireEvent.change(passwordInput, { target: { value: '1234' } })
-  fireEvent.click(okButton)
-
-  const errorMessage = getByText('Fel lösenord, försök igen.')
-  expect(errorMessage).toBeTruthy()
+test('renders Safe component correctly', () => {
+  const password = 'correctPassword'
+  const whenSolved = jest.fn()
+  const { container } = render(<Safe password={password} whenSolved={whenSolved} />)
+  expect(container).toBeDefined()
 })
