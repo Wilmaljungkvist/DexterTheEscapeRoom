@@ -6,6 +6,8 @@ import LastRoom from './LastRoom'
 // eslint-disable-next-line no-unused-vars
 import Safe from './Safe'
 // eslint-disable-next-line no-unused-vars
+import Plant from './Plant'
+// eslint-disable-next-line no-unused-vars
 import RiddleAndCabinet from './RiddleAndCabinet'
 
 /**
@@ -96,6 +98,8 @@ function FirstRoom () {
           alt="Bild på en nyckel till dörren."
         />
       )}
+
+      <Plant></Plant>
 
       {displayText && (
         <p
