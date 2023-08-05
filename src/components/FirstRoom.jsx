@@ -76,16 +76,6 @@ function FirstRoom () {
     }, 3000)
   }
 
-  /**
-   * Handles when the painting is clicked.
-   */
-  function handlePaintingClick () {
-    setDisplayText('Tavlan sitter fast, den går inte att ta loss.')
-    setTimeout(() => {
-      setDisplayText('')
-    }, 3000)
-  }
-
   if (isDoorOpen) {
     return <LastRoom />
   }
@@ -122,13 +112,6 @@ function FirstRoom () {
           alt="Bild på en nyckel till dörren."
         />
       )}
-
-      <img
-        className="first-painting"
-        src="./img/painting.png"
-        onClick={handlePaintingClick}
-        alt="Bild på en tavla med en solros."
-      />
 
       {displayText && (
         <p
