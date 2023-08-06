@@ -58,9 +58,9 @@ function FirstRoom () {
   }
 
   /**
-   * Handles the safe when the riddle is solved.
+   * Handles the safe when it's opened.
    *
-   * @param {boolean} solved - Is true when the riddle is solved.
+   * @param {boolean} solved - Is true when the safe is opened.
    */
   function handleSafeSolved (solved) {
     if (solved) {

@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
-import RiddleGame from './Riddle'
+import RiddleGame from './RiddleGame'
 // eslint-disable-next-line no-unused-vars
 import WeatherPaper from './WeatherPaper'
 
