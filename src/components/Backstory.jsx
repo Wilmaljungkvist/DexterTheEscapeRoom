@@ -9,7 +9,7 @@ import StoryViewer from './StoryViewer'
 import StoryButton from './StoryButton'
 
 /**
- * Component for showing the Backstory to the escape room.
+ * Component for showing the Backstory.
  *
  * @returns {JSX.Element} - the JSX element representing the Backstory component.
  */
